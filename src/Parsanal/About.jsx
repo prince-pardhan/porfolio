@@ -70,7 +70,7 @@ export default function AboutPage() {
             Skills
           </Title>
           <List spacing="xs" style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {['Video Editor', 'Photo Editor', 'Writer', 'Gamer', 'Poster  Editor', 'Typing', 'Besicl computer',
+            {['Video Editor', 'Photo Editor', 'Writer', 'Gamer', 'Poster  Editor', 'Typing', ' Basic computer',
               'fotto ai video', 'html', 'css', 'javascript'].map((skill) => (
                 <List.Item
                   key={skill}

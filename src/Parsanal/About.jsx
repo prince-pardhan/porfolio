@@ -11,7 +11,7 @@ import {
   Flex,
 } from '@mantine/core';
 import img1 from "./images/shyam ji pop.jpg"
-import img2 from "./images/image.png"
+import img2 from "./images/self-pic.jpeg"
 
 export default function AboutPage() {
   return (

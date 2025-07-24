@@ -30,7 +30,7 @@ export default function AboutPage() {
           </Text>
         </div>
 
-        <Flex justify={'space-between'} style={{ boxShadow: '10px 10px 100px 10px gray' }}>
+        <Flex justify={'space-between'} h={150} style={{ boxShadow: '10px 10px 100px 10px 10pxm10px gray' }}>
           <Image
             src={img1}
             alt="Profile Image"

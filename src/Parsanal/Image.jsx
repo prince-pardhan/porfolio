@@ -18,17 +18,17 @@ import img1 from "./images/swami.jpeg"
 export default function Contactpage() {
   return (
   
-     <Flex justify={'space-between'}>
+     <Flex align="center" >
                 <Image
                     src={img1}
 
 
-                    alt="Profile Image"
+                    // alt="Profile Image"
                     style={{
                         width: '150px',
                         height: '150px',
                         objectFit: 'cover',
-                        borderRadius: '50%',
+                        borderRadius: '10%',
                     }}
                     mb="sm"
                 />
@@ -37,11 +37,11 @@ export default function Contactpage() {
 
 
                     alt="Profile Image"
-                    style={{
-                        width: '100px',
-                        height: '100px',
+                  style={{
+                        width: '150px',
+                        height: '150px',
                         objectFit: 'cover',
-                        borderRadius: '50%',
+                        borderRadius: '10%',
                     }}
                     mb="sm"
                 />

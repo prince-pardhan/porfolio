@@ -14,7 +14,7 @@ import {
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mantine/hooks';
-import img1 from "./images/shyam ji pop.jpg"
+import img1 from "./images/swami.jpeg"
 import img2 from "./images/OIP (1).jpeg"
 
 export default function ProfilePage() {

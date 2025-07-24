@@ -84,8 +84,7 @@ export default function ProfilePage() {
                
                 <Card shadow="sm" radius="md" padding="lg" withBorder >
                     <Text weight={50} size="xl" mb="xs" fw={900} c="blue.9">
-                        <a href="whatsapp://send?abid=8290400325&text=Hello deer">whatsapp</a>
-
+<a href="https://wa.me/8290400325">Whatsapp Me</a>
                     </Text>
                     <Anchor href="/About" weight={900} fw={900}>
 

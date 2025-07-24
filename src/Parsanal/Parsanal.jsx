@@ -83,8 +83,8 @@ export default function ProfilePage() {
                 </Card>
                
                 <Card shadow="sm" radius="md" padding="lg" withBorder >
-                    <Text weight={50} size="xl" mb="xs" fw={900} c="blue.9">
-<a href="https://wa.me/8290400325">Whatsapp Me</a>
+                    <Text weight={900} size="xl" mb="xs" fw={900} c="red">
+<a href="https://wa.me/8290400325">Whatsapp.. ↠↠↠</a>
                     </Text>
                     <Anchor href="/About" weight={900} fw={900}>
 
@@ -93,7 +93,7 @@ export default function ProfilePage() {
 
                 <Card shadow="xs" radius="xs" padding="xs" withBorder>
                     <Text weight={50} size="xl" mb="xs" fw={900}>
-                        📱 <a href="tel:=918290400325"> call me </a>
+                        📱 <a href="tel:=918290400325"> call me.. ↠↠↠</a>
                     </Text>
                 </Card>
             </SimpleGrid>

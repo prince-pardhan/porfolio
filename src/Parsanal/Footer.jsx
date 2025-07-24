@@ -22,7 +22,7 @@ export default function Footer() {
           <a href="https://youtube.com/@princpardhan7782?si=L09C7Xo4r6uUwGVN" style={{color:"red"}}>youtube ...</a>
           <a href="https://www.facebook.com/share/p/19WEkPssmd/" style={{color:"red"}}>fackbook ...</a>
           <a href="https://www.blogger.com/blog/posts/571040556621222478" style={{color:"red"}}>Blogger ...</a>
-          {/* <a href="https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg==" style={{color:"red  "}}>Instagram ...</a> */}
+          <a href="https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg==" style={{color:"red  "}}>Instagram ...</a>
         </Group>
         <Text  size="xl" color="dimmed" c="white" fw={900}>Chak ↟ all link</Text>
         <Divider my="md" c="white"/>      

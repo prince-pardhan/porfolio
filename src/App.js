@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Parsanal from './Parsanal/Parsanal';
-import AboutPage from './Parsanal/About.jsx';
+import About from './Parsanal/About.jsx';
 import Motavison from './Parsanal/Motavison.jsx';
-import Image from './Parsanal/Image.jsx';
 import Footer from './Parsanal/Footer';
 
 
@@ -16,9 +15,9 @@ export default function App() {
 
       <Routes>
         <Route path='/' element={<Parsanal />} />
-        <Route path='/About' element={< AboutPage />} />
+        <Route path='/About' element={< About />} />
         <Route path='/Motavison' element={<Motavison />} />
-        <Route path='/Image' element={<Image />} />
+        
       </Routes>
     <Footer/>
     </BrowserRouter>

@@ -13,11 +13,11 @@ import {
 import img1 from "./images/rahul.jpeg"
 import img2 from "./images/self-pic.jpeg"
 
-export default function AboutPage() {
+export default function About() {
   return (
     <Container
       size="sm"
-      // p="xl"
+      p="xl"
       style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff' }}
     >
       <Stack spacing="md">
@@ -38,11 +38,10 @@ export default function AboutPage() {
               width: '150px',
               height: '150px',
               objectFit: 'cover',
-              borderRadius: '50%',
+              borderRadius: '10%',
 
             }}
             mb="sm"
-
           />
           <Image
             src={img2}
@@ -51,7 +50,7 @@ export default function AboutPage() {
               width: '150px',
               height: '150px',
               objectFit: 'cover',
-              borderRadius: '50%',
+              borderRadius: '10%',
 
             }}
             mb="sm"

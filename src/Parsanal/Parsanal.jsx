@@ -41,8 +41,8 @@ export default function ProfilePage() {
 
                     alt="Profile Image"
                     style={{
-                        width: '100px',
-                        height: '100px',
+                        width: '150px',
+                        height: '150px',
                         objectFit: 'cover',
                         borderRadius: '50%',
                     }}

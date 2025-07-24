@@ -1,10 +1,15 @@
 import React from 'react';
 import {
   Container,
-  TextInput,
-  Button,
-  Title,
-  Stack,
+    Text,
+    Anchor,
+    SimpleGrid,
+    Card,
+    Image,
+    Center,
+    Title,
+    Box,
+    Flex,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { Link } from 'react-router-dom';

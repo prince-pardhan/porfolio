@@ -82,6 +82,14 @@ export default function ProfilePage() {
                     </Anchor>
                 </Card>
                 <Card shadow="sm" radius="md" padding="lg" withBorder >
+                    <Text weight={50} size="sm" mb="xs" fw={900}>
+                       Image
+                    </Text>
+                    <Anchor href="/Image" weight={900} fw={900}>
+                        Read more.. ↠↠↠
+                    </Anchor>
+                </Card>
+                <Card shadow="sm" radius="md" padding="lg" withBorder >
                     <Text weight={50} size="xl" mb="xs" fw={900} c="blue.9">
                         <a href="whatsapp://send?abid=8290400325&text=Hello deer">whatsapp</a>
 

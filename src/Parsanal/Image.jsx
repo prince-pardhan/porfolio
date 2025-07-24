@@ -12,7 +12,7 @@ import img2 from "./images/OIP (1).jpeg"
 import img1 from "./images/swami.jpeg"
 export default function Contactpage() {
   return (
-   <>
+  
      <Flex justify={'space-between'}>
                 <Image
                     src={img1}
@@ -41,6 +41,7 @@ export default function Contactpage() {
                     mb="sm"
                 />
             </Flex>
-   </>
+
+  
   );
 }

@@ -26,7 +26,6 @@ export default function ProfilePage() {
       const [opened, { toggle }] = useDisclosure(false);
 
     return (
-
         <Container fluid style={{ background: 'linear-gradient(135deg, #00fff7ff, white)', minHeight: '100vh', padding: 0, }}>
 
             <Center style={{ height: '20%', flexDirection: 'inherit' }}>

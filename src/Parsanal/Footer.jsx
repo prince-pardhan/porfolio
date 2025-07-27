@@ -6,6 +6,7 @@ import {
   Anchor,
   Divider,
   Container,
+  Rating,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ export default function Footer() {
     <Container component="footer" py="md" bg="gray.9">
       <Stack align="center" spacing="sm"  >
        
+         <Rating defaultValue={0} />
 
         
         <h1 style={{color:"white"}}  >My ↡ Business ↡ link...</h1>

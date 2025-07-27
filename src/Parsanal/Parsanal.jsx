@@ -11,14 +11,20 @@ import {
     Title,
     Box,
     Flex,
+    Group,
+    Button,
+    Collapse,
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mantine/hooks';
 import img1 from "./images/swami.jpeg"
 import img2 from "./images/OIP (1).jpeg"
+import { useDisclosure } from '@mantine/hooks';
 
 export default function ProfilePage() {
     const isMobile = useMediaQuery("(max-width: 780px)");
+      const [opened, { toggle }] = useDisclosure(false);
+
     return (
 
         <Container fluid style={{ background: 'linear-gradient(135deg, #00fff7ff, white)', minHeight: '100vh', padding: 0, }}>
@@ -62,7 +68,21 @@ export default function ProfilePage() {
                     mb="sm"
                 />
             </Flex>
+  <Box maw={900} mx="auto">
+      <Group justify="center" mb={12} >
+        <Button onClick={toggle} color='blue.9'>Chak</Button>
+      </Group>
 
+      <Collapse in={opened}>
+        <Text>
+            <h1>•Hii..</h1>
+            <h2>•Rahul swami?</h2>
+            <h3>•I am Video Editor in siras.</h3>
+            <h4>•Editor video link in Footer.</h4>
+            <h5>•Chak All Link.</h5>
+        </Text>
+      </Collapse>
+    </Box>
             <SimpleGrid cols={2} spacing="md" px="md" >
                 <Card shadow="sm" radius="md" padding="lg" >
                     <Text weight={20} size="xl" mb="xs" fw={900}>
@@ -84,7 +104,7 @@ export default function ProfilePage() {
                
                 <Card shadow="sm" radius="md" padding="lg" withBorder >
                     <Text weight={900} size="xl" mb="xs" fw={900} c="red">
-<a href="https://wa.me/8290400325">Whatsapp.. ↠↠↠</a>
+                   <a href="https://wa.me/8290400325">Whatsapp.. ↠↠↠</a>
                     </Text>
                     <Anchor href="/About" weight={900} fw={900}>
 

@@ -43,12 +43,7 @@ export default function Footer() {
         <option>sirsa</option>
         <option>8290400325</option> 
         </select>
-         <AspectRatio ratio={16 }>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d222162.70021320193!2d75.030407!3d29.536984000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39114db0893d723d%3A0xc51125be998c4f95!2sSirsa%2C%20Haryana%20125055!5e0!3m2!1sen!2sin!4v1753684470114!5m2!1sen!2sin" 
-        style={{ border: 0,  width:940,height:500}}
-      />
-    </AspectRatio>
+      
     </Container>
   );
 }

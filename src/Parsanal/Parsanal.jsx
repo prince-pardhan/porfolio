@@ -75,7 +75,8 @@ export default function ProfilePage() {
       <Collapse in={opened}>
         <Text>
             <h1>•Hii..</h1>
-            <h2>•Rahul swami?</h2>
+            
+            <h2>•me  Rahul swami?</h2>
             <h3>•I am Video Editor in siras.</h3>
             <h4>•Editor video link in Footer.</h4>
             <h5>•Chak All Link.</h5>

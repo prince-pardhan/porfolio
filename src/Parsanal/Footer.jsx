@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <Container component="footer" py="md" bg="gray.9">
-         <Indicator position="bottom-end" size={6}>
+         <Indicator position="bottom-end" size={6} disabled>
       <Avatar
         size="lg"
         radius="sm"

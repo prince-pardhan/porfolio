@@ -1,6 +1,8 @@
 export default function ProfilePage() {
+    
     return (
         <>
+
             <div style={{ background: "black", color: "whitr" }}>   .
                 <div style={{ color: "white" }}>
 

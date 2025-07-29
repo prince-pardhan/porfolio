@@ -8,6 +8,8 @@ import {
   Container,
   Rating,
   AspectRatio,
+  Avatar,
+  Indicator, 
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +17,13 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <Container component="footer" py="md" bg="gray.9">
+         <Indicator position="bottom-end" size={6}>
+      <Avatar
+        size="lg"
+        radius="sm"
+        src="https://tse1.mm.bing.net/th/id/OIP.jHk00ZjluDdK2icnSPU72QHaEK?pid=Api&P=0&h=180"
+      />
+    </Indicator>
       <Stack align="center" spacing="sm"  >
        
          <Rating defaultValue={0} />

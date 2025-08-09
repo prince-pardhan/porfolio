@@ -123,6 +123,17 @@ export default function ProfilePage() {
                     Email: srk016361@gmail.com
                 </Text>
             </Center>
+            <Center style={{ height: '100%' }}>
+                <Text size="xl" weight={900} color="red" fw={900}>
+                    "It takes time to become successful, and time is money, and time is power"
+                </Text>
+            </Center>
+            <Center style={{ height: '100%' }}>
+                <Text size="lg" weight={900} color="black.9" fw={900} >
+                   "Chanakya said that the one who controls Sama, Dana, Danda, and Bhed 
+                   is called a king — what we now call a hacker. And I control all three of them
+                </Text>
+            </Center>
         </Container>
     );
 }

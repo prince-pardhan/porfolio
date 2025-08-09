@@ -12,7 +12,7 @@ export default function App() {
   return (
 
     <BrowserRouter>
-
+ 
       <Routes>
         <Route path='/' element={<Parsanal />} />
         <Route path='/About' element={< About />} />

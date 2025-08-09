@@ -69,7 +69,7 @@ export default function ProfilePage() {
             </Flex>
   <Box maw={900} mx="auto">
       <Group justify="center" mb={12} >
-        <Button onClick={toggle} color='blue.9'>Chak</Button>
+        <Button onClick={toggle} color='blue.9'>Opened</Button>
       </Group>
 
       <Collapse in={opened}>
@@ -81,6 +81,16 @@ export default function ProfilePage() {
             <h4>•Editor video link in Footer.</h4>
             <h5>•Chak All Link.</h5>
         </Text>
+      </Collapse>
+    </Box>
+            <Box maw={400} mx="auto">
+      <Group justify="center" mb={5}>
+      </Group>
+
+      <Collapse in={opened} transitionDuration={1000} transitionTimingFunction="linear">
+        <Text fw={900}>"It takes time to become successful, and time is money, and time is power"</Text>
+        <Text fw={900} c='gray'>"Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called a king
+             — what we now call a hacker. And I control all three of them</Text>
       </Collapse>
     </Box>
             <SimpleGrid cols={2} spacing="md" px="md" >
@@ -121,17 +131,6 @@ export default function ProfilePage() {
             <Center style={{ height: '100%' }}>
                 <Text size="lg" weight={900} color="gray.6" fw={900}>
                     Email: srk016361@gmail.com
-                </Text>
-            </Center>
-            <Center style={{ height: '100%' }}>
-                <Text size="xl" weight={900} color="red" fw={900}>
-                    "It takes time to become successful, and time is money, and time is power"
-                </Text>
-            </Center>
-            <Center style={{ height: '100%' }}>
-                <Text size="lg" weight={900} color="black.9" fw={900} >
-                   "Chanakya said that the one who controls Sama, Dana, Danda, and Bhed 
-                   is called a king — what we now call a hacker. And I control all three of them
                 </Text>
             </Center>
         </Container>

@@ -17,8 +17,8 @@ import {
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mantine/hooks';
-import img1 from "./images/swami.jpeg"
-import img2 from "./images/OIP (1).jpeg"
+import img1 from "./images/maxresdefault.jpg"
+import img3 from "./images/design.png"
 import { useDisclosure } from '@mantine/hooks';
 
 export default function ProfilePage() {
@@ -26,10 +26,11 @@ export default function ProfilePage() {
       const [opened, { toggle }] = useDisclosure(false);
 
     return (
-        <Container fluid style={{ background: 'linear-gradient(135deg, #00fff7ff, white)', minHeight: '100vh', padding: 0, }}>
+        <Container fluid style={{ minHeight: '100vh', width:"100%", padding: 10, backgroundImage:`url(${img3})` , backgroundPosition:"center",backgroundAttachment:"fixed", backgroundSize:"cover" }}>
+           
 
             <Center style={{ height: '20%', flexDirection: 'inherit' }}>
-                <Title order={1} color="black">
+                <Title order={1}  c='gray.5'>
                     ↭rahul swami↭
                 </Title>
 
@@ -39,34 +40,9 @@ export default function ProfilePage() {
                 <Text weight={900} size="xs" color="red">
                 </Text>
             </Center>
-            <Flex justify={'space-between'}>
-                <Image
-                    src={img1}
-
-
-                    alt="Profile Image"
-                    style={{
-                        width: '150px',
-                        height: '150px',
-                        objectFit: 'cover',
-                        borderRadius: '50%',
-                    }}
-                    mb="sm"
-                />
-                <Image
-                    src={img2}
-
-
-                    alt="Profile Image"
-                    style={{
-                        width: '100px',
-                        height: '100px',
-                        objectFit: 'cover',
-                        borderRadius: '50%',
-                    }}
-                    mb="sm"
-                />
-            </Flex>
+            
+            
+            
   <Box maw={900} mx="auto">
       <Group justify="center" mb={12} >
         <Button onClick={toggle} color='blue.9'>Opened</Button>
@@ -80,8 +56,8 @@ export default function ProfilePage() {
       <Group justify="center" mb={5}>
       </Group>
 
-      <Collapse in={opened} transitionDuration={1000} transitionTimingFunction="linear">
-               <Text>
+      <Collapse in={opened} transitionDuration={1000} transitionTimingFunction="linear" color='gray'>
+               <Text  c='gray.5'>
             <h1>•Hii..</h1>
             
             <h2>•me  Rahul swami?</h2>
@@ -89,14 +65,14 @@ export default function ProfilePage() {
             <h4>•Editor video link in Footer.</h4>
             <h5>•Chak All Link.</h5>
         </Text>
-        <Text fw={900}>"It takes time to become successful, and time is money, and time is power"</Text>
-        <Text fw={900} c='gray'>"Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called a king
+        <Text fw={900}  c='gray.5' >"It takes time to become successful, and time is money, and time is power"</Text>
+        <Text fw={900} c='gray.5'>"Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called a king
              — what we now call a hacker. And I control all three of them</Text>
       </Collapse>
     </Box>
-            <SimpleGrid cols={2} spacing="md" px="md" >
-                <Card shadow="sm" radius="md" padding="lg" >
-                    <Text weight={20} size="xl" mb="xs" fw={900}>
+            <SimpleGrid cols={2} spacing="md" px="md"  >
+                <Card shadow="sm" radius="md" padding="lg" bg='gray.5'>
+                    <Text weight={10} size="xl" mb="xs" fw={900}>
                         About Me
                     </Text>
                     <Anchor href="/About" weight={900} fw={900}>
@@ -104,25 +80,25 @@ export default function ProfilePage() {
                     </Anchor>
                 </Card>
                 
-                <Card shadow="sm" radius="md" padding="lg" withBorder >
+                <Card shadow="sm" radius="md" padding="lg" withBorder  bg='gray.5'>
                     <Text weight={50} size="sm" mb="xs" fw={900}>
                        Bussian Motavison story 
                     </Text>
-                    <Anchor href="/Motavison" weight={900} fw={900}>
+                    <Anchor href="/Motavison" weight={900} fw={900} bg='gray.5'>
                         Read more.. ↠↠↠
                     </Anchor>
                 </Card>
                
-                <Card shadow="sm" radius="md" padding="lg" withBorder >
+                <Card shadow="sm" radius="md" padding="lg" withBorder bg='gray.5' >
                     <Text weight={900} size="xl" mb="xs" fw={900} c="red">
                    <a href="https://wa.me/8290400325">Whatsapp.. ↠↠↠</a>
                     </Text>
-                    <Anchor href="/About" weight={900} fw={900}>
+                    <Anchor href="/About" weight={900} fw={900}bg='gray.5'>
 
                     </Anchor>
                 </Card>
 
-                <Card shadow="xs" radius="xs" padding="xs" withBorder>
+                <Card shadow="xs" radius="xs" padding="xs" withBorder bg='gray.5'>
                     <Text weight={50} size="xl" mb="xs" fw={900}>
                         📱 <a href="tel:=918290400325"> call me.. ↠↠↠</a>
                     </Text>
@@ -134,6 +110,20 @@ export default function ProfilePage() {
                     Email: srk016361@gmail.com
                 </Text>
             </Center>
+          
+            <Image
+                src={img1}
+        
+        
+                alt="Profile Image"
+                style={{
+                    width: '150px',
+                    height: '150px',
+                    objectFit: 'cover',
+                    borderRadius: '50%',
+                }}
+                mb="sm"
+            />
         </Container>
     );
 }

@@ -10,8 +10,8 @@ import {
   rem,
   Flex,
 } from '@mantine/core';
-import img1 from "./images/rahul.jpeg"
-import img2 from "./images/self-pic.jpeg"
+import img1 from "./images/original-720851e051702405d1881785f1168a3a.webp"
+import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg"
 
 export default function About() {
   return (

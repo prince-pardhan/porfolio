@@ -18,7 +18,7 @@ import {
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mantine/hooks';
 import img1 from "./images/maxresdefault.jpg"
-import img3 from "./images/design.png"
+import img3 from "./images/circuit-data-neural-network-ai-technology-cloud-computing-bits-internet-5g-blue-background-information-ai-talking-circuit-women-free-video.jpg"
 import { useDisclosure } from '@mantine/hooks';
 
 export default function ProfilePage() {
@@ -57,7 +57,7 @@ export default function ProfilePage() {
       </Group>
 
       <Collapse in={opened} transitionDuration={1000} transitionTimingFunction="linear" color='gray'>
-               <Text  c='gray.5'>
+               <Text  c='gray.3'>
             <h1>•Hii..</h1>
             
             <h2>•me  Rahul swami?</h2>

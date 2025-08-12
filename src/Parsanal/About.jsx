@@ -70,7 +70,7 @@ export default function About() {
           </Title>
           <List spacing="xs" style={{ display: 'flex', flexWrap: 'wrap' }}>
             {['Video Editor', 'Photo Editor', 'Writer', 'Gamer', 'Poster  Editor', 'Typing', ' Basic computer',
-              'fotto ai video', 'html', 'css', 'javascript', 'Reactjs'].map((skill) => (
+              'fotto ai video', 'html', 'css', 'javascript', 'Reactjs','Ai'].map((skill) => (
                 <List.Item
                   key={skill}
                   style={{

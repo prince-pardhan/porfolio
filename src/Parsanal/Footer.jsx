@@ -24,7 +24,7 @@ export default function Footer() {
       <Avatar
         size="lg"
         radius="sm"
-        src="https://tse1.mm.bing.net/th/id/OIP.jHk00ZjluDdK2icnSPU72QHaEK?pid=Api&P=0&h=180"
+        src="https://cdn1.vectorstock.com/i/1000x1000/99/25/modern-ai-logo-design-for-business-and-company-vector-37619925.jpg"
       />
     </Indicator>
       <Stack align="center" spacing="sm"  >

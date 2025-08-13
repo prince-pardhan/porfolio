@@ -1,5 +1,6 @@
 
 import React from 'react';
+
 import {
     Container,
     Text,
@@ -20,6 +21,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import img1 from "./images/maxresdefault.jpg"
 import img3 from "./images/circuit-data-neural-network-ai-technology-cloud-computing-bits-internet-5g-blue-background-information-ai-talking-circuit-women-free-video.jpg"
 import { useDisclosure } from '@mantine/hooks';
+import "../App.css"
 
 export default function ProfilePage() {
     const isMobile = useMediaQuery("(max-width: 780px)");
@@ -29,6 +31,14 @@ export default function ProfilePage() {
         <Container fluid style={{ minHeight: '100vh', width:"100%", padding: 10, backgroundImage:`url(${img3})` , backgroundPosition:"center",backgroundAttachment:"fixed", backgroundSize:"cover" }}>
            
 
+                 <div className='hii'>
+                    <div className='ramki' >
+                    <button style={{backgroundColor:"#89CFEF"}} ><a href="/About">About</a></button>
+                    <button  style={{backgroundColor:"#89CFEF"}}><a href="/Motavison"  >Motavison</a></button>
+                    <button  style={{backgroundColor:"#89CFEF"}}><a href="https://wa.me/8290400325">Whatsapp</a></button>
+                    <button  style={{backgroundColor:"#89CFEF"}}> 📱 <a href="tel:=918290400325"> call now</a> </button>
+                    </div>
+                 </div>
             <Center style={{ height: '20%', flexDirection: 'inherit' }}>
                 <Title order={1}  c='gray.5'>
                     ↭rahul swami↭
@@ -40,7 +50,6 @@ export default function ProfilePage() {
                 <Text weight={900} size="xs" color="red">
                 </Text>
             </Center>
-            
             
             
   <Box maw={900} mx="auto">
@@ -70,40 +79,7 @@ export default function ProfilePage() {
              — what we now call a hacker. And I control all three of them</Text>
       </Collapse>
     </Box>
-            <SimpleGrid cols={2} spacing="md" px="md"  >
-                <Card shadow="sm" radius="md" padding="lg" bg='gray.5'>
-                    <Text weight={10} size="xl" mb="xs" fw={900}>
-                        About Me
-                    </Text>
-                    <Anchor href="/About" weight={900} fw={900}>
-                        Read more.. ↠↠↠
-                    </Anchor>
-                </Card>
-                
-                <Card shadow="sm" radius="md" padding="lg" withBorder  bg='gray.5'>
-                    <Text weight={50} size="sm" mb="xs" fw={900}>
-                       Bussian Motavison story 
-                    </Text>
-                    <Anchor href="/Motavison" weight={900} fw={900} bg='gray.5'>
-                        Read more.. ↠↠↠
-                    </Anchor>
-                </Card>
-               
-                <Card shadow="sm" radius="md" padding="lg" withBorder bg='gray.5' >
-                    <Text weight={900} size="xl" mb="xs" fw={900} c="red">
-                   <a href="https://wa.me/8290400325">Whatsapp.. ↠↠↠</a>
-                    </Text>
-                    <Anchor href="/About" weight={900} fw={900}bg='gray.5'>
-
-                    </Anchor>
-                </Card>
-
-                <Card shadow="xs" radius="xs" padding="xs" withBorder bg='gray.5'>
-                    <Text weight={50} size="xl" mb="xs" fw={900}>
-                        📱 <a href="tel:=918290400325"> call me.. ↠↠↠</a>
-                    </Text>
-                </Card>
-            </SimpleGrid>
+           
 
             <Center style={{ height: '100%' }}>
                 <Text size="lg" weight={900} color="gray.6" fw={900}>

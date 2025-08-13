@@ -13,10 +13,13 @@ import {
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
+import img3 from "./images/circuit-data-neural-network-ai-technology-cloud-computing-bits-internet-5g-blue-background-information-ai-talking-circuit-women-free-video.jpg"
 
 export default function Footer() {
   return (
-    <Container component="footer" py="md" bg="gray.9">
+    <Container component="footer" py="md"style={{ backgroundImage:`url(${img3})`, minHeight: '50vh', color: '#fff' }}>
+    
+
          <Indicator position="bottom-end" size={6} disabled>
       <Avatar
         size="lg"

@@ -12,13 +12,14 @@ import {
 } from '@mantine/core';
 import img1 from "./images/original-720851e051702405d1881785f1168a3a.webp"
 import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg"
+import img3 from "./images/background-ai_094202459.png"
 
 export default function About() {
   return (
     <Container
       size="sm"
       p="xl"
-      style={{ backgroundColor: '#000', minHeight: '100vh', color: '#fff' }}
+      style={{ backgroundImage:`url(${img3})`, minHeight: '100vh', color: '#fff' }}
     >
       <Stack spacing="md">
 

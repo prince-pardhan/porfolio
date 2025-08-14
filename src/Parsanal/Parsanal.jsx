@@ -19,7 +19,7 @@ import {
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mantine/hooks';
 import img1 from "./images/maxresdefault.jpg"
-import img3 from "./images/circuit-data-neural-network-ai-technology-cloud-computing-bits-internet-5g-blue-background-information-ai-talking-circuit-women-free-video.jpg"
+import img3 from "./images/7ad0c9b192167fbeac6f53ff97a656df.gif"
 import { useDisclosure } from '@mantine/hooks';
 import "../App.css"
 

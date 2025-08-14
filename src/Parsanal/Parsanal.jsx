@@ -65,17 +65,17 @@ export default function ProfilePage() {
       <Group justify="center" mb={5}>
       </Group>
 
-      <Collapse in={opened} transitionDuration={1000} transitionTimingFunction="linear" color='gray'>
-               <Text  c='gray.3'>
+      <Collapse in={opened} transitionDuration={7000} transitionTimingFunction="linear" color='#ff0000ff' >
+               <Text  c='white'  >
             <h1>•Hii..</h1>
             
             <h2>•me  Rahul swami?</h2>
-            <h3>•I am Video Editor in siras.</h3>
-            <h4>•Editor video link in Footer.</h4>
-            <h5>•Chak All Link.</h5>
+            <h2>•I am Video Editor in siras.</h2>
+            <h2>•Editor video link in Footer.</h2>
+            <h2>•Chak All Link.</h2>
         </Text>
-        <Text fw={900}  c='gray.5' >"It takes time to become successful, and time is money, and time is power"</Text>
-        <Text fw={900} c='gray.5'>"Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called a king
+        <Text fw={900}  c='white' >"It takes time to become successful, and time is money, and time is power"</Text>
+        <Text fw={900} c='white'>"Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called a king
              — what we now call a hacker. And I control all three of them</Text>
       </Collapse>
     </Box>

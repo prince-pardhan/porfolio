@@ -1,7 +1,25 @@
+import {
+    Container,
+    Text,
+    Anchor,
+    SimpleGrid,
+    Card,
+    Image,
+    Center,
+    Title,
+    Box,
+    Flex,
+    Group,
+    Button,
+    Collapse,
+} from '@mantine/core';
+import img3 from "./images/background-ai_094202459.png"
+
 export default function ProfilePage() {
     
     return (
-        <>
+        
+        <Container fluid style={{ minHeight: '100vh', width:"100%", padding: 10, backgroundImage:`url(${img3})` , backgroundPosition:"center",backgroundAttachment:"fixed", backgroundSize:"cover" }}>
 
             <div style={{ background: "black", color: "whitr" }}>   .
                 <div style={{ color: "white",  gap:"10" }}>
@@ -40,6 +58,7 @@ All who find you will regret it.🥀</button>
                 </div>
             </div>
             <h1>Rahul swami</h1>
-        </>
+            </Container>
+        
     )
 }

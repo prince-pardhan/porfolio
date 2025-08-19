@@ -45,13 +45,9 @@ export default function ProfilePage() {
             
             
   <Box maw={900} mx="auto">
-      <Group justify="center" mb={12} >
-        
-      </Group>
+     
 
-      <Collapse in={opened}>
       
-      </Collapse>
     </Box>
     
             <Image

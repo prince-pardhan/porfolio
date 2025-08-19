@@ -57,7 +57,7 @@ Then why did you spend years 🥀  <br /> After losing you I have come to know t
 All who find you will regret it.🥀</button>
                 </div>
             </div>
-            <h1>Rahul swami</h1>
+            <h1 style={{color:"white"}}>Rahul swami</h1>
             </Container>
         
     )

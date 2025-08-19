@@ -18,7 +18,7 @@ import {
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mantine/hooks';
-import img1 from "./images/maxresdefault.jpg"
+import img1 from "./images/technology-background-with-a-ai-concept-vector.jpg"
 import img3 from "./images/background-ai_094202459.png"
 import { useDisclosure } from '@mantine/hooks';
 import "../App.css"

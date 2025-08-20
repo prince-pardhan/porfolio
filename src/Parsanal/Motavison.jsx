@@ -1,78 +1,126 @@
 import {
-    Container,
-    Text,
-    Anchor,
-    SimpleGrid,
-    Card,
-    Image,
-    Center,
-    Title,
-    Box,
-    Flex,
-    Group,
-    Button,
-    Collapse,
-} from '@mantine/core';
-import img3 from "./images/background-ai_094202459.png"
+  Container,
+  Text,
+  Card,
+  Title,
+  Flex
+} from "@mantine/core";
+import img3 from "./images/background-ai_094202459.png";
 
 export default function ProfilePage() {
-    
-    return (
-        
-        <Container fluid style={{ minHeight: '100vh', width:"100%", padding: 10, backgroundImage:`url(${img3})` , backgroundPosition:"center",backgroundAttachment:"fixed", backgroundSize:"cover" }}>
+  const quotes = [
+    `Write my story after my death.
+     How my youth was wasted. 
+     Write that even at the time of my death I 
+     was praying for you. My hands were out.  
+     Write this sign from my shroud.`,
 
-            <div style={{ background: "black", color: "whitr" }}>   .
-                <div style={{ color: "white",  gap:"10" }}>
+    `To achieve your dreams, work hard and try till your last breath..!  
+     Promise that we will win.  
+     Always try harder.  
+     Even if fate is angry, don't lose courage.  
+     Make this resolve so strong…`,
 
-     <button style={{background:"black",color:"white"}}>  Write my story after my death.
-         How my youth was wasted. <br /> 
-         Write that even at the time of my death I <br />
-         was praying for you. My hands were out.  <br />
-         Write this sign from my shroud.</button>
-        <button style={{background:"black",color:"white"}}>To achieve your dreams, work hard and try till your last breath..! <br />
+    `Relationships often end due to misunderstandings.  
+     Mistakes are not always to blame.  
+     I have seen those who are against me…!!!  
+     They used to talk about supporting me forever… 🖤 💔`,
 
-Promise that we will win. <br />
-Always try harder. <br />
-Even if fate is angry, don't lose courage. <br />
-Make this resolve so strong…</button>
-<button style={{background:"black",color:"white"}}>Relationships often end due to misunderstandings <br />
+    `Can't see two hearts meeting.  
+     People even drive away two sitting birds 💔💔`,
 
-Mistakes are not always to blame  <br />
-I have seen those who are against me…!!! <br />
+    `Listen, you make me cry every day.  
+     Don't you feel pain from someone else's pain? 🤔  
+     Those who dwell in the heart 🥀  
+     They are the ones who disturb sleep 😔💔`,
 
-They used to talk about supporting me forever… 🖤 💔</button>
-<button style={{background:"black",color:"white"}}> Can't see two hearts meeting <br /> <br />
+    `When I had to say goodbye 💔  
+     Then why did you spend years 🥀  
+     After losing you I have come to know this much 💔  
+     All who find you will regret it 🥀`,
 
-People even drive away two sitting birds💔💔</button>
-<button style={{background:"black",color:"white"}}> Listen, you make me cry every day <br />
+    `There should be no hope of meeting in the next life,  
+     If the river dries up then there should be no thirst,  
+     Those who were saying that living is impossible without you,  
+     They should not be sad even for two days after being separated from me.`,
 
-Don't you feel pain from someone else's pain? 🤔 <br />
-    Those who dwell in the heart 🥀<br />
+    `If you can escape my memories,  
+     This is my promise to you,  
+     I will tell the world myself,  
+     The flaw was in my loyalty.`,
 
-They are the ones who disturb sleep 😔💔 </button>
-<button style={{background:"black",color:"white"}}> When I had to say goodbye💔 <br />
+    `Take with you the incomplete stories of your false promises.  
+     You will need them again in your next love.  
+     I had come to decorate the party of your heart,  
+     I swear I had come to make you mine.  
+     For what did you punish me, you unfaithful person?  
+     I had come to make your pain mine.`,
+  ];
 
-Then why did you spend years 🥀  <br /> After losing you I have come to know this much 💔<br />
+  return (
+    <Container
+      fluid
+      style={{
+        minHeight: "100vh",
+        width: "100%",
+        backgroundImage: `url(${img3})`,
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        padding: "30px 0"
+      }}
+    >
+      {/* Title Section */}
+      <div style={{ textAlign: "center", marginBottom: "30px" }}>
+        <Title
+          order={1}
+          style={{
+            color: "white",
+            fontSize: "2.5rem",
+            textShadow: "0 0 20px rgba(255,255,255,0.8)",
+          }}
+        >
+          Rahul Swami
+        </Title>
+      </div>
 
-All who find you will regret it.🥀</button>
- <button style={{background:"black",color:"white"}}>There should be no hope of meeting in the next life, <br />
-If the river dries up then there should be no thirst, <br />
-Those who were saying that living is impossible without you, <br />
-They should not be sad even for two days after being separated from me. <br /></button>
-<button style={{background:"black",color:"white"}}> If you can escape my memories, <br />
-This is my promise to you, <br />
-I will tell the world myself , <br />
-The flaw was in my loyalty. <br /></button>
-  <button style={{background:"black",color:"white"}}> Take with you the incomplete stories of your false promises <br />
-
-You will need them again in your next love. <br />I had come to decorate the party of your heart <br />
-I swear I had come to make you mine <br />
-For what did you punish me, you unfaithful person <br />
-I had come to make your pain mine. <br />   </button>
-                </div>
-            </div>
-            <h1 style={{color:"white"}}>Rahul swami</h1>
-            </Container>
-        
-    )
+      {/* Cards in column */}
+      <Flex direction="column" gap="lg" align="center">
+        {quotes.map((q, i) => (
+          <Card
+            key={i}
+            shadow="lg"
+            padding="lg"
+            radius="lg"
+            style={{
+              width: "80%",   // ✅ हर कार्ड सेंटर और बराबर चौड़ाई में
+              background: "rgba(255, 255, 255, 0.08)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              backdropFilter: "blur(10px)",
+              color: "white",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.02)";
+              e.currentTarget.style.boxShadow =
+                "0 0 20px rgba(255,255,255,0.6)";
+              e.currentTarget.style.border =
+                "1px solid rgba(255,255,255,0.6)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.border =
+                "1px solid rgba(255,255,255,0.2)";
+            }}
+          >
+            <Text size="sm" style={{ lineHeight: 1.7 }}>
+              {q}
+            </Text>
+          </Card>
+        ))}
+      </Flex>
+    </Container>
+  );
 }

@@ -142,7 +142,7 @@ export default function ProfilePage() {
           zIndex: 1,
         }}
       >
-        {/* 🚀 Creative Developer • 🎨 Modern UI Designer • 🤖 Tech Explorer */}
+        
       </Text>
     </Container>
   );

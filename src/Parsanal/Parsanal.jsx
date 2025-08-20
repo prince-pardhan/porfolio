@@ -33,10 +33,10 @@ export default function ProfilePage() {
 
                  <div className='hii'>
                     <div className='ramki' >
-                    <button style={{backgroundColor:"#89CFEF"}} ><a href="/About" style={{color:"black",}} > About</a></button>
-                    <button  style={{backgroundColor:"#89CFEF"}}><a href="/Motavison" style={{color:"black"}} >Poetry</a></button>
-                    <button  style={{backgroundColor:"#89CFEF"}}><a href="https://wa.me/8290400325" style={{color:"black"}}>Whatsapp</a></button>
-                    <button  style={{backgroundColor:"#89CFEF",}}>  <a href="tel:=918290400325" style={{color:"black"}}> call</a> </button>
+                    <button style={{background:"black"}} ><a href="/About" style={{color:"white"}} > About</a></button>
+                    <button  style={{background:"black"}}><a href="/Motavison" style={{color:"white"}} >Poetry</a></button>
+                    <button  style={{background:"black"}}><a href="https://wa.me/8290400325" style={{color:"white"}}>Whatsapp</a></button>
+                    <button  style={{background:"black" }}>  <a href="tel:=918290400325" style={{color:"white"}}> call</a> </button>
                     </div>
                  </div>
            

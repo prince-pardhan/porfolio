@@ -55,6 +55,14 @@ export default function ProfilePage() {
      I swear I had come to make you mine.  
      For what did you punish me, you unfaithful person?  
      I had come to make your pain mine.`,
+     `Web EnthusiThere should be no hope of meeting in the next life,
+If the river dries up then there should be no thirst,
+Those who were saying that living is impossible without you,
+They should not be sad even for two days after being separated from me.`,
+`The passing of time makes us realize,
+The one we love from the heart is the one who hurts us,
+The wounds that time heals,
+Someone close to us awakens that pain again.`,
   ];
 
   return (

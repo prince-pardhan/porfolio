@@ -127,7 +127,7 @@ export default function ProfilePage() {
           textShadow: "0 0 12px rgba(255,255,255,0.5)",
         }}
       >
-        Rahul Swami.online
+        Rahul Swami
       </Text>
 
       {/* Subtitle */}

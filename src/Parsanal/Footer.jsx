@@ -111,7 +111,7 @@ export default function Footer() {
         <Divider w="100%" my="lg" color="white" fw={900}/>
 
         {/* Dropdown Card */}
-        <Card
+        {/* <Card
           withBorder
           shadow="xl"
           radius="lg"
@@ -121,8 +121,8 @@ export default function Footer() {
             border: "1px solid rgba(255,255,255,0.3)",
             boxShadow: "0 0 20px rgba(255,255,255,0.3)",
           }}
-        >
-          <select
+        > */}
+          {/* <select
             style={{
               padding: "10px 16px",
               borderRadius: "10px",
@@ -143,8 +143,8 @@ export default function Footer() {
             <option style={{ color: "black" }}>Madhosinghana</option>
             <option style={{ color: "black" }}>Sirsa</option>
             <option style={{ color: "black" }}>8290400325</option>
-          </select>
-        </Card>
+          </select> */}
+        {/* </Card> */}
 
         {/* Bottom Copyright */}
         <Text

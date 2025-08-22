@@ -9,8 +9,8 @@ import {
   Card,
   Group,
 } from "@mantine/core";
-import { motion } from "framer-motion"; // 👈 animation
-import img1 from "./images/original-720851e051702405d1881785f1168a3a.webp";
+import { motion } from "framer-motion"; 
+// import img1 from "./images/original-720851e051702405d1881785f1168a3a.webp";
 import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import img3 from "./images/background-ai_094202459.png";
 
@@ -48,7 +48,7 @@ export default function About() {
             Rahul Swami
           </Title>
           <Text size="lg" style={{ color: "#bbb", fontSize: "1.2rem" }}>
-            Creative Editor | Gamer | Web Enthusiast
+            Creative Editor | Gamer $
           </Text>
         </motion.div>
 
@@ -59,21 +59,22 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Group position="center" spacing="xl">
-            {[img1, img2].map((src, i) => (
+          <Group position="center" spacing="xl" align="center" justify="center">
+            {[ img2].map((src, i) => (
               <Image
                 key={i}
                 src={src}
                 alt="Profile"
-                radius="lg"
+                radius="xl"
                 style={{
                   width: "200px",
                   height: "200px",
                   objectFit: "cover",
-                  border: "3px solid #30ff06",
+                  border: "1px solid #30ff06",
                   borderRadius: "50%",
-                  boxShadow: "0px 0px 30px rgba(48,255,6,0.6)",
+                  boxShadow: "1px 1px 90px rgba(48,255,6,0.6)",
                   transition: "transform 0.4s, box-shadow 0.4s",
+                 
                 }}
               />
             ))}
@@ -98,7 +99,7 @@ export default function About() {
             }}
           >
             <Text size="md" style={{ lineHeight: 1.8, color:"white" }}>
-              Namaste 👋! Main <strong>Rahul Swami</strong> – ek passionate{" "}
+              <strong>Hii</strong>👋! Main <strong>Rahul Swami</strong> – ek passionate{" "}
               <strong>Video & Photo Editor</strong>,{" "}
               <strong>Poster Designer</strong> aur{" "}
               <strong>Web Enthusiast</strong> hoon.
@@ -136,7 +137,7 @@ export default function About() {
               }}
             >
               {[
-                "Video Editing",
+                 "Video Editing",
                 "Photo Editing",
                 "Writing",
                 "Gaming",
@@ -148,6 +149,7 @@ export default function About() {
                 "CSS",
                 "JavaScript",
                 "React.js",
+                
               ].map((skill) => (
                 <List.Item
                   key={skill}
@@ -157,7 +159,7 @@ export default function About() {
                     padding: "8px 18px",
                     borderRadius: "25px",
                     margin: "6px",
-                    border: "1px solid rgba(48,255,6,0.5)",
+                    border: "2px solid rgba(48,255,6,0.5)",
                     fontWeight: 500,
                     color: "#fff",
                   }}

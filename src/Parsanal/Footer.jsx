@@ -1,164 +1,147 @@
 import React from "react";
 import {
-  Stack,
-  Group,
+  Container,
   Text,
+  Group,
   Anchor,
   Divider,
-  Container,
-  Rating,
-  Avatar,
-  Indicator,
-  Card,
+  Stack,
+  Box,
 } from "@mantine/core";
 
-import img3 from "./images/circuit-data-neural-network-ai-technology-cloud-computing-bits-internet-5g-blue-background-information-ai-talking-circuit-women-free-video.jpg";
-
-export default function Footer() {
+export default function HackerFooter() {
   return (
-    <Container
+    <Box
       component="footer"
-      fluid
-      py="xl"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url(${img3})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "60vh",
-        color: "#fff",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        background: "black",
+        minHeight: "65vh",
+        padding: "50px 20px",
+        color: "#00ff00",
+        fontFamily: "monospace",
+        position: "relative",
+        overflow: "hidden",
+        borderTop: "2px solid #00ff00",
       }}
     >
-      <Stack align="center" spacing="md">
-        {/* Avatar with indicator */}
-        <Indicator position="bottom-end" size={12} color="green" offset={4}>
-          <Avatar
-            size="xl"
-            radius="50%"
-            src="https://cdn1.vectorstock.com/i/1000x1000/99/25/modern-ai-logo-design-for-business-and-company-vector-37619925.jpg"
+      {/* Matrix-style animated background */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif')",
+          backgroundSize: "cover",
+          opacity: 0.25,
+          zIndex: 0,
+          filter: "blur(1px)",
+        }}
+      />
+
+      <Container style={{ position: "relative", zIndex: 2 }}>
+        <Stack align="center" spacing="lg">
+          {/* Hacker Title */}
+          <Text
+            size="2.2rem"
+            fw={900}
             style={{
-              border: "3px solid white",
-              boxShadow: "0 0 20px rgba(255,255,255,0.5)",
-            }}
-          />
-        </Indicator>
-
-        {/* Heading */}
-        <Text
-          fw={900}
-          size="2rem"
-          style={{
-            color: "white",
-            textShadow: "0 0 15px rgba(255,255,255,0.8)",
-            letterSpacing: "3px",
-            fontFamily: "Poppins, sans-serif",
-          }}
-        >
-           My Business Links 
-        </Text>
-
-        {/* Rating Stars */}
-        <Rating defaultValue={5} size="lg" color="yellow" />
-
-        {/* Social Links */}
-        <Group spacing="xl" mt="md">
-          {[
-            {
-              name: "YouTube",
-              link: "https://youtube.com/@princpardhan7782?si=L09C7Xo4r6uUwGVN",
-              color: "red",
-            },
-            {
-              name: "Facebook",
-              link: "https://www.facebook.com/share/p/19WEkPssmd/",
-              color: "#1877F2",
-            },
-            {
-              name: "Blogger",
-              link: "https://www.blogger.com/blog/posts/571040556621222478",
-              color: "#FF8800",
-            },
-            {
-              name: "Instagram",
-              link: "https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg==",
-              color: "#E1306C",
-            },
-          ].map((social, i) => (
-            <Anchor
-              key={i}
-              href={social.link}
-              target="_blank"
-              style={{
-                color: social.color,
-                fontWeight: 700,
-                fontSize: "18px",
-                textDecoration: "none",
-                transition: "0.3s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textShadow = "0 0 15px white")
-              }
-              onMouseLeave={(e) => (e.currentTarget.style.textShadow = "none")}
-            >
-              {social.name}
-            </Anchor>
-          ))}
-        </Group>
-
-        {/* Divider */}
-        <Divider w="100%" my="lg" color="white" fw={900}/>
-
-        {/* Dropdown Card */}
-        {/* <Card
-          withBorder
-          shadow="xl"
-          radius="lg"
-          style={{
-            background: "rgba(255,255,255,0.1)",
-            backdropFilter: "blur(20px)",
-            border: "1px solid rgba(255,255,255,0.3)",
-            boxShadow: "0 0 20px rgba(255,255,255,0.3)",
-          }}
-        > */}
-          {/* <select
-            style={{
-              padding: "10px 16px",
-              borderRadius: "10px",
-              background: "rgba(255,255,255,0.2)",
-              color: "white",
-              border: "none",
-              fontWeight: 600,
-              fontSize: "16px",
-              cursor: "pointer",
-              outline: "none",
-              textShadow: "0 0 10px rgba(255,255,255,0.8)",
+              color: "#00ff00",
+              textShadow: "0 0 25px #00ff00, 0 0 50px #00ff00",
+              letterSpacing: "4px",
+              animation: "flicker 2s infinite",
             }}
           >
-            <option style={{ color: "black" }}>Personal</option>
-            <option style={{ color: "black" }}>
-              Contact us to build a website
-            </option>
-            <option style={{ color: "black" }}>Madhosinghana</option>
-            <option style={{ color: "black" }}>Sirsa</option>
-            <option style={{ color: "black" }}>8290400325</option>
-          </select> */}
-        {/* </Card> */}
+            [ Rahul Swami]
+          </Text>
 
-        {/* Bottom Copyright */}
-        <Text
-          size="sm"
-          fw={700}
-          style={{
-            marginTop: "30px",
-            opacity: 0.9,
-            textShadow: "0 0 10px rgba(255,255,255,0.6)",
-          }}
-        >
-          © 2025 RahulSwami.com |  💙
-        </Text>
-      </Stack>
-    </Container>
+          {/* Navigation Links */}
+          <Group spacing="xl">
+            {["Home", "Motavison", "Footer",].map((link, i) => (
+              <Anchor
+                key={i}
+                href={"/" + link.toLowerCase()}
+                style={{
+                  color: "#00ff00",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  transition: "0.3s",
+                  fontSize: "1rem",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textShadow =
+                    "0 0 20px #00ff00, 0 0 40px #00ff00")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textShadow = "none")
+                }
+              >
+                {"> " + link}
+              </Anchor>
+            ))}
+          </Group>
+
+          <Divider my="md" color="green" style={{ width: "70%" }} />
+
+          {/* Contact Info */}
+          <Stack spacing="xs" align="center">
+           
+            <Text> Contact +91-8290-400-325</Text>
+            
+          </Stack>
+
+          {/* Social Links */}
+          <Group spacing="md" mt="md">
+            <Anchor
+              href="https://youtube.com/@princpardhan7782"
+              style={{ color: "#ff3333", textShadow: "0 0 15px #ff3333" }}
+            >
+              [YouTube]
+            </Anchor>
+            <Anchor
+              href="https://www.facebook.com/share/p/19WEkPssmd/"
+              style={{ color: "#00aaff", textShadow: "0 0 15px #00aaff" }}
+            >
+              [Facebook]
+            </Anchor>
+            <Anchor
+              href="https://www.instagram.com/princ_pardhan_325"
+              style={{ color: "#ff00ff", textShadow: "0 0 15px #ff00ff" }}
+            >
+              [Instagram]
+            </Anchor>
+          </Group>
+
+          {/* Footer Note */}
+          <Text
+            size="sm"
+            style={{
+              opacity: 0.9,
+              marginTop: "25px",
+              textShadow: "0 0 12px #00ff00, 0 0 30px #00ff00",
+              fontSize: "0.9rem",
+            }}
+          >
+            © 2025 [System Breached] | Powered by Rahul HackerZ 🕶️
+          </Text>
+        </Stack>
+      </Container>
+
+      {/* Glitch + Flicker Animations */}
+      <style>
+        {`
+          @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+              opacity: 1;
+            }
+            20%, 24%, 55% {
+              opacity: 0.3;
+            }
+          }
+        `}
+      </style>
+    </Box>
   );
 }

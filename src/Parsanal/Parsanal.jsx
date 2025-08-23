@@ -5,8 +5,8 @@ import {
   Image,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
+import { IconPhoneCall, IconBrandWhatsapp, IconBook, IconUser } from "@tabler/icons-react";
 import img1 from "./images/self-pic.jpeg";
-import img3 from "./images/background-ai_094202459.png";
 import "../App.css";
 
 export default function ProfilePage() {
@@ -17,19 +17,22 @@ export default function ProfilePage() {
 
   const getButtonStyle = (btn) => ({
     background: activeBtn === btn
-      ? "linear-gradient(135deg, #ff00cc, #3333ff)"
-      : "rgba(255,255,255,0.08)",
-    color: "white",
-    border: "1px solid rgba(255,255,255,0.25)",
-    padding: isMobile ? "10px 20px" : "14px 30px",
+      ? "linear-gradient(135deg, #00ffcc, #0066ff)"
+      : "rgba(0,0,0,0.6)",
+    color: "#0ff",
+    border: "1px solid rgba(0,255,200,0.6)",
+    padding: isMobile ? "10px 22px" : "14px 32px",
     fontSize: isMobile ? "14px" : "16px",
     fontWeight: "600",
     borderRadius: "50px",
     cursor: "pointer",
     margin: "8px",
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
     boxShadow: activeBtn === btn
-      ? "0 0 25px rgba(255,0,150,0.9), 0 0 60px rgba(0,200,255,0.7)"
-      : "0 4px 15px rgba(0,0,0,0.5)",
+      ? "0 0 25px rgba(0,255,200,0.9), 0 0 60px rgba(0,255,200,0.7)"
+      : "0 4px 15px rgba(0,255,200,0.2)",
     transition: "all 0.4s ease",
     transform: activeBtn === btn ? "scale(1.15)" : "scale(1)",
     backdropFilter: "blur(12px)",
@@ -43,10 +46,7 @@ export default function ProfilePage() {
         minHeight: '100vh',
         width: "100%",
         padding: 20,
-        backgroundImage: `url(${img3})`,
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
+        background: "black",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -56,14 +56,8 @@ export default function ProfilePage() {
         overflow: "hidden",
       }}
     >
-      {/* Gradient Overlay */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        background: "linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,40,0.9))",
-        backdropFilter: "blur(8px)",
-        zIndex: 0
-      }} />
+      {/* Hacking Matrix Rain Effect */}
+      <div className="matrix-bg"></div>
 
       {/* Buttons */}
       <div
@@ -75,75 +69,168 @@ export default function ProfilePage() {
           marginBottom: "40px",
           padding: "18px 25px",
           borderRadius: "30px",
-          zIndex: 1
+          zIndex: 2
         }}
       >
         <button onClick={() => handleClick('about')} style={getButtonStyle('about')}>
-          <a href="/About" style={{ color: "inherit", textDecoration: "none" }}>About</a>
+          <IconUser size={18}/> <a href="/About" style={{ color: "inherit", textDecoration: "none" }}>About</a>
         </button>
 
         <button onClick={() => handleClick('poetry')} style={getButtonStyle('poetry')}>
-          <a href="/Motavison" style={{ color: "inherit", textDecoration: "none" }}>Poetry</a>
+          <IconBook size={18}/> <a href="/Motavison" style={{ color: "inherit", textDecoration: "none" }}>Poetry</a>
         </button>
 
         <button onClick={() => handleClick('whatsapp')} style={getButtonStyle('whatsapp')}>
-          <a href="https://wa.me/8290400325" style={{ color: "inherit", textDecoration: "none" }}>Whatsapp</a>
+          <IconBrandWhatsapp size={18}/> <a href="https://wa.me/8290400325" style={{ color: "inherit", textDecoration: "none" }}>Whatsapp</a>
         </button>
 
         <button onClick={() => handleClick('call')} style={getButtonStyle('call')}>
-          <a href="tel:+918290400325" style={{ color: "inherit", textDecoration: "none" }}>Call</a>
+          <IconPhoneCall size={18}/> <a href="tel:+918290400325" style={{ color: "inherit", textDecoration: "none" }}>Call</a>
         </button>
       </div>
 
       {/* Profile Image */}
-      <Image
-        src={img1}
-        alt="Profile"
-        style={{
-          width: isMobile ? '140px' : '200px',
-          height: isMobile ? '140px' : '200px',
-          objectFit: 'cover',
-          borderRadius: '50%',
-          border: "6px solid rgba(255,255,255,0.9)",
-          boxShadow: "0 0 40px rgba(0,200,255,0.9), 0 0 90px rgba(255,0,150,0.8)",
-          transition: "all 0.5s ease-in-out",
-          transform: "scale(1)",
-          zIndex: 1,
-        }}
-        className="profile-img"
-        mb="sm"
-      />
+      <div className="profile-wrapper">
+        <Image
+          src={img1}
+          alt="Profile"
+          style={{
+            width: isMobile ? '150px' : '220px',
+            height: isMobile ? '150px' : '220px',
+            objectFit: 'cover',
+            borderRadius: '50%',
+            border: "4px solid #0ff",
+            boxShadow: "0 0 40px #0ff, 0 0 90px #00f",
+            zIndex: 2,
+          }}
+          className="profile-img"
+        />
+      </div>
 
       {/* Title */}
       <Text
         fw={900}
         style={{
-          marginTop: "20px",
-          fontSize: isMobile ? "26px" : "42px",
-          background: "linear-gradient(90deg, #ff00cc, #00ffff, #ffcc00)",
+          marginTop: "25px",
+          fontSize: isMobile ? "28px" : "46px",
+          background: "linear-gradient(90deg, #00ffcc, #00ffff, #33ff00)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          zIndex: 1,
-          textShadow: "0 0 12px rgba(255,255,255,0.5)",
+          zIndex: 2,
+          textShadow: "0 0 20px #0ff, 0 0 50px #0f0",
+          animation: "glowText 2.5s infinite alternate",
         }}
       >
         Rahul Swami
       </Text>
 
-      {/* Subtitle */}
+      {/* Typing Effect Subtitle */}
       <Text
         size={isMobile ? "sm" : "md"}
+        className="typing-text"
         style={{
           marginTop: "12px",
-          color: "#ddd",
+          color: "#0f0",
           fontStyle: "italic",
           letterSpacing: "2px",
-          textShadow: "0 0 10px rgba(0,200,255,0.8)",
-          zIndex: 1,
+          zIndex: 2,
         }}
       >
-        
+        `Take with you the incomplete stories of your false promises.  
+     You will need them again in your next love.  
+     I had come to decorate the party of your heart,  
+     I swear I had come to make you mine.  
+     For what did you punish me, you unfaithful person?  
+     I had come to make your pain mine.`,
+     `Web EnthusiThere should be no hope of meeting in the next life,
+If the river dries up then there should be no thirst,
+Those who were saying that living is impossible without you,
+They should not be sad even for two days after being separated from me.`,
+`The passing of time makes us realize,
+The one we love from the heart is the one who hurts us,
+The wounds that time heals,
+Someone close to us awakens that pain again.`,
+  
       </Text>
+
+      {/* Animations */}
+      <style>
+        {`
+          @keyframes glowText {
+            from { }
+            to { text-shad }
+          }
+
+          /* Typing animation */
+          .typing-text {
+            width: 0;
+            overflow: hidden;
+            border-right: 2px solid #0ff;
+            white-space: nowrap;
+            animation: typing 5s steps(30, end) infinite alternate,
+                       blink 0.7s infinite;
+          }
+
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+          }
+          @keyframes blink {
+            50% { border-color: transparent }
+          }
+
+          /* Profile Glow Ring */
+          .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+          }
+          .profile-wrapper::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, ;
+            animation: rotateRing 6s linear infinite;
+            filter: blur(12px);
+            z-index: 0;
+          }
+          @keyframes rotateRing {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+
+          /* Matrix Hacking Background */
+          .matrix-bg {
+            position: absolute;
+            inset: 0;
+            background: black;
+            overflow: hidden;
+            z-index: 0;
+          }
+          .matrix-bg::before {
+            content: "01 010 101 0110 110 1001 01 110 001 0101 101 0100 11 0010";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            font-size: 18px;
+            line-height: 22px;
+            color: #0f0;
+            white-space: pre;
+            animation: matrixScroll 10s linear infinite;
+            opacity: 0.5;
+          }
+          @keyframes matrixScroll {
+            from { top: -100%; }
+            to { top: 0%; }
+          }
+        `}
+      </style>
     </Container>
   );
 }

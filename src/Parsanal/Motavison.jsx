@@ -3,23 +3,20 @@ import {
   Text,
   Card,
   Title,
-  Flex
+  Flex,
+  Badge,
 } from "@mantine/core";
 import img3 from "./images/background-ai_094202459.png";
 
 export default function ProfilePage() {
   const quotes = [
-    `Write my story after my death.
-     How my youth was wasted. 
-     Write that even at the time of my death I 
-     was praying for you. My hands were out.  
-     Write this sign from my shroud.`,
+    `Write my story after my death. How my youth was wasted. 
+     Write that even at the time of my death I was praying for you. 
+     My hands were out. Write this sign from my shroud.`,
 
     `To achieve your dreams, work hard and try till your last breath..!  
-     Promise that we will win.  
-     Always try harder.  
-     Even if fate is angry, don't lose courage.  
-     Make this resolve so strong…`,
+     Promise that we will win. Always try harder. Even if fate is angry, 
+     don't lose courage. Make this resolve so strong…`,
 
     `Relationships often end due to misunderstandings.  
      Mistakes are not always to blame.  
@@ -55,14 +52,6 @@ export default function ProfilePage() {
      I swear I had come to make you mine.  
      For what did you punish me, you unfaithful person?  
      I had come to make your pain mine.`,
-     `Web EnthusiThere should be no hope of meeting in the next life,
-If the river dries up then there should be no thirst,
-Those who were saying that living is impossible without you,
-They should not be sad even for two days after being separated from me.`,
-`The passing of time makes us realize,
-The one we love from the heart is the one who hurts us,
-The wounds that time heals,
-Someone close to us awakens that pain again.`,
   ];
 
   return (
@@ -71,59 +60,86 @@ Someone close to us awakens that pain again.`,
       style={{
         minHeight: "100vh",
         width: "100%",
-        backgroundImage: `url(${img3})`,
+        backgroundImage: `linear-gradient(135deg, rgba(10,10,30,0.95), rgba(40,0,60,0.9)), url(${img3})`,
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
-        padding: "30px 0"
+        padding: "50px 0",
       }}
     >
       {/* Title Section */}
-      <div style={{ textAlign: "center", marginBottom: "30px" }}>
+      <div style={{ textAlign: "center", marginBottom: "50px" }}>
         <Title
-          order={1}
+          order={0}
           style={{
-            color: "white",
-            fontSize: "2.5rem",
-            textShadow: "0 0 20px rgba(255,255,255,0.8)",
+            background: "linear-gradient",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontSize: "3.5rem",
+            fontWeight: "900",
+            letterSpacing: "3px",
+            textShadow: "0 0 30px rgba(0, 255, 255, 0.8)",
           }}
         >
-          Rahul Swami
+          rahul Swami
         </Title>
+        <Text c="gray.2" size="md"  fw={900} fs="3.5rem"  style={{ fontStyle: "italic" ,textShadow:"0 0 30px rgba(0, 255, 255, 0.8)"}}>
+           Rahul Swami 
+          
+        </Text>
       </div>
 
-      {/* Cards in column */}
+      {/* Quotes Cards */}
       <Flex direction="column" gap="lg" align="center">
         {quotes.map((q, i) => (
           <Card
             key={i}
-            shadow="lg"
-            padding="lg"
+            shadow="xl"
+            padding="xl"
             radius="lg"
             style={{
-              width: "80%",   // ✅ हर कार्ड सेंटर और बराबर चौड़ाई में
-              background: "rgba(255, 255, 255, 0.08)",
+              width: "85%",
+              background:
+                "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.4))",
               border: "1px solid rgba(255,255,255,0.2)",
-              backdropFilter: "blur(10px)",
+              backdropFilter: "blur(18px)",
               color: "white",
-              transition: "all 0.3s ease",
+              transition: "all 0.4s ease",
               cursor: "pointer",
+              position: "relative",
+              overflow: "hidden",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.6)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.02)";
+              e.currentTarget.style.transform =
+                "translateY(-10px) scale(1.03)";
               e.currentTarget.style.boxShadow =
-                "0 0 20px rgba(255,255,255,0.6)";
+                "0 0 30px rgba(0,255,255,0.8)";
               e.currentTarget.style.border =
-                "1px solid rgba(255,255,255,0.6)";
+                "1px solid rgba(0,255,255,0.8)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 25px rgba(0,0,0,0.6)";
               e.currentTarget.style.border =
                 "1px solid rgba(255,255,255,0.2)";
             }}
           >
-            <Text size="sm" style={{ lineHeight: 1.7 }}>
+            {/* Badge Top */}
+            <Badge
+              variant="gradient"
+              gradient={{ from: "cyan", to: "blue" }}
+              size="sm"
+              style={{
+                marginBottom: "12px",
+                boxShadow: "0 0 15px rgba(0,255,255,0.8)",
+              }}
+            >
+              🌟 Quote #{i + 1}
+            </Badge>
+
+            <Text size="md" style={{ lineHeight: 1.8, fontWeight: "500" }}>
               {q}
             </Text>
           </Card>

@@ -9,8 +9,10 @@ import {
   Group,
   Divider,
   Badge,
+  Button,
 } from "@mantine/core";
 import { motion } from "framer-motion";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import img3 from "./images/background-ai_094202459.png";
 
@@ -95,9 +97,9 @@ export default function About() {
                 boxShadow: "0 0 70px rgba(48,255,6,0.9)",
                 transition: "all 0.4s ease",
                 cursor: "pointer",
-                display:"flex",
-                alignItems:"center",
-                justifyContent:"center",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.12) rotate(4deg)";
@@ -145,10 +147,9 @@ export default function About() {
               <span style={{ color: "#30ff06", fontWeight: "bold" }}>
                 Rahul Swami
               </span>{" "}
-              – {" "}
+              –{" "}
               <span style={{ color: "#30ff06" }}>Video & Photo Editor</span>,{" "}
-              <span style={{ color: "#30ff06" }}>Poster Designer</span>{""}
-             
+              <span style={{ color: "#30ff06" }}>Poster Designer</span>
             </Text>
           </Card>
         </motion.div>
@@ -215,8 +216,7 @@ export default function About() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "scale(1.5)";
-                    e.currentTarget.style.background =
-                      "rgba(48,255,6,0.3)";
+                    e.currentTarget.style.background = "rgba(48,255,6,0.3)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = "scale(1)";
@@ -230,6 +230,7 @@ export default function About() {
             </Group>
           </Card>
         </motion.div>
+
         {/* Experience */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
@@ -290,6 +291,7 @@ export default function About() {
               border: "1px solid rgba(48,255,6,0.7)",
               backdropFilter: "blur(15px)",
               boxShadow: "0 0 30px rgba(48,255,6,0.6)",
+              textAlign: "center",
             }}
           >
             <Title
@@ -311,10 +313,7 @@ export default function About() {
               }}
             >
               Main <strong>Rahul</strong> hoon, ek{" "}
-              <strong>
-                Photo Editor, Video Editor & Poster Designer
-              </strong>{" "}
-              – Panipat me based.
+              <strong>Photo Editor, Video Editor & Poster Designer</strong> – Panipat me based.
             </Text>
             <Text
               mt="md"
@@ -322,11 +321,44 @@ export default function About() {
                 color: "#30ff06",
                 fontWeight: "bold",
                 fontSize: "1.3rem",
-                textAlign: "center",
               }}
             >
               🚀 Thanks for visiting!
             </Text>
+
+            {/* WhatsApp Button */}
+            <Button
+              component="a"
+              href="https://wa.me/918290400325"
+              target="_blank"
+              radius="xl"
+              size="lg"
+              leftIcon={<IconBrandWhatsapp size={26} />}
+              styles={{
+                root: {
+                  marginTop: "20px",
+                  backgroundColor: "#25D366",
+                  color: "white",
+                  fontSize: "1.1rem",
+                  fontWeight: "bold",
+                  padding: "14px 30px",
+                  boxShadow: "0 0 25px rgba(37,211,102,0.7)",
+                  transition: "all 0.3s ease",
+                },
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.08)";
+                e.currentTarget.style.boxShadow =
+                  "0 0 45px rgba(37,211,102,1)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.boxShadow =
+                  "0 0 25px rgba(37,211,102,0.7)";
+              }}
+            >
+              Chat on WhatsApp
+            </Button>
           </Card>
         </motion.div>
       </Stack>

@@ -11,33 +11,6 @@ import "../App.css";
 
 export default function ProfilePage() {
   const isMobile = useMediaQuery("(max-width: 780px)");
-  const [activeBtn, setActiveBtn] = React.useState(null);
-
-  const handleClick = (btn) => setActiveBtn(btn);
-
-  const getButtonStyle = (btn) => ({
-    background: activeBtn === btn
-      ? "linear-gradient(135deg, #00ffcc, #0066ff)"
-      : "rgba(0,0,0,0.6)",
-    color: "#0ff",
-    border: "1px solid rgba(0,255,200,0.6)",
-    padding: isMobile ? "10px 22px" : "14px 32px",
-    fontSize: isMobile ? "14px" : "16px",
-    fontWeight: "600",
-    borderRadius: "50px",
-    cursor: "pointer",
-    margin: "8px",
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-    boxShadow: activeBtn === btn
-      ? "0 0 25px rgba(0,255,200,0.9), 0 0 60px rgba(0,255,200,0.7)"
-      : "0 4px 15px rgba(0,255,200,0.2)",
-    transition: "all 0.4s ease",
-    transform: activeBtn === btn ? "scale(1.15)" : "scale(1)",
-    backdropFilter: "blur(12px)",
-    letterSpacing: "1px",
-  });
 
   return (
     <Container
@@ -56,38 +29,8 @@ export default function ProfilePage() {
         overflow: "hidden",
       }}
     >
-      {/* Hacking Matrix Rain Effect */}
+      {/* Matrix BG */}
       <div className="matrix-bg"></div>
-
-      {/* Buttons */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "15px",
-          marginBottom: "40px",
-          padding: "18px 25px",
-          borderRadius: "30px",
-          zIndex: 2
-        }}
-      >
-        <button onClick={() => handleClick('about')} style={getButtonStyle('about')}>
-          <IconUser size={18}/> <a href="/About" style={{ color: "inherit", textDecoration: "none" }}>About</a>
-        </button>
-
-        <button onClick={() => handleClick('poetry')} style={getButtonStyle('poetry')}>
-          <IconBook size={18}/> <a href="/Motavison" style={{ color: "inherit", textDecoration: "none" }}>Poetry</a>
-        </button>
-
-        <button onClick={() => handleClick('whatsapp')} style={getButtonStyle('whatsapp')}>
-          <IconBrandWhatsapp size={18}/> <a href="https://wa.me/8290400325" style={{ color: "inherit", textDecoration: "none" }}>Whatsapp</a>
-        </button>
-
-        <button onClick={() => handleClick('call')} style={getButtonStyle('call')}>
-          <IconPhoneCall size={18}/> <a href="tel:+918290400325" style={{ color: "inherit", textDecoration: "none" }}>Call</a>
-        </button>
-      </div>
 
       {/* Profile Image */}
       <div className="profile-wrapper">
@@ -107,7 +50,7 @@ export default function ProfilePage() {
         />
       </div>
 
-      {/* Title */}
+      {/* Name */}
       <Text
         fw={900}
         style={{
@@ -118,13 +61,12 @@ export default function ProfilePage() {
           WebkitTextFillColor: "transparent",
           zIndex: 2,
           textShadow: "0 0 20px #0ff, 0 0 50px #0f0",
-          animation: "glowText 2.5s infinite alternate",
         }}
       >
         Rahul Swami
       </Text>
 
-      {/* Typing Effect Subtitle */}
+      {/* Subtitle */}
       <Text
         size={isMobile ? "sm" : "md"}
         className="typing-text"
@@ -136,16 +78,50 @@ export default function ProfilePage() {
           zIndex: 2,
         }}
       >
-    It Takes Time To Become Successful, And Time Is Money, And Time Is Power
-  
+        It Takes Time To Become Successful, And Time Is Money, And Time Is Power
       </Text>
 
-      {/* Animations */}
+      {/* Icon Buttons */}
+      <div style={{ marginTop: "40px", display: "flex", gap: "25px" }}>
+        {/* WhatsApp */}
+        <a href="https://wa.me/8290400325" target="_blank" rel="noopener noreferrer" className="icon-btn whatsapp-btn">
+          <IconBrandWhatsapp size={32}/>
+        </a>
+
+        {/* Call */}
+        <a href="tel:+918290400325" className="icon-btn call-btn">
+          <IconPhoneCall size={32}/>
+        </a>
+      </div>
+
+      {/* Extra CSS */}
       <style>
         {`
-          @keyframes glowText {
-            from { }
-            to { text-shad }
+          .icon-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            transition: 0.3s ease;
+            box-shadow: 0 0 20px rgba(0,255,200,0.6);
+          }
+
+          .whatsapp-btn {
+            background: radial-gradient(circle, #25D366, #128C7E);
+            border: 2px solid #25D366;
+          }
+          .call-btn {
+            background: radial-gradient(circle, #00c6ff, #0072ff);
+            border: 2px solid #00c6ff;
+          }
+
+          .icon-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 40px #0ff, 0 0 70px #00f;
           }
 
           /* Typing animation */
@@ -157,64 +133,12 @@ export default function ProfilePage() {
             animation: typing 5s steps(30, end) infinite alternate,
                        blink 0.7s infinite;
           }
-
           @keyframes typing {
             from { width: 0 }
             to { width: 100% }
           }
           @keyframes blink {
             50% { border-color: transparent }
-          }
-
-          /* Profile Glow Ring */
-          .profile-wrapper {
-            position: relative;
-            display: inline-block;
-            z-index: 2;
-          }
-          .profile-wrapper::before {
-            content: "";
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: calc(100% + 30px);
-            height: calc(100% + 30px);
-            border-radius: 50%;
-            background: conic-gradient(from 0deg, ;
-            animation: rotateRing 6s linear infinite;
-            filter: blur(12px);
-            z-index: 0;
-          }
-          @keyframes rotateRing {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-
-          /* Matrix Hacking Background */
-          .matrix-bg {
-            position: absolute;
-            inset: 0;
-            background: black;
-            overflow: hidden;
-            z-index: 0;
-          }
-          .matrix-bg::before {
-            content: "01 010 101 0110 110 1001 01 110 001 0101 101 0100 11 0010";
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            font-size: 18px;
-            line-height: 22px;
-            color: #0f0;
-            white-space: pre;
-            animation: matrixScroll 10s linear infinite;
-            opacity: 0.5;
-          }
-          @keyframes matrixScroll {
-            from { top: -100%; }
-            to { top: 0%; }
           }
         `}
       </style>

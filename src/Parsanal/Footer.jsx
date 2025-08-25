@@ -8,6 +8,11 @@ import {
   Stack,
   Box,
 } from "@mantine/core";
+import {
+  IconBrandYoutube,
+  IconBrandFacebook,
+  IconBrandInstagram,
+} from "@tabler/icons-react";
 
 export default function HackerFooter() {
   return (
@@ -57,9 +62,8 @@ export default function HackerFooter() {
             [ Rahul Swami]
           </Text>
 
-          
           <Group spacing="xl">
-            {["Home","About", "Motavison"].map((link, i) => (
+            {["Home", "About", "Motavison"].map((link, i) => (
               <Anchor
                 key={i}
                 href={"/" + link.toLowerCase()}
@@ -87,30 +91,33 @@ export default function HackerFooter() {
 
           {/* Contact Info */}
           <Stack spacing="xs" align="center">
-           
             <Text> Contact +91-8290-400-325</Text>
-            
           </Stack>
 
-          {/* Social Links */}
-          <Group spacing="md" mt="md">
+          {/* Social Links with Icons */}
+          <Group spacing="lg" mt="md">
             <Anchor
               href="https://youtube.com/@princpardhan7782"
-              style={{ color: "#ff3333", textShadow: "0 0 15px #ff3333" }}
+              target="_blank"
+              style={{ color: "#ff3333" }}
             >
-              [YouTube]
+              <IconBrandYoutube size={28} style={{ filter: "drop-shadow(0 0 10px #ff3333)" }} />
             </Anchor>
+
             <Anchor
               href="https://www.facebook.com/share/p/19WEkPssmd/"
-              style={{ color: "#00aaff", textShadow: "0 0 15px #00aaff" }}
+              target="_blank"
+              style={{ color: "#00aaff" }}
             >
-              [Facebook]
+              <IconBrandFacebook size={28} style={{ filter: "drop-shadow(0 0 10px #00aaff)" }} />
             </Anchor>
+
             <Anchor
               href="https://www.instagram.com/princ_pardhan_325"
-              style={{ color: "#ff00ff", textShadow: "0 0 15px #ff00ff" }}
+              target="_blank"
+              style={{ color: "#ff00ff" }}
             >
-              [Instagram]
+              <IconBrandInstagram size={28} style={{ filter: "drop-shadow(0 0 10px #ff00ff)" }} />
             </Anchor>
           </Group>
 
@@ -124,7 +131,7 @@ export default function HackerFooter() {
               fontSize: "0.9rem",
             }}
           >
-            © 2025 [RahulSwami] 
+            © 2025 [RahulSwami]
           </Text>
         </Stack>
       </Container>

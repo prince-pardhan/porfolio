@@ -230,7 +230,6 @@ export default function About() {
             </Group>
           </Card>
         </motion.div>
-
         {/* Experience */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}

@@ -95,6 +95,9 @@ export default function About() {
                 boxShadow: "0 0 70px rgba(48,255,6,0.9)",
                 transition: "all 0.4s ease",
                 cursor: "pointer",
+                display:"flex",
+                alignItems:"center",
+                justifyContent:"center",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.12) rotate(4deg)";
@@ -142,10 +145,10 @@ export default function About() {
               <span style={{ color: "#30ff06", fontWeight: "bold" }}>
                 Rahul Swami
               </span>{" "}
-              – ek passionate{" "}
+              – {" "}
               <span style={{ color: "#30ff06" }}>Video & Photo Editor</span>,{" "}
-              <span style={{ color: "#30ff06" }}>Poster Designer</span> aur{" "}
-              <span style={{ color: "#30ff06" }}>Web Enthusiast</span>.
+              <span style={{ color: "#30ff06" }}>Poster Designer</span>{""}
+             
             </Text>
           </Card>
         </motion.div>
@@ -211,7 +214,7 @@ export default function About() {
                     transition: "0.3s",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.1)";
+                    e.currentTarget.style.transform = "scale(1.5)";
                     e.currentTarget.style.background =
                       "rgba(48,255,6,0.3)";
                   }}

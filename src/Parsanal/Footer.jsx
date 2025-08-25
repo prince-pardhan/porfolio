@@ -57,9 +57,9 @@ export default function HackerFooter() {
             [ Rahul Swami]
           </Text>
 
-          {/* Navigation Links */}
+          
           <Group spacing="xl">
-            {["Home", "Motavison", "Footer",].map((link, i) => (
+            {["Home","About", "Motavison"].map((link, i) => (
               <Anchor
                 key={i}
                 href={"/" + link.toLowerCase()}
@@ -124,7 +124,7 @@ export default function HackerFooter() {
               fontSize: "0.9rem",
             }}
           >
-            © 2025 [System Breached] | Powered by Rahul HackerZ 🕶️
+            © 2025 [RahulSwami] 
           </Text>
         </Stack>
       </Container>

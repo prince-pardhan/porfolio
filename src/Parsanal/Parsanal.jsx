@@ -6,7 +6,7 @@ import {
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconPhoneCall, IconBrandWhatsapp, IconBook, IconUser } from "@tabler/icons-react";
-import img1 from "./images/self-pic.jpeg";
+import img1 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import "../App.css";
 
 export default function ProfilePage() {
@@ -136,20 +136,7 @@ export default function ProfilePage() {
           zIndex: 2,
         }}
       >
-        `Take with you the incomplete stories of your false promises.  
-     You will need them again in your next love.  
-     I had come to decorate the party of your heart,  
-     I swear I had come to make you mine.  
-     For what did you punish me, you unfaithful person?  
-     I had come to make your pain mine.`,
-     `Web EnthusiThere should be no hope of meeting in the next life,
-If the river dries up then there should be no thirst,
-Those who were saying that living is impossible without you,
-They should not be sad even for two days after being separated from me.`,
-`The passing of time makes us realize,
-The one we love from the heart is the one who hurts us,
-The wounds that time heals,
-Someone close to us awakens that pain again.`,
+    It Takes Time To Become Successful, And Time Is Money, And Time Is Power
   
       </Text>
 

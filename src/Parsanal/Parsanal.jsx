@@ -5,7 +5,7 @@ import {
   Image,
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { IconPhoneCall, IconBrandWhatsapp, IconBook, IconUser } from "@tabler/icons-react";
+import { IconPhoneCall, IconBrandWhatsapp } from "@tabler/icons-react";
 import img1 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import "../App.css";
 
@@ -55,10 +55,9 @@ export default function ProfilePage() {
         overflow: "hidden",
       }}
     >
-     
       <div className="matrix-bg"></div>
 
-     
+      {/* Buttons */}
       <div
         style={{
           display: "flex",
@@ -72,28 +71,28 @@ export default function ProfilePage() {
         }}
       >
         <button onClick={() => handleClick('about')} style={getButtonStyle('about')}>
-          <a href="/About" style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px" }}>
+          <a href="/About" style={{ color: "inherit", textDecoration: "none" }}>
             About
           </a>
         </button>
 
         <button onClick={() => handleClick('poetry')} style={getButtonStyle('poetry')}>
-          <a href="/Motavison" style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px" }}>
-           Poetry
+          <a href="/Motavison" style={{ color: "inherit", textDecoration: "none" }}>
+            Poetry
           </a>
         </button>
 
-        {/* Whatsapp Button (Only Icon) */}
+        {/* Whatsapp Button (Green Icon) */}
         <a href="https://wa.me/8290400325" target="_blank" rel="noopener noreferrer">
           <button onClick={() => handleClick('whatsapp')} style={getButtonStyle('whatsapp')}>
-            <IconBrandWhatsapp size={22}/>
+            <IconBrandWhatsapp size={22} color="#25D366" />
           </button>
         </a>
 
-        {/* Call Button (Only Icon) */}
+        {/* Call Button (Blue-Green Icon) */}
         <a href="tel:+918290400325">
           <button onClick={() => handleClick('call')} style={getButtonStyle('call')}>
-            <IconPhoneCall size={22}/>
+            <IconPhoneCall size={22} color="#00BFFF" />
           </button>
         </a>
       </div>
@@ -116,7 +115,6 @@ export default function ProfilePage() {
         />
       </div>
 
-    
       <Text
         fw={900}
         style={{
@@ -126,14 +124,12 @@ export default function ProfilePage() {
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           zIndex: 2,
-      
           animation: "glowText 2.5s infinite alternate",
         }}
       >
         Rahul Swami
       </Text>
 
-      {/* Typing Effect Subtitle */}
       <Text
         size={isMobile ? "sm" : "md"}
         className="typing-text"
@@ -152,11 +148,9 @@ export default function ProfilePage() {
       <style>
         {`
           @keyframes glowText {
-            from { }
             to { text-shadow: 0 0 25px #0ff, 0 0 60px #0f0; }
           }
 
-          /* Typing animation */
           .typing-text {
             width: 0;
             overflow: hidden;
@@ -174,7 +168,6 @@ export default function ProfilePage() {
             50% { border-color: transparent }
           }
 
-          /* Profile Glow Ring */
           .profile-wrapper {
             position: relative;
             display: inline-block;
@@ -197,7 +190,6 @@ export default function ProfilePage() {
             100% { transform: rotate(360deg); }
           }
 
-          /* Matrix Hacking Background */
           .matrix-bg {
             position: absolute;
             inset: 0;

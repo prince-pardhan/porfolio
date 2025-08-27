@@ -8,282 +8,316 @@ import {
   Card,
   Group,
   Divider,
-  Badge,
   Button,
 } from "@mantine/core";
 import { motion } from "framer-motion";
-import { IconBrandWhatsapp, IconPhoneCall } from "@tabler/icons-react"; // Call icon import
+import { IconBrandWhatsapp, IconPhoneCall } from "@tabler/icons-react"; 
 import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import img3 from "./images/background-ai_094202459.png";
 
 export default function About() {
   return (
-    <Container
-      size="lg"
-      p="xl"
-      style={{
-        minHeight: "100vh",
-        color: "#fff",
-        backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,20,0,0.95)), url(${img3})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        borderRadius: "20px",
-        boxShadow: "inset 0 0 80px rgba(48,255,6,0.2)",
-      }}
-    >
-      <Stack spacing="xl" style={{ width: "100%" }}>
-        {/* Name Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          style={{ textAlign: "center" }}
-        >
-          <Title
-            order={1}
-            style={{
-              color: "#30ff06",
-              textShadow: "0px 0px 35px rgba(48,255,6,1)",
-              fontSize: "3.8rem",
-              fontWeight: 900,
-              letterSpacing: "4px",
-              fontFamily: "'Orbitron', sans-serif",
-            }}
-          >
-            Rahul Swami
-          </Title>
-          <Divider
-            my="sm"
-            style={{
-              borderColor: "#30ff06",
-              width: "150px",
-              margin: "14px auto",
-              borderWidth: "3px",
-              boxShadow: "0px 0px 20px rgba(48,255,6,0.9)",
-            }}
-          />
-          <Text
-            size="lg"
-            style={{
-              color: "#aaa",
-              fontSize: "1.4rem",
-              letterSpacing: "2px",
-              fontFamily: "'Poppins', sans-serif",
-            }}
-          >
-            Creative Editor | Gamer | Designer
-          </Text>
-        </motion.div>
+    <div  id="about" >
+      <Container
+        size="lg"
+        p="xl"
+        style={{
+          minHeight: "100vh",
+          color: "#fff",
+          backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,20,0,0.95)), url(${img3})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "20px",
+          boxShadow: "inset 0 0 80px rgba(48,255,6,0.2)",
+        }}
+      >
+        <Stack spacing="xl" style={{ width: "100%" }}>
 
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.7 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <Group position="center">
-            <Image
-              src={img2}
-              alt="Profile"
-              radius="xl"
-              style={{
-                width: "250px",
-                height: "250px",
-                objectFit: "cover",
-                border: "4px solid #30ff06",
-                borderRadius: "50%",
-                boxShadow: "0 0 70px rgba(48,255,6,0.9)",
-                transition: "all 0.4s ease",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.12) rotate(4deg)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 120px rgba(48,255,6,1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1) rotate(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 70px rgba(48,255,6,0.9)";
-              }}
-            />
-          </Group>
-        </motion.div>
+          {/* Name Section */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: -40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              style={{ textAlign: "center" }}
+            >
+              <Title
+                order={1}
+                style={{
+                  color: "#30ff06",
+                  textShadow: "0px 0px 35px rgba(48,255,6,1)",
+                  fontSize: "3.8rem",
+                  fontWeight: 900,
+                  letterSpacing: "4px",
+                  fontFamily: "'Orbitron', sans-serif",
+                }}
+              >
+                Rahul Swami
+              </Title>
 
-        {/* Intro Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <Card
-            shadow="xl"
-            padding="lg"
-            radius="xl"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(48,255,6,0.15), rgba(0,0,0,0.7))",
-              border: "1px solid rgba(48,255,6,0.5)",
-              backdropFilter: "blur(15px)",
-              boxShadow: "0 0 35px rgba(48,255,6,0.4)",
-            }}
-          >
+              <Divider
+                my="sm"
+                style={{
+                  borderColor: "#30ff06",
+                  width: "150px",
+                  margin: "14px auto",
+                  borderWidth: "3px",
+                  boxShadow: "0px 0px 20px rgba(48,255,6,0.9)",
+                }}
+              />
+            </motion.div>
+
             <Text
-              size="md"
+              size="lg"
               style={{
-                lineHeight: 1.9,
-                fontSize: "1.2rem",
-                color: "#eee",
+                color: "#aaa",
+                fontSize: "1.4rem",
+                letterSpacing: "2px",
+                fontFamily: "'Poppins', sans-serif",
                 textAlign: "center",
               }}
             >
-              👋 <strong>Hi</strong>, I’m{" "}
+              Creative Editor | Gamer | Designer
+            </Text>
+          </div>
+          {/* Profile Image */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.7 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+
+              <Group position="center">
+                <Image
+                  src={img2}
+                  alt="Profile"
+                  radius="xl"
+                  style={{
+                    width: "250px",
+                    height: "250px",
+                    objectFit: "cover",
+                    border: "4px solid #30ff06",
+                    borderRadius: "50%",
+                    boxShadow: "0 0 70px rgba(48,255,6,0.9)",
+                    transition: "all 0.4s ease",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.12) rotate(4deg)";
+                    e.currentTarget.style.boxShadow =
+                      "0 0 120px rgba(48,255,6,1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1) rotate(0)";
+                    e.currentTarget.style.boxShadow =
+                      "0 0 70px rgba(48,255,6,0.9)";
+                  }}
+                />
+              </Group>
+            </motion.div>
+          </div>
+
+          {/* Intro Card */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <Card
+                shadow="xl"
+                padding="lg"
+                radius="xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(48,255,6,0.15), rgba(0,0,0,0.7))",
+                  border: "1px solid rgba(48,255,6,0.5)",
+                  backdropFilter: "blur(15px)",
+                  boxShadow: "0 0 35px rgba(48,255,6,0.4)",
+                }}
+              >
+                <Text
+                  size="md"
+                  style={{
+                    lineHeight: 1.9,
+                    fontSize: "1.2rem",
+                    color: "#eee",
+                    textAlign: "center",
+                  }}
+                >
+                  👋 <strong>Hi</strong>, I’m{" "}
+                  <span style={{ color: "#30ff06", fontWeight: "bold" }}>
+                    Rahul Swami
+                  </span>{" "}
+                  –{" "}
+                  <span style={{ color: "#30ff06" }}>Video & Photo Editor</span>,{" "}
+                  <span style={{ color: "#30ff06" }}>Poster Designer</span>
+                </Text>
+              </Card>
+            </motion.div>
+          </div>
+
+          {/* Skills Card */}
+          <div>
+            <Card
+              shadow="xl"
+              padding="lg"
+              radius="xl"
+              style={{
+                background: "rgba(0,0,0,0.85)",
+                color: "green",
+                border: "1px solid rgba(48,255,6,0.7)",
+                backdropFilter: "blur(15px)",
+                boxShadow: "0 0 30px rgba(43, 255, 0, 0.6)",
+                textAlign: "center",
+              }}
+            >
               <span style={{ color: "#30ff06", fontWeight: "bold" }}>
-                Rahul Swami
-              </span>{" "}
-              –{" "}
-              <span style={{ color: "#30ff06" }}>Video & Photo Editor</span>,{" "}
-              <span style={{ color: "#30ff06" }}>Poster Designer</span>
-            </Text>
-          </Card>
-        </motion.div>
+                [Edditer], [Gamer], [HTML], [CSS], [JS],
+                [Video Editor], [Photo Editor], [Development],
+                [Poster Editor]
+              </span>
+            </Card>
+          </div>
 
-        {/* Skills */}
-        {/* (Skills wala part unchanged) */}
-
-        {/* My Details with WhatsApp & Call */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Card
-            shadow="xl"
-            padding="lg"
-            radius="xl"
-            style={{
-              background: "rgba(0,0,0,0.85)",
-              border: "1px solid rgba(48,255,6,0.7)",
-              backdropFilter: "blur(15px)",
-              boxShadow: "0 0 30px rgba(48,255,6,0.6)",
-              textAlign: "center",
-            }}
-          >
-            <Title
-              order={3}
-              style={{
-                color: "#30ff06",
-                textShadow: "0px 0px 15px rgba(48,255,6,0.9)",
-              }}
+          {/* My Details Card */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
             >
-              My Details
-            </Title>
-            <Text
-              size="sm"
-              style={{
-                marginTop: "10px",
-                lineHeight: 1.9,
-                fontSize: "1.1rem",
-                color: "#eee",
-              }}
-            >
-              Main <strong>Rahul</strong> hoon, ek{" "}
-              <strong>Photo Editor, Video Editor & Poster Designer</strong> – Panipat me based.
-            </Text>
-            <Text
-              mt="md"
-              style={{
-                color: "#30ff06",
-                fontWeight: "bold",
-                fontSize: "1.3rem",
-              }}
-            >
-              🚀 Thanks for visiting!
-            </Text>
-
-            {/* Buttons */}
-            <Group position="center" mt="lg" spacing="lg">
-              {/* WhatsApp Button */}
-              <Button
-                component="a"
-                href="https://wa.me/918290400325"
-                target="_blank"
+              <Card
+                shadow="xl"
+                padding="lg"
                 radius="xl"
-                size="lg"
-                leftIcon={
-                  <IconBrandWhatsapp size={28} color="#25D366" stroke={2} />
-                }
-                styles={{
-                  root: {
-                    backgroundColor: "#111",
-                    border: "2px solid #25D366",
-                    color: "#25D366",
-                    fontSize: "1.1rem",
-                    fontWeight: "bold",
-                    padding: "14px 30px",
-                    boxShadow: "0 0 25px rgba(37,211,102,0.7)",
-                    transition: "all 0.3s ease",
-                  },
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.08)";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 45px rgba(37,211,102,1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 25px rgba(37,211,102,0.7)";
+                style={{
+                  background: "rgba(0,0,0,0.85)",
+                  border: "1px solid rgba(48,255,6,0.7)",
+                  backdropFilter: "blur(15px)",
+                  boxShadow: "0 0 30px rgba(48,255,6,0.6)",
+                  textAlign: "center",
                 }}
               >
-                WhatsApp
-              </Button>
-
-              {/* Call Button */}
-              <Button
-                component="a"
-                href="tel:+918290400325"
-                radius="xl"
-                size="lg"
-                leftIcon={
-                  <IconPhoneCall size={26} color="#1DA1F2" stroke={2} />
-                }
-                styles={{
-                  root: {
-                    backgroundColor: "#111",
-                    border: "2px solid #1DA1F2",
-                    color: "#1DA1F2",
+                <Title
+                  order={3}
+                  style={{
+                    color: "#30ff06",
+                    textShadow: "0px 0px 15px rgba(48,255,6,0.9)",
+                  }}
+                >
+                  My Details
+                </Title>
+                <Text
+                  size="sm"
+                  style={{
+                    marginTop: "10px",
+                    lineHeight: 1.9,
                     fontSize: "1.1rem",
+                    color: "#eee",
+                  }}
+                >
+                  Main <strong>Rahul</strong> hoon, ek{" "}
+                  <strong>Photo Editor, Video Editor & Poster Designer</strong> – Panipat me based.
+                </Text>
+                <Text
+                  mt="md"
+                  style={{
+                    color: "#30ff06",
                     fontWeight: "bold",
-                    padding: "14px 30px",
-                    boxShadow: "0 0 25px rgba(29,161,242,0.7)",
-                    transition: "all 0.3s ease",
-                  },
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.08)";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 45px rgba(29,161,242,1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 25px rgba(29,161,242,0.7)";
-                }}
-              >
-                Call Now
-              </Button>
-            </Group>
-          </Card>
-        </motion.div>
-      </Stack>
-    </Container>
+                    fontSize: "1.3rem",
+                  }}
+                >
+                  🚀 Thanks for visiting!
+                </Text>
+
+                {/* Buttons */}
+                <Group position="center" mt="lg" spacing="lg">
+                  {/* WhatsApp Button */}
+                  <Button
+                    component="a"
+                    href="https://wa.me/918290400325"
+                    target="_blank"
+                    radius="xl"
+                    size="lg"
+                    leftIcon={
+                      <IconBrandWhatsapp size={28} color="#25D366" stroke={2} />
+                    }
+                    styles={{
+                      root: {
+                        backgroundColor: "#111",
+                        border: "2px solid #25D366",
+                        color: "#25D366",
+                        fontSize: "1.1rem",
+                        fontWeight: "bold",
+                        padding: "14px 30px",
+                        boxShadow: "0 0 25px rgba(37,211,102,0.7)",
+                        transition: "all 0.3s ease",
+                      },
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.08)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 45px rgba(37,211,102,1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 25px rgba(37,211,102,0.7)";
+                    }}
+                  >
+                    WhatsApp
+                  </Button>
+
+                  {/* Call Button */}
+                  <Button
+                    component="a"
+                    href="tel:+918290400325"
+                    radius="xl"
+                    size="lg"
+                    leftIcon={
+                      <IconPhoneCall size={26} color="#1DA1F2" stroke={2} />
+                    }
+                    styles={{
+                      root: {
+                        backgroundColor: "#111",
+                        border: "2px solid #1DA1F2",
+                        color: "#1DA1F2",
+                        fontSize: "1.1rem",
+                        fontWeight: "bold",
+                        padding: "14px 30px",
+                        boxShadow: "0 0 25px rgba(29,161,242,0.7)",
+                        transition: "all 0.3s ease",
+                      },
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.08)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 45px rgba(29,161,242,1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.boxShadow =
+                        "0 0 25px rgba(29,161,242,0.7)";
+                    }}
+                  >
+                    Call Now
+                  </Button>
+                </Group>
+              </Card>
+            </motion.div>
+          </div>
+
+        </Stack>
+      </Container>
+    </div>
   );
 }

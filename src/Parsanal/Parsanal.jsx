@@ -8,6 +8,8 @@ import { useMediaQuery } from '@mantine/hooks';
 import { IconPhoneCall, IconBrandWhatsapp } from "@tabler/icons-react";
 import img1 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import "../App.css";
+import About from './About';
+import Poirty from './Motavison';
 
 export default function ProfilePage() {
   const isMobile = useMediaQuery("(max-width: 780px)");
@@ -71,25 +73,25 @@ export default function ProfilePage() {
         }}
       >
         <button onClick={() => handleClick('about')} style={getButtonStyle('about')}>
-          <a href="/About" style={{ color: "inherit", textDecoration: "none" }}>
+          <a href="#about" style={{ color: "inherit", textDecoration: "none" }}>
             About
           </a>
         </button>
 
         <button onClick={() => handleClick('poetry')} style={getButtonStyle('poetry')}>
-          <a href="/Motavison" style={{ color: "inherit", textDecoration: "none" }}>
+          <a href="#motavison" style={{ color: "inherit", textDecoration: "none" }}>
             Poetry
           </a>
         </button>
 
-        {/* Whatsapp Button (Green Icon) */}
+        {/* Whatsapp Button */}
         <a href="https://wa.me/8290400325" target="_blank" rel="noopener noreferrer">
           <button onClick={() => handleClick('whatsapp')} style={getButtonStyle('whatsapp')}>
             <IconBrandWhatsapp size={22} color="#25D366" />
           </button>
         </a>
 
-        {/* Call Button (Blue-Green Icon) */}
+        {/* Call Button */}
         <a href="tel:+918290400325">
           <button onClick={() => handleClick('call')} style={getButtonStyle('call')}>
             <IconPhoneCall size={22} color="#00BFFF" />
@@ -144,9 +146,22 @@ export default function ProfilePage() {
         It Takes Time To Become Successful, And Time Is Money, And Time Is Power
       </Text>
 
-      {/* Animations */}
+      {/* Sections with IDs */}
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="motavison">
+        <Poirty />
+      </div>
+
+      {/* Animations & Smooth Scroll */}
       <style>
         {`
+          html {
+            scroll-behavior: smooth;
+          }
+
           @keyframes glowText {
             to { text-shadow: 0 0 25px #0ff, 0 0 60px #0f0; }
           }

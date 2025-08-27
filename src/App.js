@@ -15,8 +15,7 @@ export default function App() {
  
       <Routes>
         <Route path='/' element={<Parsanal />} />
-        <Route path='/About' element={< About />} />
-        <Route path='/Motavison' element={<Motavison />} />
+        {/* <Route path='/Motavison' element={<Motavison />} /> */}
         
       </Routes>
     <Footer/>

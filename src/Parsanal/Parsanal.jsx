@@ -6,7 +6,7 @@ import {
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconPhoneCall, IconBrandWhatsapp } from "@tabler/icons-react";
-import img1 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
+import img1 from "./images/image.png";
 import "../App.css";
 import About from './About';
 import Poirty from './Motavison';
@@ -143,7 +143,7 @@ export default function ProfilePage() {
           zIndex: 2,
         }}
       >
-        It Takes Time To Become Successful, And Time Is Money, And Time Is Power
+        It Takes Time To Become Successful, And Time Is Money,
       </Text>
 
       {/* Sections with IDs */}

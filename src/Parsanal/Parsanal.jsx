@@ -10,8 +10,7 @@ import img1 from "./images/image.png";
 import "../App.css";
 import About from './About';
 import Poirty from './Motavison';
-import Contact from './Page';
-import Rahul from './Page';
+
 
 export default function ProfilePage() {
   const isMobile = useMediaQuery("(max-width: 780px)");
@@ -85,11 +84,7 @@ export default function ProfilePage() {
             Poetry
           </a>
         </button>
-        <button onClick={() => handleClick('rahul')} style={getButtonStyle('rahul')}>
-          <a href="#page" style={{ color: "inherit", textDecoration: "none" }}>
-            Interodaksan
-          </a>
-        </button>
+        
 
        
         <a href="https://wa.me/8290400325" target="_blank" rel="noopener noreferrer">
@@ -160,10 +155,7 @@ export default function ProfilePage() {
 
       <div id="motavison">
         <Poirty />
-      </div>
-      <div id='page'>
-         <Rahul/>
-
+      
       </div>
 
       {/* Animations & Smooth Scroll */}

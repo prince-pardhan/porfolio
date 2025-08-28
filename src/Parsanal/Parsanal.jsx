@@ -10,6 +10,8 @@ import img1 from "./images/image.png";
 import "../App.css";
 import About from './About';
 import Poirty from './Motavison';
+import Contact from './Page';
+import Rahul from './Page';
 
 export default function ProfilePage() {
   const isMobile = useMediaQuery("(max-width: 780px)");
@@ -83,8 +85,13 @@ export default function ProfilePage() {
             Poetry
           </a>
         </button>
+        <button onClick={() => handleClick('rahul')} style={getButtonStyle('rahul')}>
+          <a href="#page" style={{ color: "inherit", textDecoration: "none" }}>
+            Interodaksan
+          </a>
+        </button>
 
-        {/* Whatsapp Button */}
+       
         <a href="https://wa.me/8290400325" target="_blank" rel="noopener noreferrer">
           <button onClick={() => handleClick('whatsapp')} style={getButtonStyle('whatsapp')}>
             <IconBrandWhatsapp size={22} color="#25D366" />
@@ -143,16 +150,20 @@ export default function ProfilePage() {
           zIndex: 2,
         }}
       >
-        It Takes Time To Become Successful, And Time Is Money,
+        It Takes Time To Become Successful-And Time Is Money
       </Text>
 
-      {/* Sections with IDs */}
+     
       <div id="about">
         <About />
       </div>
 
       <div id="motavison">
         <Poirty />
+      </div>
+      <div id='page'>
+         <Rahul/>
+
       </div>
 
       {/* Animations & Smooth Scroll */}

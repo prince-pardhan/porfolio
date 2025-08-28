@@ -28,7 +28,6 @@ export default function About() {
           backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,20,0,0.95)), url(${img3})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          // boxShadow: "inset 0 0 80px rgba(48,255,6,0.2)",
           position: "relative",
         }}
       >
@@ -171,7 +170,7 @@ export default function About() {
                   textShadow: "0px 0px 15px rgba(48,255,6,1)",
                 }}
               >
-                Skills
+               My all Skills
               </Title>
               <Group position="center" spacing="sm" style={{ flexWrap: "wrap" }}>
                 {[
@@ -181,7 +180,7 @@ export default function About() {
                   "CSS",
                   "JavaScript",
                   "ReactJS",
-                  "Writer",
+                  "Writer", 
                   "Photo Editor",
                   "Video Editor",
                   "Poster Designer",
@@ -260,7 +259,7 @@ export default function About() {
                 Thanks
               </Text>
               <Group position="center" mt="lg" spacing="lg">
-                {/* WhatsApp Button */}
+                
                 <Button
                   component="a"
                   href="https://wa.me/918290400325"

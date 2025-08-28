@@ -63,7 +63,7 @@ export default function HackerFooter() {
           </Text>
 
           <Group spacing="xl">
-            {["Home", "About", "Motavison"].map((link, i) => (
+            {[, "About", "Motavison",].map((link, i) => (
               <Anchor
                 key={i}
                 href={"/" + link.toLowerCase()}

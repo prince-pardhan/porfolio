@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Parsanal from './Parsanal/Parsanal';
 import About from './Parsanal/About.jsx';
 import Motavison from './Parsanal/Motavison.jsx';
+import Page from './Parsanal/Page.jsx';
 import Footer from './Parsanal/Footer';
 
 
@@ -15,7 +16,7 @@ export default function App() {
  
       <Routes>
         <Route path='/' element={<Parsanal />} />
-        {/* <Route path='/Motavison' element={<Motavison />} /> */}
+       
         
       </Routes>
     <Footer/>

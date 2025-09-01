@@ -7,8 +7,10 @@ import {
   Badge,
 } from "@mantine/core";
 import img3 from "./images/background-ai_094202459.png";
+import { a } from "framer-motion/client";
 
 export default function Poirty() {
+ 
   const quotes = [
     // `Write my story after my death. How my youth was wasted. 
     //  Write that even at the time of my death I was praying for you. 
@@ -53,11 +55,12 @@ export default function Poirty() {
     //  For what did you punish me, you unfaithful person?  
     //  I had come to make your pain mine.`,
      `"It takes time to become successful-and time is money, and time is power" 
-     "Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called "
-     "a king — what we now call a hacker. And I control all three of them"`,
+     Chanakya said that the one who controls Sama, Dana, Danda, and Bhed is called "
+     a king — what we now call a hacker. And I control all three of them"`,
   ];
 
   return (
+    
     <div id="motavison">
       <Container
         fluid
@@ -100,7 +103,7 @@ export default function Poirty() {
             Rahul Swami
           </Text>
         </div>
-
+        
         {/* Quotes Cards */}
         <Flex direction="column" gap="lg" align="center">
           {quotes.map((q, i) => (
@@ -110,7 +113,7 @@ export default function Poirty() {
               padding="xl"
               radius="lg"
               style={{
-                width: "85%",
+                width: "75%",
                 background:
                   "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.4))",
                 border: "1px solid rgba(255,255,255,0.2)",
@@ -145,13 +148,13 @@ export default function Poirty() {
                 size="sm"
                 style={{
                   marginBottom: "12px",
-                  boxShadow: "0 0 15px rgba(0,255,255,0.8)",
+                  boxShadow: "0 0 95px rgba(0,255,255,0.8)",
                 }}
               >
                 ❤️💞 Porty={i + 1}
               </Badge>
 
-              <Text size="xl" style={{ lineHeight: 1.8, fontWeight: "900" }}>
+              <Text size="xxl" style={{ lineHeight: 1.8, fontWeight: "900" }}>
                 {q}
               </Text>
             </Card>

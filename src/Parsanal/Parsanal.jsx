@@ -34,8 +34,8 @@ export default function ProfilePage() {
     alignItems: "center",
     justifyContent: "center",
     boxShadow: activeBtn === btn
-      ? "0 0 25px rgba(0,255,200,0.9), 0 0 60px rgba(0,255,200,0.7)"
-      : "0 4px 15px rgba(0,255,200,0.2)",
+      ? "0 0 25px rgba(0, 26, 255, 1), 0 0 60px rgba(0, 255, 200, 0.7)"
+      : "0 4px 15px rgba(102, 0, 255, 0.2)",
     transition: "all 0.4s ease",
     transform: activeBtn === btn ? "scale(1.15)" : "scale(1)",
     backdropFilter: "blur(12px)",
@@ -131,7 +131,7 @@ export default function ProfilePage() {
           animation: "glowText 2.5s infinite alternate",
         }}
       >
-        Rahul Swami
+        Rk Swami
       </Text>
 
       <Text

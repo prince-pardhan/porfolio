@@ -17,19 +17,19 @@ import {
 export default function HackerFooter() {
   return (
     <Box
-      component="footer"
-      style={{
-        background: "black",
-        minHeight: "65vh",
-        padding: "50px 20px",
-        color: "#00ff00",
-        fontFamily: "monospace",
-        position: "relative",
-        overflow: "hidden",
-        borderTop: "2px solid #00ff00",
-      }}
+    component="footer"
+    style={{
+      background: "black",
+      minHeight: "65vh",
+      padding: "50px 20px",
+      color: "#00ff00",
+      fontFamily: "monospace",
+      position: "relative",
+      overflow: "hidden",
+      borderTop: "2px solid #00ff00",
+    }}
     >
-      {/* Matrix-style animated background */}
+      
       <div
         style={{
           position: "absolute",
@@ -38,13 +38,17 @@ export default function HackerFooter() {
           width: "100%",
           height: "100%",
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif')",
+          "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif')",
           backgroundSize: "cover",
           opacity: 0.25,
           zIndex: 0,
           filter: "blur(1px)",
         }}
       />
+      
+      
+       
+
 
       <Container style={{ position: "relative", zIndex: 2 }}>
         <Stack align="center" spacing="lg">
@@ -59,14 +63,14 @@ export default function HackerFooter() {
               animation: "flicker 2s infinite",
             }}
           >
-            [ Rahul Swami]
+            [ Rk Swami]
           </Text>
 
           <Group spacing="xl">
-            {[, "About", "Motavison",].map((link, i) => (
+            {["About","Motavison",'jai shree shyam ji'].map((link, i) => (
               <Anchor
                 key={i}
-                href={"/" + link.toLowerCase()}
+                href={"#" + link.toLowerCase()}
                 style={{
                   color: "#00ff00",
                   textDecoration: "none",
@@ -92,6 +96,7 @@ export default function HackerFooter() {
           {/* Contact Info */}
           <Stack spacing="xs" align="center">
             <Text> Contact +91-8290-400-325</Text>
+            <Text>Gmail = srk016361@Gmail.com</Text>
           </Stack>
 
           {/* Social Links with Icons */}
@@ -100,10 +105,11 @@ export default function HackerFooter() {
               href="https://youtube.com/@princpardhan7782"
               target="_blank"
               style={{ color: "#ff3333" }}
+             
             >
               <IconBrandYoutube size={28} style={{ filter: "drop-shadow(0 0 10px #ff3333)" }} />
             </Anchor>
-
+             <Text>=</Text>
             <Anchor
               href="https://www.facebook.com/share/p/19WEkPssmd/"
               target="_blank"
@@ -111,7 +117,7 @@ export default function HackerFooter() {
             >
               <IconBrandFacebook size={28} style={{ filter: "drop-shadow(0 0 10px #00aaff)" }} />
             </Anchor>
-
+                 <Text>=</Text>
             <Anchor
               href="https://www.instagram.com/princ_pardhan_325"
               target="_blank"
@@ -119,9 +125,10 @@ export default function HackerFooter() {
             >
               <IconBrandInstagram size={28} style={{ filter: "drop-shadow(0 0 10px #ff00ff)" }} />
             </Anchor>
-          </Group>
-
-          {/* Footer Note */}
+          </Group>  
+                 <Text>My ↟ Bussing ↟  link</Text>
+                 <Text style={{color:"blue"}}> Development and Edtior  </Text>
+       
           <Text
             size="sm"
             style={{
@@ -131,12 +138,12 @@ export default function HackerFooter() {
               fontSize: "0.9rem",
             }}
           >
-            © 2025 [RahulSwami]
+            © 2025 [Rahul Swami...]    ?
           </Text>
         </Stack>
       </Container>
 
-      {/* Glitch + Flicker Animations */}
+      
       <style>
         {`
           @keyframes flicker {
@@ -144,11 +151,12 @@ export default function HackerFooter() {
               opacity: 1;
             }
             20%, 24%, 55% {
-              opacity: 0.3;
+              opacity: 0.5;
             }
           }
         `}
       </style>
+      
     </Box>
   );
 }

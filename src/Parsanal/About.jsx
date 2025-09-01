@@ -7,7 +7,7 @@ import {
   Stack,
   Card,
   Group,
-  Divider,
+  Divider, 
   Button,
   Badge,
 } from "@mantine/core";
@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import { IconBrandWhatsapp, IconPhoneCall } from "@tabler/icons-react"; 
 import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
 import img3 from "./images/background-ai_094202459.png";
-
+import  img4  from "./images/self-pic.jpeg";
 export default function About() {
   return (
     <div id="about">
@@ -25,7 +25,7 @@ export default function About() {
         style={{
           minHeight: "100vh",
           color: "#fff",
-          backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,20,0,0.95)), url(${img3})`,
+          // backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.95), rgba(0,20,0,0.95)), url(${img3})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
@@ -51,7 +51,7 @@ export default function About() {
                 fontFamily: "'Orbitron', sans-serif",
               }}
             >
-              Rahul Swami
+              Rk Swami
             </Title>
 
             <Divider
@@ -74,7 +74,7 @@ export default function About() {
                 fontFamily: "'Poppins', sans-serif",
               }}
             >
-              Creative Editor | Gamer | Development
+              Creative Editor↠Gamer↠Development
             </Text>
           </motion.div>
 
@@ -91,7 +91,7 @@ export default function About() {
               marginTop: "30px",
             }}
           >
-            <Image
+            {/* <Image
               src={img2}
               alt="Profile"
               radius="xl"
@@ -102,7 +102,7 @@ export default function About() {
                 borderRadius: "50%",
                 boxShadow: "0 0 70px rgba(48,255,6,0.9)",
               }}
-            />
+            /> */}
           </motion.div>
 
           {/* Intro Card */}
@@ -135,18 +135,19 @@ export default function About() {
               >
                 👋 <strong>Hi</strong>, I’m{" "}
                 <span style={{ color: "#30ff06", fontWeight: "bold" }}>
-                  Rahul Swami
+                  {/* <strong>hii</strong> */}
+                  Rk Swami
                 </span>{" "}
                 –{" "}
                 <span style={{ color: "#30ff06" }}>Video & Photo Editor</span>,{" "}
-                <span style={{ color: "#30ff06" }}>Poster Designer</span>
+                <span style={{ color: "#30ff06" }}>Poster Designer...</span>{" "}
               </Text>
             </Card>
           </motion.div>
 
           {/* Skills Card (Edited) */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 40 }} 
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             viewport={{ once: true }}
@@ -170,14 +171,14 @@ export default function About() {
                   textShadow: "0px 0px 15px rgba(48,255,6,1)",
                 }}
               >
-               My all Skills
+               My  Skills
               </Title>
               <Group position="center" spacing="sm" style={{ flexWrap: "wrap" }}>
                 {[
                   "Editor",
                   "Gamer",
-                  "HTML",
-                  "CSS",
+                  "Html",
+                  "Css",
                   "JavaScript",
                   "ReactJS",
                   "Writer", 
@@ -185,6 +186,7 @@ export default function About() {
                   "Video Editor",
                   "Poster Designer",
                   "Frontend Dev",
+                  "basick coputer"
                 ].map((skill, i) => (
                   <Badge
                     key={i}
@@ -245,8 +247,8 @@ export default function About() {
                   color: "#eee",
                 }}
               >
-                <strong>Rahul</strong> hoon, ek{" "}
-                <strong>Photo Editor, Video Editor & Poster Designer</strong> – Sirsa me based.
+                <strong>Rk</strong>Swami{" "}
+                <strong>Photo Editor, Video Editor & Poster Designer</strong> – Sirsa me based...
               </Text>
               <Text
                 mt="md"
@@ -309,6 +311,47 @@ export default function About() {
             </Card>
           </motion.div>
         </Stack>
+         <Card
+         shadow="xl"
+              padding="lg"
+              radius="xl"
+              style={{
+                background: "rgba(0,0,0,0.85)",
+                // border: "1px solid rgba(48,255,6,0.7)",
+                backdropFilter: "blur(15px)",
+                // boxShadow: "0 0 30px rgba(48,255,6,0.6)",
+                textAlign: "center",
+                display: "flex",
+                margin:"15px"
+
+              }}
+              >     
+              <br />
+              
+           <Image
+              src={img4}
+              alt="Profile"
+              radius="xl"
+              style={{
+                width: "220px",
+                height: "220px",
+                // border: "4px solid #30ff06",
+                borderRadius: "50%",
+                // boxShadow: "0 0 70px rgba(48,255,6,0.9)",
+              }}
+            />  
+          <Text style={{color:"gray",fontWeight:"900",fontSize:"xl",fontSize:"10px"}}> <h3 style={{color:"blue"}}>Hii,</h3> <br/>
+               I ma Rk swami, <br />
+              Editor Skill in Cult Music poduction,Multi Genre Producer,Nohar , Editor working in 2 year. ? <br />
+              Software Development  in (Ks junction Sirsa) Frontend Developer ? <br />
+
+              <h2 style={{color:"blue"}}>Thanks...</h2> 
+
+            
+              
+
+              </Text>
+            </Card>
       </Container>
     </div>
   );

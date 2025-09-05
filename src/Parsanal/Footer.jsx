@@ -1,162 +1,139 @@
-import React from "react";
 import {
+  Box,
   Container,
-  Text,
+  Flex,
   Group,
+  Stack,
+  Text,
+  Title,
   Anchor,
   Divider,
-  Stack,
-  Box,
+  ActionIcon,
 } from "@mantine/core";
 import {
-  IconBrandYoutube,
   IconBrandFacebook,
+  IconBrandYoutube,
   IconBrandInstagram,
 } from "@tabler/icons-react";
 
-export default function HackerFooter() {
+export default function Footer() {
   return (
     <Box
-    component="footer"
-    style={{
-      background: "black",
-      minHeight: "65vh",
-      padding: "50px 20px",
-      color: "#00ff00",
-      fontFamily: "monospace",
-      position: "relative",
-      overflow: "hidden",
-      borderTop: "2px solid #00ff00",
-    }}
+      py="xl"
+      mt="xl"
+      style={{
+        background: "linear-gradient(135deg, #232222ff, #00bfffff, #0d81a8ff)",
+      }}
     >
-      
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.98)), url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif')",
-          backgroundSize: "cover",
-          opacity: 0.25,
-          zIndex: 0,
-          filter: "blur(1px)",
-        }}
-      />
-      
-      
-       
+      <Container size="lg">
+        
+        <Flex
+          direction={{ base: "column", sm: "row" }}
+          justify="space-between"
+          gap="xl"
+          wrap="wrap"
+        >
+         
+          <Box w={{ base: "100%", sm: "40%" }}>
+            <Title order={3} c="white" mb="sm" style={{ fontWeight: "700" }}>
+            Editor Skill↠↠Video,Image,Poater Editor,||  Editor working in 2 year. ? <br />
 
-
-      <Container style={{ position: "relative", zIndex: 2 }}>
-        <Stack align="center" spacing="lg">
-          {/* Hacker Title */}
-          <Text
-            size="2.2rem"
-            fw={900}
-            style={{
-              color: "#00ff00",
-              textShadow: "0 0 25px #00ff00, 0 0 50px #00ff00",
-              letterSpacing: "4px",
-              animation: "flicker 2s infinite",
-            }}
-          >
-            [ Rk Swami]
-          </Text>
-
-          <Group spacing="xl">
-            {["About","Motavison",'jai shree shyam ji'].map((link, i) => (
+            </Title>
+            <Text size="sm" c="gray.3" style={{ lineHeight: 1.6 }}>
+               Software Development  in (Ks junction Sirsa)  Developer ? 
+              <br /> <br />
+              👨‍💻 Developer↠{" "}
+              <strong style={{ color: "rgba(0, 195, 255, 1)", fontWeight:"900" }}>Rahul Swami</strong>
+            </Text>
+          </Box>
+ 
+          
+          <Stack spacing="xs">
+          
+            {[
+           
+            ].map((item) => (
               <Anchor
-                key={i}
-                href={"#" + link.toLowerCase()}
+                key={item.label}
+                href={item.link}
+                size="sm"
+                c="gray.2"
                 style={{
-                  color: "#00ff00",
-                  textDecoration: "none",
-                  fontWeight: "bold",
                   transition: "0.3s",
-                  fontSize: "1rem",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.textShadow =
-                    "0 0 20px #00ff00, 0 0 40px #00ff00")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.textShadow = "none")
-                }
+                onMouseEnter={(e) => (e.target.style.color = "#ffd369")}
+                onMouseLeave={(e) => (e.target.style.color = "#ccc")}
               >
-                {"> " + link}
+                {item.label}
               </Anchor>
             ))}
-          </Group>
+          </Stack> 
+          <Stack>
+             <Text style={{color:"white", fontWeight:"900"}}>Quick Links </Text>
+            <Text> <a href="#about" style={{color:"white", fontWeight:"700"}}>About</a> </Text> 
+          <Text> <a href="#motavison" style={{color:"white", fontWeight:"700"}}>Motavison</a></Text>
+          <Text> <a href="#" style={{color:"white", fontWeight:"700"}}>Home</a></Text></Stack>
+         
+          
+          <Stack spacing="xs">
 
-          <Divider my="md" color="green" style={{ width: "70%" }} />
-
-          {/* Contact Info */}
-          <Stack spacing="xs" align="center">
-            <Text> Contact +91-8290-400-325</Text>
-            <Text>Gmail = srk016361@Gmail.com</Text>
+            <Title order={5} c="white" mb="xs" fw={900}>
+              Contact
+            </Title>
+            <Text size="sm" c="white" fw="900">
+              📞 +91-8290-400-325
+            </Text>
+            <Text size="xxl" c="white" fw="900">  
+              📧 srk016361@.com
+            </Text>
+            <Group spacing="md" mt="sm">
+              <ActionIcon
+                size="lg"
+                radius="xl"
+                variant="filled"
+                color="blue"
+                component="a"
+                href="https://www.facebook.com/share/p/19WEkPssmd/"
+                target="_blank"
+                style={{ transition: "0.3s" }}
+              >
+                <IconBrandFacebook size={40} />
+              </ActionIcon>
+              <ActionIcon
+                size="lg"
+                radius="xl"
+                variant="filled"
+                color="red"
+                component="a"
+                href="https://youtube.com/@princpardhan7782?si=h71r0D50nU4aPtFd"
+                target="_blank"
+              >
+                <IconBrandYoutube size={25} />
+              </ActionIcon>
+              <ActionIcon
+                size="lg"
+                radius="xl"
+                variant="filled"
+                color="pink"
+                component="a"
+                href="https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg=="
+                target="_blank"
+              >
+                <IconBrandInstagram size={30} />
+              </ActionIcon>
+            </Group>
           </Stack>
+        </Flex>
 
-          {/* Social Links with Icons */}
-          <Group spacing="lg" mt="md">
-            <Anchor
-              href="https://youtube.com/@princpardhan7782"
-              target="_blank"
-              style={{ color: "#ff3333" }}
-             
-            >
-              <IconBrandYoutube size={28} style={{ filter: "drop-shadow(0 0 10px #ff3333)" }} />
-            </Anchor>
-             <Text>=</Text>
-            <Anchor
-              href="https://www.facebook.com/share/p/19WEkPssmd/"
-              target="_blank"
-              style={{ color: "#00aaff" }}
-            >
-              <IconBrandFacebook size={28} style={{ filter: "drop-shadow(0 0 10px #00aaff)" }} />
-            </Anchor>
-                 <Text>=</Text>
-            <Anchor
-              href="https://www.instagram.com/princ_pardhan_325"
-              target="_blank"
-              style={{ color: "#ff00ff" }}
-            >
-              <IconBrandInstagram size={28} style={{ filter: "drop-shadow(0 0 10px #ff00ff)" }} />
-            </Anchor>
-          </Group>  
-                 <Text>My ↟ Bussing ↟  link</Text>
-                 <Text style={{color:"blue"}}> Development and Edtior  </Text>
-       
-          <Text
-            size="sm"
-            style={{
-              opacity: 0.9,
-              marginTop: "25px",
-              textShadow: "0 0 12px #00ff00, 0 0 30px #00ff00",
-              fontSize: "0.9rem",
-            }}
-          >
-            © 2025 [Rahul Swami...]    ?
-          </Text>
-        </Stack>
+        {/* Divider */}
+        <Divider my="lg" color="gray.7" />
+
+        
+        <Text size="sm" ta="center" c="white" fw={900}>
+          © {new Date().getFullYear()} <strong style={{color:"white", fontWeight:"900"}}>Rahulswami.online</strong> 
+        
+        </Text>
       </Container>
-
-      
-      <style>
-        {`
-          @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-              opacity: 1;
-            }
-            20%, 24%, 55% {
-              opacity: 0.5;
-            }
-          }
-        `}
-      </style>
-      
     </Box>
   );
 }

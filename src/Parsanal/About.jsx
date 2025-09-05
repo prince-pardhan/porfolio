@@ -344,6 +344,7 @@ export default function About() {
                I ma Rk swami, <br />
               Editor Skill in Cult Music poduction,Multi Genre Producer,Nohar , Editor working in 2 year. ? <br />
               Software Development  in (Ks junction Sirsa) Frontend Developer ? <br />
+             {/* live location in Barnala rod DCB bank 1st flowr                */}
 
               <h2 style={{color:"blue"}}>Thanks...</h2> 
 

@@ -102,7 +102,7 @@ export default function About() {
                   textAlign: "center",
                 }}
               >
-                👋 <strong>Hi</strong>, I’m{" "}
+                 <strong>Hi</strong>, I’m{" "}
                 <span style={{ color: "#2a5298", fontWeight: "bold" }}>
                   Rk Swami
                 </span>{" "}
@@ -325,7 +325,7 @@ export default function About() {
   weight={700}
   style={{ color: "blue", marginTop: "15px" }}
 >
-  Hii 👋
+  Hii 
 </Text>
 
 <Text
@@ -346,7 +346,7 @@ export default function About() {
   weight={700}
   style={{ color: "blue", marginTop: "20px" }}
 >
-  Thanks 🙏
+  Thanks 
 </Text>
 
           

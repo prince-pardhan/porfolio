@@ -96,7 +96,7 @@ export default function ProfilePage() {
             lineHeight: 1.6,
           }}
         >
-          🌙 It Takes Time To Become Successful – And Time Is Money
+           It Takes Time To Become Successful – And Time Is Money
         </Text>
 
         {/* Buttons */}

@@ -1,240 +1,154 @@
-import React from 'react';
+import React from "react";
 import {
   Container,
   Text,
   Image,
-} from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
+  Card,
+  Group,
+  Button,
+} from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconPhoneCall, IconBrandWhatsapp } from "@tabler/icons-react";
 import img1 from "./images/image.png";
 import "../App.css";
-import About from './About';
-import Poirty from './Motavison';
-
+import About from "./About";
+import Poirty from "./Motavison";
 
 export default function ProfilePage() {
   const isMobile = useMediaQuery("(max-width: 780px)");
-  const [activeBtn, setActiveBtn] = React.useState(null);
-
-  const handleClick = (btn) => setActiveBtn(btn);
-
-  const getButtonStyle = (btn) => ({
-    background: activeBtn === btn
-      ? "linear-gradient(135deg, #00ffcc, #0066ff)"
-      : "rgba(0,0,0,0.6)",
-    color: "#0ff",
-    border: "1px solid rgba(0,255,200,0.6)",
-    padding: isMobile ? "12px" : "14px",
-    fontSize: isMobile ? "14px" : "16px",
-    fontWeight: "600",
-    borderRadius: "50%",
-    cursor: "pointer",
-    margin: "8px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    boxShadow: activeBtn === btn
-      ? "0 0 25px rgba(0, 26, 255, 1), 0 0 60px rgba(0, 255, 200, 0.7)"
-      : "0 4px 15px rgba(102, 0, 255, 0.2)",
-    transition: "all 0.4s ease",
-    transform: activeBtn === btn ? "scale(1.15)" : "scale(1)",
-    backdropFilter: "blur(12px)",
-  });
 
   return (
     <Container
       fluid
       style={{
-        minHeight: '100vh',
+        minHeight: "100vh",
         width: "100%",
-        padding: 20,
-        background: "black",
+        padding: isMobile ? "20px" : "60px",
+        background: "linear-gradient(135deg, #e0eafc, #cfdef3)", // soft gradient
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
-      <div className="matrix-bg"></div>
-
-      {/* Buttons */}
-      <div
+      {/* Profile Card */}
+      <Card
+        shadow="xl"
+        radius="lg"
+        padding="xl"
         style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "15px",
-          marginBottom: "40px",
-          padding: "18px 25px",
-          borderRadius: "30px",
-          zIndex: 2
+          maxWidth: "580px",
+          width: "100%",
+          background: "rgba(255, 255, 255, 0.85)",
+          border: "1px solid rgba(200,200,200,0.2)",
+          backdropFilter: "blur(20px)",
+          boxShadow: "0 12px 40px rgba(0,0,0,0.12)",
+          textAlign: "center",
+          transition: "all 0.3s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-10px) scale(1.02)";
+          e.currentTarget.style.boxShadow =
+            "0 18px 45px rgba(0,0,0,0.18)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0) scale(1)";
+          e.currentTarget.style.boxShadow =
+            "0 12px 40px rgba(0,0,0,0.12)";
         }}
       >
-        <button onClick={() => handleClick('about')} style={getButtonStyle('about')}>
-          <a href="#about" style={{ color: "inherit", textDecoration: "none" }}>
-            About
-          </a>
-        </button>
-
-        <button onClick={() => handleClick('poetry')} style={getButtonStyle('poetry')}>
-          <a href="#motavison" style={{ color: "inherit", textDecoration: "none" }}>
-            Poetry
-          </a>
-        </button>
-        
-
-       
-        <a href="https://wa.me/8290400325" target="_blank" rel="noopener noreferrer">
-          <button onClick={() => handleClick('whatsapp')} style={getButtonStyle('whatsapp')}>
-            <IconBrandWhatsapp size={22} color="#25D366" />
-          </button>
-        </a>
-
-        {/* Call Button */}
-        <a href="tel:+918290400325">
-          <button onClick={() => handleClick('call')} style={getButtonStyle('call')}>
-            <IconPhoneCall size={22} color="#00BFFF" />
-          </button>
-        </a>
-      </div>
-
-      {/* Profile Image */}
-      <div className="profile-wrapper">
+        {/* Profile Image */}
         <Image
           src={img1}
           alt="Profile"
           style={{
-            width: isMobile ? '150px' : '220px',
-            height: isMobile ? '150px' : '220px',
-            objectFit: 'cover',
-            borderRadius: '50%',
-            border: "4px solid #0ff",
-            boxShadow: "0 0 40px #0ff, 0 0 90px #00f",
-            zIndex: 2,
+            width: isMobile ? "130px" : "170px",
+            height: isMobile ? "130px" : "170px",
+            borderRadius: "50%",
+            objectFit: "cover",
+            border: "5px solid transparent",
+            background: "linear-gradient(135deg, #4facfe, #00f2fe) padding-box, white border-box",
+            margin: "0 auto",
           }}
-          className="profile-img"
         />
-      </div>
 
-      <Text
-        fw={900}
-        style={{
-          marginTop: "25px",
-          fontSize: isMobile ? "28px" : "46px",
-          background: "linear-gradient(90deg, #00ffcc, #00ffff, #33ff00)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          zIndex: 2,
-          animation: "glowText 2.5s infinite alternate",
-        }}
-      >
-        Rk Swami
-      </Text>
+        {/* Name */}
+        <Text
+          fw={800}
+          style={{
+            marginTop: "20px",
+            fontSize: isMobile ? "26px" : "36px",
+            background: "linear-gradient(90deg, #4facfe, #2a5298)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Rk Swami
+        </Text>
 
-      <Text
-        size={isMobile ? "sm" : "md"}
-        className="typing-text"
-        style={{
-          marginTop: "12px",
-          color: "#0f0",
-          fontStyle: "italic",
-          letterSpacing: "2px",
-          zIndex: 2,
-        }}
-      >
-        It Takes Time To Become Successful-And Time Is Money
-      </Text>
+        {/* Tagline */}
+        <Text
+          size={isMobile ? "sm" : "md"}
+          style={{
+            marginTop: "10px",
+            color: "#555",
+            fontStyle: "italic",
+            lineHeight: 1.6,
+          }}
+        >
+          🌙 It Takes Time To Become Successful – And Time Is Money
+        </Text>
 
-     
-      <div id="about">
+        {/* Buttons */}
+        <Group mt="xl" spacing="md" position="center">
+          <a href="#about" style={{ textDecoration: "none" }}>
+            <Button variant="gradient" gradient={{ from: "blue", to: "cyan" }} radius="xl">
+              About
+            </Button>
+          </a>
+
+          <a href="#motavison" style={{ textDecoration: "none" }}>
+            <Button variant="gradient" gradient={{ from: "indigo", to: "violet" }} radius="xl">
+              Poetry
+            </Button>
+          </a>
+
+          <a
+            href="https://wa.me/8290400325"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="outline"
+              radius="xl"
+              color="green"
+              leftIcon={<IconBrandWhatsapp size={18} />}
+            >
+              WhatsApp
+            </Button>
+          </a>
+
+          <a href="tel:+918290400325">
+            <Button
+              variant="outline"
+              radius="xl"
+              color="teal"
+              leftIcon={<IconPhoneCall size={18} />}
+            >
+              Call
+            </Button>
+          </a>
+        </Group>
+      </Card>
+
+      {/* Sections */}
+      <div id="about" style={{ marginTop: "60px", width: "100%" }}>
         <About />
       </div>
 
-      <div id="motavison">
+      <div id="motavison" style={{ marginTop: "60px", width: "100%" }}>
         <Poirty />
-      
       </div>
-
-      {/* Animations & Smooth Scroll */}
-      <style>
-        {`
-          html {
-            scroll-behavior: smooth;
-          }
-
-          @keyframes glowText {
-            to { text-shadow: 0 0 25px #0ff, 0 0 60px #0f0; }
-          }
-
-          .typing-text {
-            width: 0;
-            overflow: hidden;
-            border-right: 2px solid #0ff;
-            white-space: nowrap;
-            animation: typing 5s steps(30, end) infinite alternate,
-                       blink 0.7s infinite;
-          }
-
-          @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-          }
-          @keyframes blink {
-            50% { border-color: transparent }
-          }
-
-          .profile-wrapper {
-            position: relative;
-            display: inline-block;
-            z-index: 2;
-          }
-          .profile-wrapper::before {
-            content: "";
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: calc(100% + 30px);
-            height: calc(100% + 30px);
-            border-radius: 50%;
-            animation: rotateRing 6s linear infinite;
-            filter: blur(12px);
-            z-index: 0;
-          }
-          @keyframes rotateRing {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-
-          .matrix-bg {
-            position: absolute;
-            inset: 0;
-            background: black;
-            overflow: hidden;
-            z-index: 0;
-          }
-          .matrix-bg::before {
-            content: "01 010 101 0110 110 1001 01 110 001 0101 101 0100 11 0010";
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            font-size: 18px;
-            line-height: 22px;
-            color: #0f0;
-            white-space: pre;
-            animation: matrixScroll 10s linear infinite;
-            opacity: 0.5;
-          }
-          @keyframes matrixScroll {
-            from { top: -100%; }
-            to { top: 0%; }
-          }
-        `}
-      </style>
     </Container>
   );
 }
+  

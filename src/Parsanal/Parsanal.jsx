@@ -13,6 +13,7 @@ import img1 from "./images/image.png";
 import "../App.css";
 import About from "./About";
 import Poirty from "./Motavison";
+import LoginPage from "./Login";
 
 export default function ProfilePage() {
   const isMobile = useMediaQuery("(max-width: 780px)");
@@ -111,6 +112,11 @@ export default function ProfilePage() {
               Poetry
             </Button>
           </a>
+          <a href="#login" style={{ textDecoration: "none" }}>
+            <Button variant="gradient" gradient={{ from: "indigo", to: "violet" }} radius="xl">
+              Login
+            </Button>
+          </a>
 
           <a
             href="https://wa.me/8290400325"
@@ -147,6 +153,9 @@ export default function ProfilePage() {
 
       <div id="motavison" style={{ marginTop: "60px", width: "100%" }}>
         <Poirty />
+      </div>
+      <div id="login" style={{ marginTop: "60px", width: "100%" }}>
+        <LoginPage />
       </div>
     </Container>
   );

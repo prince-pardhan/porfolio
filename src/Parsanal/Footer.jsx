@@ -14,6 +14,8 @@ import {
   IconBrandFacebook,
   IconBrandYoutube,
   IconBrandInstagram,
+  IconPhoneCall,
+  IconMail,
 } from "@tabler/icons-react";
 
 export default function Footer() {
@@ -22,70 +24,93 @@ export default function Footer() {
       py="xl"
       mt="xl"
       style={{
-        background: "linear-gradient(135deg, #232222ff, #00bfffff, #0d81a8ff)",
+        background:
+          "linear-gradient(135deg, rgba(20,20,20,0.95), rgba(0,191,255,0.9), rgba(13,129,168,0.9))",
+        backdropFilter: "blur(10px)",
       }}
     >
       <Container size="lg">
-        
+        {/* Main Layout */}
         <Flex
           direction={{ base: "column", sm: "row" }}
           justify="space-between"
           gap="xl"
           wrap="wrap"
         >
-         
+          {/* About / Editor Info */}
           <Box w={{ base: "100%", sm: "40%" }}>
-            <Title order={3} c="white" mb="sm" style={{ fontWeight: "700" }}>
-            Editor Skill↠↠Video,Image,Poater Editor,||  Editor working in 2 year. ? <br />
-
+            <Title
+              order={3}
+              c="white"
+              mb="sm"
+              style={{ fontWeight: "700", fontSize: "1.4rem" }}
+            >
+              Editor Skills
             </Title>
             <Text size="sm" c="gray.3" style={{ lineHeight: 1.6 }}>
-               Software Development  in (Ks junction Sirsa)  Developer ? 
-              <br /> <br />
-              👨‍💻 Developer↠{" "}
-              <strong style={{ color: "rgba(0, 195, 255, 1)", fontWeight:"900" }}>Rahul Swami</strong>
+              🎬 Video, Image, Poster Editing <br />
+              💼 2+ years of editing experience <br />
+              👨‍💻 Software Development @{" "}
+              <strong
+                style={{ color: "#00c3ff", fontWeight: "900" }}
+              >
+                KS Junction Sirsa
+              </strong>
+              <br />
+              🚀 Developer:{" "}
+              <strong
+                style={{ color: "#ffd369", fontWeight: "900" }}
+              >
+                Rahul Swami
+              </strong>
             </Text>
           </Box>
- 
-          
+
+          {/* Quick Links */}
           <Stack spacing="xs">
-          
+            <Title order={5} c="white" mb="xs" fw={700}>
+              Quick Links
+            </Title>
             {[
-           
-            ].map((item) => (
+              { label: "Home", link: "#" },
+              { label: "About", link: "#about" },
+              { label: "Motavison", link: "#motavison" },
+            ].map((item, idx) => (
               <Anchor
-                key={item.label}
+                key={idx}
                 href={item.link}
                 size="sm"
                 c="gray.2"
                 style={{
+                  fontWeight: 600,
                   transition: "0.3s",
                 }}
-                onMouseEnter={(e) => (e.target.style.color = "#ffd369")}
-                onMouseLeave={(e) => (e.target.style.color = "#ccc")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#ffd369")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#ccc")}
               >
                 {item.label}
               </Anchor>
             ))}
-          </Stack> 
-          <Stack>
-             <Text style={{color:"white", fontWeight:"900"}}>Quick Links </Text>
-            <Text> <a href="#about" style={{color:"white", fontWeight:"700"}}>About</a> </Text> 
-          <Text> <a href="#motavison" style={{color:"white", fontWeight:"700"}}>Motavison</a></Text>
-          <Text> <a href="#" style={{color:"white", fontWeight:"700"}}>Home</a></Text></Stack>
-         
-          
-          <Stack spacing="xs">
+          </Stack>
 
-            <Title order={5} c="white" mb="xs" fw={900}>
+          {/* Contact */}
+          <Stack spacing="xs">
+            <Title order={5} c="white" mb="xs" fw={700}>
               Contact
             </Title>
-            <Text size="sm" c="white" fw="900">
-              📞 +91-8290-400-325
-            </Text>
-            <Text size="xxl" c="white" fw="900">  
-              📧 srk016361@.com
-            </Text>
+            <Group spacing="xs">
+              <IconPhoneCall size={18} color="#ffd369" />
+              <Text size="sm" c="white" fw="600">
+                +91-8290-400-325
+              </Text>
+            </Group>
+            <Group spacing="xs">
+              <IconMail size={18} color="#ffd369" />
+              <Text size="sm" c="white" fw="600">
+                srk016361@.com
+              </Text>
+            </Group>
+            {/* Social Icons */}
             <Group spacing="md" mt="sm">
               <ActionIcon
                 size="lg"
@@ -97,7 +122,7 @@ export default function Footer() {
                 target="_blank"
                 style={{ transition: "0.3s" }}
               >
-                <IconBrandFacebook size={40} />
+                <IconBrandFacebook size={22} />
               </ActionIcon>
               <ActionIcon
                 size="lg"
@@ -108,7 +133,7 @@ export default function Footer() {
                 href="https://youtube.com/@princpardhan7782?si=h71r0D50nU4aPtFd"
                 target="_blank"
               >
-                <IconBrandYoutube size={25} />
+                <IconBrandYoutube size={22} />
               </ActionIcon>
               <ActionIcon
                 size="lg"
@@ -119,7 +144,7 @@ export default function Footer() {
                 href="https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg=="
                 target="_blank"
               >
-                <IconBrandInstagram size={30} />
+                <IconBrandInstagram size={22} />
               </ActionIcon>
             </Group>
           </Stack>
@@ -128,10 +153,11 @@ export default function Footer() {
         {/* Divider */}
         <Divider my="lg" color="gray.7" />
 
-        
-        <Text size="sm" ta="center" c="white" fw={900}>
-          © {new Date().getFullYear()} <strong style={{color:"white", fontWeight:"900"}}>Rahulswami.online</strong> 
-        
+        {/* Bottom Copyright */}
+        <Text size="sm" ta="center" c="white" fw={700}>
+          © {new Date().getFullYear()}{" "}
+          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong> | All
+          Rights Reserved
         </Text>
       </Container>
     </Box>

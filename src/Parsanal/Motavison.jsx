@@ -20,21 +20,26 @@ export default function Poirty() {
         style={{
           minHeight: "100vh",
           width: "100%",
-          backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245,245,245,0.95)), url(${img3})`,
+          backgroundImage: ` url(${img3})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "60px 0",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {/* Title Section */}
-        <div style={{ textAlign: "center", marginBottom: "40px" }}>
+        <div style={{ textAlign: "center", marginBottom: "50px" }}>
           <Title
-            order={2}
+            order={1}
             style={{
-              color: "#2a5298",
-              fontSize: "2.8rem",
-              fontWeight: "800",
-              letterSpacing: "1px",
+              color: "#fff",
+              fontSize: "3.2rem",
+              fontWeight: "900",
+              letterSpacing: "2px",
+              textShadow: "2px 4px 6px rgba(0,0,0,0.3)",
             }}
           >
             Rahul Swami
@@ -43,49 +48,53 @@ export default function Poirty() {
             size="lg"
             fw={500}
             style={{
-              color: "#555",
-              marginTop: "8px",
+              color: "#e0e0e0",
+              marginTop: "10px",
               fontStyle: "italic",
+              fontSize: "1.2rem",
             }}
           >
-            
+            Turning vision into strategy
           </Text>
         </div>
 
         {/* Quotes Section */}
-        <Flex direction="column" gap="lg" align="center">
+        <Flex direction="column" gap="lg" align="center" style={{ width: "100%" }}>
           {quotes.map((q, i) => (
             <Card
               key={i}
-              shadow="sm"
+              shadow="lg"
               padding="xl"
-              radius="md"
-              withBorder
+              radius="lg"
               style={{
-                width: "70%",
-                background: "#fff",
-                border: "1px solid #e0e0e0",
+                width: "75%",
+                background: "rgba(255, 255, 255, 0.2)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                backdropFilter: "blur(10px)",
                 transition: "all 0.3s ease",
+                cursor: "pointer",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform =
-                  "translateY(-5px) scale(1.02)";
+                  "translateY(-8px) scale(1.03)";
                 e.currentTarget.style.boxShadow =
-                  "0 8px 20px rgba(0,0,0,0.1)";
+                  "0 12px 25px rgba(0,0,0,0.25)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
                 e.currentTarget.style.boxShadow =
-                  "0 2px 10px rgba(0,0,0,0.05)";
+                  "0 4px 12px rgba(0,0,0,0.1)";
               }}
             >
               <Text
                 size="lg"
                 style={{
                   lineHeight: 1.8,
-                  fontWeight: "500",
-                  color: "#333",
+                  fontWeight: "600",
+                  color: "#fff",
                   textAlign: "center",
+                  fontSize: "1.2rem",
+                  textShadow: "1px 2px 4px rgba(0,0,0,0.3)",
                 }}
               >
                 {q}

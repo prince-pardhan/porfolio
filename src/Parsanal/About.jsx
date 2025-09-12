@@ -6,351 +6,239 @@ import {
   Image,
   Stack,
   Card,
-  Group,
-  Divider,
-  Button,
-  Badge,
 } from "@mantine/core";
 import { motion } from "framer-motion";
-import { IconBrandWhatsapp, IconPhoneCall } from "@tabler/icons-react";
-import img2 from "./images/2873617d72b26362d1e6a626efceeac8.jpg";
-import img3 from "./images/background-ai_094202459.png";
+import {
+  IconBrandHtml5,
+  IconBrandCss3,
+  IconBrandJavascript,
+  IconBrandReact,
+  IconDeviceGamepad2,
+  IconPencil,
+  IconCamera,
+  IconVideo,
+  IconPaint,
+  IconCode,
+  IconDeviceDesktop,
+} from "@tabler/icons-react";
 import img4 from "./images/self-pic.jpeg";
 
 export default function About() {
+  const skills = [
+    { name: "Editor", icon: <IconPencil size={20} /> },
+    { name: "Gamer", icon: <IconDeviceGamepad2 size={20} /> },
+    { name: "HTML", icon: <IconBrandHtml5 size={20} color="#E44D26" /> },
+    { name: "CSS", icon: <IconBrandCss3 size={20} color="#1572B6" /> },
+    { name: "JavaScript", icon: <IconBrandJavascript size={20} color="#F7DF1E" /> },
+    { name: "ReactJS", icon: <IconBrandReact size={20} color="#61DBFB" /> },
+    { name: "Writer", icon: <IconPencil size={20} /> },
+    { name: "Photo Editor", icon: <IconCamera size={20} /> },
+    { name: "Video Editor", icon: <IconVideo size={20} /> },
+    { name: "Poster Designer", icon: <IconPaint size={20} /> },
+    { name: "Frontend Dev", icon: <IconCode size={20} /> },
+    { name: "Basic Computer", icon: <IconDeviceDesktop size={20} /> },
+  ];
+
   return (
     <div id="about">
       <Container
         size="lg"
-        p="xl"
+        py="xl"
         style={{
           minHeight: "100vh",
           color: "#fff",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "relative",
+          background: "linear-gradient(135deg,#141E30,#243B55)",
+          borderRadius: "20px",
+          padding: "60px 30px",
         }}
       >
-        <Stack spacing="xl" style={{ width: "100%" }}>
-          {/* Name Section */}
+        {/* Local CSS */}
+        <style>{`
+          .skills-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            align-items: stretch;
+          }
+
+          .skill-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 600;
+            padding: 16px 18px;
+            border-radius: 16px;
+            font-size: 1rem;
+            color: #fff;
+            cursor: default;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid transparent;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+            transition: transform 250ms ease, box-shadow 250ms ease, border 300ms ease;
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .skill-badge::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, #ffb703, #ff4800, #ffb703);
+            -webkit-mask: 
+              linear-gradient(#fff 0 0) content-box, 
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+          }
+
+          .skill-badge:hover::before {
+            opacity: 1;
+          }
+
+          .skill-badge:hover {
+            transform: translateY(-8px) scale(1.06);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+          }
+
+          .skill-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+          }
+        `}</style>
+
+        <Stack spacing="xl" align="center">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: -40 }}
+            initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 0.9 }}
             viewport={{ once: true }}
             style={{ textAlign: "center" }}
           >
-            <Title
-              order={1}
-              style={{
-                color: "#2a5298",
-                fontSize: "3.8rem",
-                fontWeight: 900,
-                letterSpacing: "4px",
-                fontFamily: "'Poppins', sans-serif",
-              }}
-            >
+            <Text size="lg" style={{ color: "#e0e0e0", fontSize: "1.05rem" }}>
               Rk Swami
-            </Title>
-
-            <Divider
-              my="sm"
-              style={{
-                borderColor: "#2a5298",
-                width: "150px",
-                margin: "14px auto",
-                borderWidth: "3px",
-              }}
-            />
-
-            <Text
-              size="lg"
-              style={{
-                color: "#666",
-                fontSize: "1.3rem",
-                letterSpacing: "1px",
-                fontFamily: "'Poppins', sans-serif",
-              }}
-            >
-              Creative Editor ↠ Gamer ↠ Development
             </Text>
           </motion.div>
 
-          {/* Intro Card */}
+          {/* Profile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.1 }}
+            viewport={{ once: true }}
+            style={{ textAlign: "center" }}
+          >
+            <Image
+              src={img4}
+              alt="Profile"
+              radius="xl"
+              style={{
+                width: "240px",
+                height: "240px",
+                borderRadius: "50%",
+                margin: "auto",
+                objectFit: "cover",
+                border: "5px solid #ffb703",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
+              }}
+            />
+            <Text mt="md" size="xl" weight={700} style={{ color: "#fff" }}>
+              Rk Swami
+            </Text>
+            <Text size="sm" style={{ color: "#ccc" }}>
+              Editor • Poster Designer • Frontend Dev
+            </Text>
+          </motion.div>
+
+          {/* Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15 }}
+            viewport={{ once: true }}
+            style={{ width: "100%", maxWidth: 760 }}
+          >
+            <Card
+              shadow="md"
+              padding="lg"
+              radius="xl"
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                backdropFilter: "blur(10px)",
+                textAlign: "center",
+              }}
+            >
+              <Text size="md" style={{ lineHeight: 1.8, color: "#eee" }}>
+                Hi, I’m{" "}
+                <span style={{ color: "#fff", fontWeight: "700" }}>Rk Swami</span>
+                <br />
+                Skilled in <span style={{ color: "#ffb703" }}>Video & Photo Editing</span>,{" "}
+                <span style={{ color: "#ffb703" }}>Poster Designing</span>, and{" "}
+                <span style={{ color: "#ffb703" }}>Frontend Development</span>.
+                <br />
+                <br />
+                With <strong style={{ color: "#ffb703" }}>2 years of experience</strong>,
+                I’ve worked in <span style={{ color: "#fff", fontWeight: "700" }}>Cult Music Production</span>{" "}
+                & <span style={{ color: "#fff", fontWeight: "700" }}>Ks Junction Sirsa</span>.
+              </Text>
+            </Card>
+          </motion.div>
+
+          {/* Skills */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.9, delay: 0.25 }}
             viewport={{ once: true }}
+            style={{ width: "100%", maxWidth: 900 }}
           >
             <Card
               shadow="md"
               padding="lg"
               radius="xl"
               style={{
-                background: "rgba(255, 255, 255, 0.08)",
-                backdropFilter: "blur(15px)",
-                border: "1px solid rgba(255,255,255,0.15)",
-              }}
-            >
-              <Text
-                size="md"
-                style={{
-                  lineHeight: 1.9,
-                  fontSize: "1.2rem",
-                  color: "#eee",
-                  textAlign: "center",
-                }}
-              >
-                 <strong>Hi</strong>, I’m{" "}
-                <span style={{ color: "#2a5298", fontWeight: "bold" }}>
-                  Rk Swami
-                </span>{" "}
-                –{" "}
-                <span style={{ color: "#2a5298" }}>Video & Photo Editor</span>,{" "}
-                <span style={{ color: "#2a5298" }}>Poster Designer...</span>
-              </Text>
-            </Card>
-          </motion.div>
-
-          {/* Skills Card (Updated Design) */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <Card
-              shadow="md"
-              padding="lg"
-              radius="xl"
-              style={{
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.15)",
-                backdropFilter: "blur(12px)",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                backdropFilter: "blur(10px)",
                 textAlign: "center",
               }}
             >
-              <Title
-                order={3}
-                style={{
-                  color: "#2a5298",
-                  marginBottom: "20px",
-                  fontWeight: 700,
-                }}
-              >
+              <Title order={3} style={{ color: "#ffb703", marginBottom: 18 }}>
                 My Skills
               </Title>
 
-              <Group position="center" spacing="md" style={{ flexWrap: "wrap" }}>
-                {[
-                  "Editor",
-                  "Gamer",
-                  "HTML",
-                  "CSS",
-                  "JavaScript",
-                  "ReactJS",
-                  "Writer",
-                  "Photo Editor",
-                  "Video Editor",
-                  "Poster Designer",
-                  "Frontend Dev",
-                  "Basic Computer",
-                ].map((skill, i) => (
-                  <Badge
-                    key={i}
-                    size="lg"
-                    variant="light"
-                    style={{
-                      background: "#fff",
-                      color: "#2a5298",
-                      fontSize: "0.95rem",
-                      fontWeight: 600,
-                      padding: "10px 18px",
-                      borderRadius: "20px",
-                      boxShadow: "0 3px 8px rgba(0,0,0,0.1)",
-                      transition: "all 0.3s ease",
-                      cursor: "default",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.08)";
-                      e.currentTarget.style.background = "#2a5298";
-                      e.currentTarget.style.color = "#fff";
-                      e.currentTarget.style.boxShadow =
-                        "0 5px 15px rgba(42,82,152,0.4)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.background = "#fff";
-                      e.currentTarget.style.color = "#2a5298";
-                      e.currentTarget.style.boxShadow =
-                        "0 3px 8px rgba(0,0,0,0.1)";
-                    }}
+              <div className="skills-grid">
+                {skills.map((s, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="skill-badge"
+                    title={s.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    viewport={{ once: true }}
                   >
-                    {skill}
-                  </Badge>
+                    <span className="skill-icon">{s.icon}</span>
+                    <span>{s.name}</span>
+                  </motion.div>
                 ))}
-              </Group>
-            </Card>
-          </motion.div>
-
-          {/* Details Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Card
-              shadow="md"
-              padding="lg"
-              radius="xl"
-              style={{
-                background: "rgba(0,0,0,0.75)",
-                border: "1px solid rgba(255,255,255,0.15)",
-                backdropFilter: "blur(15px)",
-                textAlign: "center",
-              }}
-            >
-              <Title
-                order={3}
-                style={{
-                  color: "#2a5298",
-                  fontWeight: 700,
-                }}
-              >
-                My Details
-              </Title>
-              <Text
-                size="sm"
-                style={{
-                  marginTop: "10px",
-                  lineHeight: 1.9,
-                  fontSize: "1.1rem",
-                  color: "#ddd",
-                }}
-              >
-                <strong>Rk Swami</strong> – Photo Editor, Video Editor &
-                Poster Designer based in Sirsa...
-              </Text>
-              <Text
-                mt="md"
-                style={{
-                  color: "#2a5298",
-                  fontWeight: "bold",
-                  fontSize: "1.3rem",
-                }}
-              >
-                Thanks
-              </Text>
-              <Group position="center" mt="lg" spacing="lg">
-                <Button
-                  component="a"
-                  href="https://wa.me/918290400325"
-                  target="_blank"
-                  radius="xl"
-                  size="lg"
-                  leftIcon={
-                    <IconBrandWhatsapp size={28} color="#25D366" stroke={2} />
-                  }
-                  styles={{
-                    root: {
-                      backgroundColor: "#fff",
-                      border: "2px solid #25D366",
-                      color: "#25D366",
-                      fontWeight: "bold",
-                      padding: "14px 30px",
-                      transition: "all 0.3s ease",
-                    },
-                  }}
-                >
-                  WhatsApp
-                </Button>
-
-                <Button
-                  component="a"
-                  href="tel:+918290400325"
-                  radius="xl"
-                  size="lg"
-                  leftIcon={
-                    <IconPhoneCall size={26} color="#1DA1F2" stroke={2} />
-                  }
-                  styles={{
-                    root: {
-                      backgroundColor: "#fff",
-                      border: "2px solid #1DA1F2",
-                      color: "#1DA1F2",
-                      fontWeight: "bold",
-                      padding: "14px 30px",
-                      transition: "all 0.3s ease",
-                    },
-                  }}
-                >
-                  Call Now
-                </Button>
-              </Group>
+              </div>
             </Card>
           </motion.div>
         </Stack>
-
-        {/* Extra Profile Card */}
-        <Card
-          shadow="md"
-          padding="lg"
-          radius="xl"
-          style={{
-            background: "rgba(0,0,0,0.7)",
-            backdropFilter: "blur(15px)",
-            textAlign: "center",
-            display: "flex",
-            margin: "15px",
-          }}
-        >
-          <br />
-         <Image
-  src={img4}
-  alt="Profile"
-  radius="xl"
-  style={{
-    width: "220px",
-    height: "220px",
-    borderRadius: "50%",
-    margin: "auto",
-  }}
-/>
-
-<Text
-  align="center"
-  size="xl"
-  weight={700}
-  style={{ color: "blue", marginTop: "15px" }}
->
-  Hii 
-</Text>
-
-<Text
-  align="center"
-  size="lg"
-  weight={600}
-  style={{ marginTop: "10px", color: "#ffffffff", lineHeight: 1.6 }}
->
-  I am Rk Swami,  
-  Editor Skill in Cult Music Production, Multi Genre Producer, Nohar,  
-  working since 2 years.  
-  Software Development in (Ks Junction Sirsa) as Frontend Developer.
-</Text>
-
-<Text
-  align="center"
-  size="lg"
-  weight={700}
-  style={{ color: "blue", marginTop: "20px" }}
->
-  Thanks 
-</Text>
-
-          
-        </Card>
       </Container>
     </div>
   );

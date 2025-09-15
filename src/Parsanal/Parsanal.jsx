@@ -26,7 +26,7 @@ export default function ProfilePage() {
         minHeight: "100vh",
         width: "100%",
         padding: isMobile ? "20px" : "60px",
-        background: "linear-gradient(135deg, #1e3c72, #2a5298, #4facfe)",
+        // background: "linear-gradient(135deg, #1e3c72, #2a5298, #4facfe)",
         backgroundSize: "400% 400%",
         animation: "gradientBG 12s ease infinite",
         display: "flex",
@@ -133,7 +133,6 @@ export default function ProfilePage() {
             size={isMobile ? "sm" : "md"}
             style={{
               marginTop: "12px",
-              color: "#eee",
               fontStyle: "italic",
               lineHeight: 1.6,
               position: "relative",

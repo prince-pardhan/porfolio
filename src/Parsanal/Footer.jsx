@@ -50,14 +50,9 @@ export default function Footer() {
             <Text size="sm" c="gray.3" style={{ lineHeight: 1.6 }}>
               🎬 Video, Image, Poster Editing <br />
               💼 2+ years of editing experience <br />
-              👨‍💻 Software Development @{" "}
-              <strong
-                style={{ color: "#00c3ff", fontWeight: "900" }}
-              >
-                KS Junction Sirsa
-              </strong>
+             
               <br />
-              🚀 Developer:{" "}
+              
               <strong
                 style={{ color: "#ffd369", fontWeight: "900" }}
               >
@@ -156,8 +151,8 @@ export default function Footer() {
         {/* Bottom Copyright */}
         <Text size="sm" ta="center" c="white" fw={700}>
           © {new Date().getFullYear()}{" "}
-          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong> | All
-          Rights Reserved
+          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong> 
+        
         </Text>
       </Container>
     </Box>

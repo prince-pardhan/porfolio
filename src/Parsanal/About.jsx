@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Title,
@@ -6,6 +6,7 @@ import {
   Image,
   Stack,
   Card,
+  Button,
 } from "@mantine/core";
 import { motion } from "framer-motion";
 import {
@@ -24,6 +25,8 @@ import {
 import img4 from "./images/self-pic.jpeg";
 
 export default function About() {
+  const [showSkills, setShowSkills] = useState(false);
+
   const skills = [
     { name: "Editor", icon: <IconPencil size={20} /> },
     { name: "Gamer", icon: <IconDeviceGamepad2 size={20} /> },
@@ -116,6 +119,26 @@ export default function About() {
             border-radius: 50%;
             box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
           }
+
+          .custom-btn {
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 12px 28px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #1100ffff, #1100ffff);
+            color: #fff;
+            box-shadow: 0 6px 16px #1100ffff;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .custom-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 30px #1100ffff;
+          }
         `}</style>
 
         <Stack spacing="xl" align="center">
@@ -150,7 +173,7 @@ export default function About() {
                 borderRadius: "50%",
                 margin: "auto",
                 objectFit: "cover",
-                border: "5px solid #ffb703",
+                border: "5px solid #031cffff",
                 boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
               }}
             />
@@ -185,58 +208,68 @@ export default function About() {
                 Hi, I’m{" "}
                 <span style={{ color: "#fff", fontWeight: "700" }}>Rk Swami</span>
                 <br />
-                Skilled in <span style={{ color: "#ffb703" }}>Video & Photo Editing</span>,{" "}
-                <span style={{ color: "#ffb703" }}>Poster Designing</span>, and{" "}
-                <span style={{ color: "#ffb703" }}>Frontend Development</span>.
+                Skilled in <span style={{ color: "#18ff03ff" }}>Video & Photo Editing</span>,{" "}
+                <span style={{ color: "#10ff03ff" }}>Poster Designing</span>, and{" "}
+                <span style={{ color: "#25ff03ff" }}>Frontend Development</span>.
                 <br />
                 <br />
-                With <strong style={{ color: "#ffb703" }}>2 years of experience</strong>,
+                With <strong style={{ color: "#3aff03ff" }}>2 years of experience</strong>,
                 I’ve worked in <span style={{ color: "#fff", fontWeight: "700" }}>Cult Music Production</span>{" "}
                 & <span style={{ color: "#fff", fontWeight: "700" }}>Ks Junction Sirsa</span>.
               </Text>
             </Card>
           </motion.div>
 
-          {/* Skills */}
+          {/* Skills with Toggle */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.25 }}
             viewport={{ once: true }}
-            style={{ width: "100%", maxWidth: 900 }}
+            style={{ width: "100%", maxWidth: 900, textAlign: "center" }}
           >
-            <Card
-              shadow="md"
-              padding="lg"
-              radius="xl"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                backdropFilter: "blur(10px)",
-                textAlign: "center",
-              }}
+            <button
+              className="custom-btn"
+              onClick={() => setShowSkills(!showSkills)}
+              style={{ marginBottom: "20px" }}
             >
-              <Title order={3} style={{ color: "#ffb703", marginBottom: 18 }}>
-                My Skills
-              </Title>
+              {showSkills ? " close Skills " : " Open Skills"}
+            </button>
 
-              <div className="skills-grid">
-                {skills.map((s, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="skill-badge"
-                    title={s.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    viewport={{ once: true }}
-                  >
-                    <span className="skill-icon">{s.icon}</span>
-                    <span>{s.name}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </Card>
+            {showSkills && (
+              <Card
+                shadow="md"
+                padding="lg"
+                radius="xl"
+                style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  backdropFilter: "blur(10px)",
+                  textAlign: "center",
+                }}
+              >
+                <Title order={4} style={{ color: "#031cffff", marginBottom: 18 }}>
+                  My Skills
+                </Title>
+
+                <div className="skills-grid">
+                  {skills.map((s, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="skill-badge"
+                      title={s.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.2, delay: idx * 0.05 }}
+                      viewport={{ once: true }}
+                    >
+                      <span className="skill-icon">{s.icon}</span>
+                      <span>{s.name}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </Card>
+            )}
           </motion.div>
         </Stack>
       </Container>

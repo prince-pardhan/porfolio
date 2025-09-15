@@ -5,7 +5,7 @@ import {
   Title,
   Flex,
 } from "@mantine/core";
-import img3 from "./images/background-ai_094202459.png";
+import img3 from "./images/design.png";
 
 export default function Poirty() {
   const quotes = [
@@ -42,7 +42,7 @@ export default function Poirty() {
               textShadow: "2px 4px 6px rgba(0,0,0,0.3)",
             }}
           >
-            Rahul Swami
+            {/* Motavison Poirty */}
           </Title>
           <Text
             size="lg"
@@ -54,7 +54,6 @@ export default function Poirty() {
               fontSize: "1.2rem",
             }}
           >
-            Turning vision into strategy
           </Text>
         </div>
 

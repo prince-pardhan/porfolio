@@ -179,8 +179,7 @@ export default function Footer() {
           style={{ letterSpacing: "0.5px" }}
         >
           © {new Date().getFullYear()}{" "}
-          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong> | All
-          Rights Reserved 🚀
+          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong>
         </Text>
       </Container>
     </Box>

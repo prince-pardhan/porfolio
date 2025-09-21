@@ -197,7 +197,7 @@ export default function About() {
                 </Title>
                 <div className="skills-grid">
                   {skills.map((s, idx) => (
-                    <motion.div 
+                    <motion.div style={{color:"white"}}
                       key={idx}
                       className="skill-badge"
                       title={s.name}

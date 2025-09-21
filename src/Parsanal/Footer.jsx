@@ -25,8 +25,9 @@ export default function Footer() {
       mt="xl"
       style={{
         background:
-          "linear-gradient(135deg, rgba(20,20,20,0.95), rgba(0,191,255,0.9), rgba(13,129,168,0.9))",
-        backdropFilter: "blur(10px)",
+          "linear-gradient(135deg, #0f2027, #203a43, #2c5364)", // Dark modern gradient
+        borderTop: "3px solid #00c3ff",
+        boxShadow: "0 -4px 20px rgba(0,0,0,0.3)",
       }}
     >
       <Container size="lg">
@@ -43,18 +44,24 @@ export default function Footer() {
               order={3}
               c="white"
               mb="sm"
-              style={{ fontWeight: "700", fontSize: "1.4rem" }}
+              style={{
+                fontWeight: "800",
+                fontSize: "1.6rem",
+                letterSpacing: "1px",
+              }}
             >
               Editor Skills
             </Title>
-            <Text size="sm" c="gray.3" style={{ lineHeight: 1.6 }}>
+            <Text size="sm" c="gray.3" style={{ lineHeight: 1.8 }}>
               🎬 Video, Image, Poster Editing <br />
               💼 2+ years of editing experience <br />
-             
               <br />
-              
               <strong
-                style={{ color: "#ffd369", fontWeight: "900" }}
+                style={{
+                  color: "#ffd369",
+                  fontWeight: "900",
+                  fontSize: "1.1rem",
+                }}
               >
                 Rahul Swami
               </strong>
@@ -67,9 +74,9 @@ export default function Footer() {
               Quick Links
             </Title>
             {[
-              { label: "Home", link: "#" },
-              { label: "About", link: "#about" },
-              { label: "Motavison", link: "#motavison" },
+              { label: "🏠 Home", link: "#" },
+              { label: "ℹ️ About", link: "#about" },
+              { label: "✨ Motivation", link: "#motavison" },
             ].map((item, idx) => (
               <Anchor
                 key={idx}
@@ -80,8 +87,12 @@ export default function Footer() {
                   fontWeight: 600,
                   transition: "0.3s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#ffd369")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#ccc")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "#00c3ff")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "#ccc")
+                }
               >
                 {item.label}
               </Anchor>
@@ -94,13 +105,13 @@ export default function Footer() {
               Contact
             </Title>
             <Group spacing="xs">
-              <IconPhoneCall size={18} color="#ffd369" />
+              <IconPhoneCall size={18} color="#00c3ff" />
               <Text size="sm" c="white" fw="600">
                 +91-8290-400-325
               </Text>
             </Group>
             <Group spacing="xs">
-              <IconMail size={18} color="#ffd369" />
+              <IconMail size={18} color="#00c3ff" />
               <Text size="sm" c="white" fw="600">
                 srk016361@.com
               </Text>
@@ -115,7 +126,10 @@ export default function Footer() {
                 component="a"
                 href="https://www.facebook.com/share/p/19WEkPssmd/"
                 target="_blank"
-                style={{ transition: "0.3s" }}
+                style={{
+                  transition: "0.3s",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                }}
               >
                 <IconBrandFacebook size={22} />
               </ActionIcon>
@@ -127,6 +141,10 @@ export default function Footer() {
                 component="a"
                 href="https://youtube.com/@princpardhan7782?si=h71r0D50nU4aPtFd"
                 target="_blank"
+                style={{
+                  transition: "0.3s",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                }}
               >
                 <IconBrandYoutube size={22} />
               </ActionIcon>
@@ -138,6 +156,10 @@ export default function Footer() {
                 component="a"
                 href="https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg=="
                 target="_blank"
+                style={{
+                  transition: "0.3s",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+                }}
               >
                 <IconBrandInstagram size={22} />
               </ActionIcon>
@@ -149,10 +171,16 @@ export default function Footer() {
         <Divider my="lg" color="gray.7" />
 
         {/* Bottom Copyright */}
-        <Text size="sm" ta="center" c="white" fw={700}>
+        <Text
+          size="sm"
+          ta="center"
+          c="white"
+          fw={600}
+          style={{ letterSpacing: "0.5px" }}
+        >
           © {new Date().getFullYear()}{" "}
-          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong> 
-        
+          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong> | All
+          Rights Reserved 🚀
         </Text>
       </Container>
     </Box>

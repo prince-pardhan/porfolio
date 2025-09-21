@@ -6,9 +6,8 @@ import {
   Image,
   Stack,
   Card,
-  Button,
 } from "@mantine/core";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import {
   IconBrandHtml5,
   IconBrandCss3,
@@ -28,18 +27,18 @@ export default function About() {
   const [showSkills, setShowSkills] = useState(false);
 
   const skills = [
-    { name: "Editor", icon: <IconPencil size={20} /> },
-    { name: "Gamer", icon: <IconDeviceGamepad2 size={20} /> },
-    { name: "HTML", icon: <IconBrandHtml5 size={20} color="#E44D26" /> },
-    { name: "CSS", icon: <IconBrandCss3 size={20} color="#1572B6" /> },
-    { name: "JavaScript", icon: <IconBrandJavascript size={20} color="#F7DF1E" /> },
-    { name: "ReactJS", icon: <IconBrandReact size={20} color="#61DBFB" /> },
-    { name: "Writer", icon: <IconPencil size={20} /> },
-    { name: "Photo Editor", icon: <IconCamera size={20} /> },
-    { name: "Video Editor", icon: <IconVideo size={20} /> },
-    { name: "Poster Designer", icon: <IconPaint size={20} /> },
-    { name: "Frontend Dev", icon: <IconCode size={20} /> },
-    { name: "Basic Computer", icon: <IconDeviceDesktop size={20} /> },
+    { name: "Editor",  icon: <IconPencil size={26} color="#00ff00" /> },
+    { name: "Gamer", icon: <IconDeviceGamepad2 size={24} color="#0ff" /> },
+    { name: "HTML", icon: <IconBrandHtml5 size={26} color="#ff0080" /> },
+    { name: "CSS", icon: <IconBrandCss3 size={26} color="#00ffcc" /> },
+    { name: "JavaScript", icon: <IconBrandJavascript size={26} color="#ffee00" /> },
+    { name: "ReactJS", icon: <IconBrandReact size={26} color="#61DBFB" /> },
+    { name: "Writer", icon: <IconPencil size={24} color="#0ff" /> },
+    { name: "Photo Editor", icon: <IconCamera size={24} color="#ff0055" /> },
+    { name: "Video Editor", icon: <IconVideo size={24} color="#0f0" /> },
+    { name: "Poster Designer", icon: <IconPaint size={24} color="#00f" /> },
+    { name: "Frontend Dev", icon: <IconCode size={24} color="#0ff" /> },
+    { name: "Basic Computer", icon: <IconDeviceDesktop size={24} color="#0f0" /> },
   ];
 
   return (
@@ -48,213 +47,157 @@ export default function About() {
         size="lg"
         py="xl"
         style={{
+          color:"#ffffffff",
           minHeight: "100vh",
-          color: "#fff",
-          background: "linear-gradient(135deg,#141E30,#243B55)",
-          borderRadius: "20px",
+          fontFamily: "'Courier New', monospace",
+          background: "radial-gradient(ellipse at center, #000 0%, #050505 100%)",
+          borderRadius: "12px",
           padding: "60px 30px",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Local CSS */}
+        {/* Background matrix effect */}
+        <div className="matrix-bg"></div>
+
         <style>{`
+          .matrix-bg {
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(
+              0deg,
+              rgba(0,255,0,0.05) 0px,
+              rgba(0,255,0,0.05) 1px,
+              transparent 1px,
+              transparent 2px
+            );
+            z-index: 0;
+            animation: scroll 2s linear infinite;
+          }
+          @keyframes scroll {
+            0% { background-position-y: 0; }
+            100% { background-position-y: 100px; }
+          }
+
+          .profile-pic {
+            position: relative;
+            display: inline-block;
+            border: 2px solid #0f0;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #0f0;
+          }
+
           .skills-grid {
             display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            align-items: stretch;
+            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
           }
 
           .skill-badge {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
             font-weight: 600;
-            padding: 16px 18px;
-            border-radius: 16px;
-            font-size: 1rem;
-            color: #fff;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: rgba(0,255,0,0.08);
+            box-shadow: 0 0 12px rgba(0,255,0,0.5);
             cursor: default;
-            background: rgba(255, 255, 255, 0.08);
-            border: 2px solid transparent;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-            transition: transform 250ms ease, box-shadow 250ms ease, border 300ms ease;
-            backdrop-filter: blur(8px);
-            position: relative;
+            font-family: monospace;
+            transition: 0.3s ease;
             overflow: hidden;
           }
-
-          .skill-badge::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 2px;
-            background: linear-gradient(135deg, #ffb703, #ff4800, #ffb703);
-            -webkit-mask: 
-              linear-gradient(#fff 0 0) content-box, 
-              linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-          }
-
-          .skill-badge:hover::before {
-            opacity: 1;
-          }
-
           .skill-badge:hover {
-            transform: translateY(-8px) scale(1.06);
-            box-shadow: 0 14px 30px rgba(0,0,0,0.35);
-          }
-
-          .skill-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 50%;
-            box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #0f0;
           }
 
           .custom-btn {
             font-weight: 700;
             font-size: 1rem;
             padding: 12px 28px;
-            border-radius: 14px;
-            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            background: linear-gradient(135deg, #1100ffff, #1100ffff);
-            color: #fff;
-            box-shadow: 0 6px 16px #1100ffff;
-            transition: all 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(90deg, #00ff00, #0ff);
+            border: none;
+            box-shadow: 0 0 12px #0ff;
+            transition: all 0.3s ease;
           }
-
           .custom-btn:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 12px 30px #1100ffff;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #0ff;
           }
         `}</style>
 
-        <Stack spacing="xl" align="center">
+        <Stack spacing="xl" align="center" style={{ position: "relative", zIndex: 1 }}>
           {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
-            style={{ textAlign: "center" }}
-          >
-            <Text size="lg" style={{ color: "#e0e0e0", fontSize: "1.05rem" }}>
-              Rk Swami
+          <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+            <Text size="lg" style={{ color: "#0f0", fontSize: "1.1rem" }}>
+              About Me
             </Text>
           </motion.div>
 
           {/* Profile */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            viewport={{ once: true }}
-            style={{ textAlign: "center" }}
-          >
-            <Image
-              src={img4}
-              alt="Profile"
-              radius="xl"
-              style={{
-                width: "240px",
-                height: "240px",
-                borderRadius: "50%",
-                margin: "auto",
-                objectFit: "cover",
-                border: "5px solid #031cffff",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
-              }}
-            />
-            <Text mt="md" size="xl" weight={700} style={{ color: "#fff" }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} viewport={{ once: true }} style={{ textAlign: "center" }}>
+            <div className="profile-pic">
+              <Image
+                src={img4}
+                alt="Profile"
+                radius="xl"
+                style={{
+                  width: "220px",
+                  height: "220px",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "2px solid #0f0",
+                }}
+              />
+            </div>
+            <Text mt="md" size="xl" weight={700} style={{ color: "#0ff" }}>
               Rk Swami
             </Text>
-            <Text size="sm" style={{ color: "#ccc" }}>
+            <Text size="sm" style={{ color: "#0f0" }}>
               Editor • Poster Designer • Frontend Dev
             </Text>
           </motion.div>
 
           {/* Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            viewport={{ once: true }}
-            style={{ width: "100%", maxWidth: 760 }}
-          >
-            <Card
-              shadow="md"
-              padding="lg"
-              radius="xl"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                backdropFilter: "blur(10px)",
-                textAlign: "center",
-              }}
-            >
-              <Text size="md" style={{ lineHeight: 1.8, color: "#eee" }}>
-                Hi, I’m{" "}
-                <span style={{ color: "#fff", fontWeight: "700" }}>Rk Swami</span>
-                <br />
-                Skilled in <span style={{ color: "#18ff03ff" }}>Video & Photo Editing</span>,{" "}
-                <span style={{ color: "#10ff03ff" }}>Poster Designing</span>, and{" "}
-                <span style={{ color: "#25ff03ff" }}>Frontend Development</span>.
-                <br />
-                <br />
-                With <strong style={{ color: "#3aff03ff" }}>2 years of experience</strong>,
-                I’ve worked in <span style={{ color: "#fff", fontWeight: "700" }}>Cult Music Production</span>{" "}
-                & <span style={{ color: "#fff", fontWeight: "700" }}>Ks Junction Sirsa</span>.
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }} viewport={{ once: true }} style={{ width: "100%", maxWidth: 760 }}>
+            <Card shadow="lg" padding="lg" radius="xl" style={{ background: "rgba(0,0,0,0.6)", border: "1px solid #0f0", backdropFilter: "blur(5px)", textAlign: "center" }}>
+              <Text size="md" style={{ lineHeight: 1.8, color: "#0f0" }}>
+                Hi, I’m <span style={{ fontWeight: "700", color: "#0ff" }}>Rk Swami</span> <br />
+                Skilled in <span style={{ color: "#0f0" }}>Editing</span>,{" "}
+                <span style={{ color: "#ff0" }}>Poster Designing</span>, and{" "}
+                <span style={{ color: "#0ff" }}>Frontend Development</span>. <br /><br />
+                With <strong style={{ color: "#0ff" }}>2+ years experience</strong>, I’ve worked in <span style={{ color: "#0f0", fontWeight: "700" }}>Cult Music Production</span> & <span style={{ color: "#0f0", fontWeight: "700" }}>Ks Junction Sirsa</span>.
               </Text>
             </Card>
           </motion.div>
 
           {/* Skills with Toggle */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.25 }}
-            viewport={{ once: true }}
-            style={{ width: "100%", maxWidth: 900, textAlign: "center" }}
-          >
-            <button
-              className="custom-btn"
-              onClick={() => setShowSkills(!showSkills)}
-              style={{ marginBottom: "20px" }}
-            >
-              {showSkills ? " close Skills " : " Open Skills"}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25 }} viewport={{ once: true }} style={{ width: "100%", maxWidth: 900, textAlign: "center", color:"white"}}>
+            <button className="custom-btn" onClick={() => setShowSkills(!showSkills)} style={{ marginBottom: "20px" }}>
+              {showSkills ? "Close Skills" : "Open Skills"}
             </button>
 
             {showSkills && (
-              <Card
-                shadow="md"
-                padding="lg"
-                radius="xl"
-                style={{
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  backdropFilter: "blur(10px)",
-                  textAlign: "center",
-                }}
-              >
-                <Title order={4} style={{ color: "#031cffff", marginBottom: 18 }}>
+              <Card shadow="lg" padding="lg" radius="xl" style={{ background: "rgba(0,0,0,0.6)", border: "1px solid #0ff", backdropFilter: "blur(5px)", textAlign: "center" }}>
+                <Title
+                  order={4}
+                  style={{
+                    marginBottom: 18,
+                    fontWeight: 700,
+                    background: "linear-gradient(90deg, #00ff00, #00ffff, #ff00ff)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
                   My Skills
                 </Title>
-
                 <div className="skills-grid">
                   {skills.map((s, idx) => (
-                    <motion.div
+                    <motion.div 
                       key={idx}
                       className="skill-badge"
                       title={s.name}
@@ -263,8 +206,9 @@ export default function About() {
                       transition={{ duration: 0.2, delay: idx * 0.05 }}
                       viewport={{ once: true }}
                     >
-                      <span className="skill-icon">{s.icon}</span>
+                      {s.icon}
                       <span>{s.name}</span>
+                      
                     </motion.div>
                   ))}
                 </div>

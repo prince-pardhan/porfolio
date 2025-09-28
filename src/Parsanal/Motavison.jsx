@@ -14,95 +14,124 @@ export default function Poirty() {
         style={{
           minHeight: "100vh",
           width: "100%",
-          backgroundImage: `url(${img3})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)), url(${img3})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          padding: "60px 0",
+          padding: "60px 20px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           fontFamily: "'Courier New', monospace",
           position: "relative",
+          overflow: "hidden",
           color: "#0f0",
         }}
       >
-        {/* Neon Matrix Overlay */}
+        {/* Matrix Overlay */}
         <div className="matrix-overlay"></div>
 
         <style>{`
           .matrix-overlay {
             position: absolute;
             inset: 0;
-            background-image: repeating-linear-gradient(
+            background: repeating-linear-gradient(
               0deg,
-              rgba(0,255,0,0.05) 0px,
-              rgba(0,255,0,0.05) 1px,
-              transparent 1px,
-              transparent 2px
+              rgba(0,255,0,0.08) 0px,
+              rgba(0,255,0,0.08) 1px,
+              transparent 2px,
+              transparent 3px
             );
+            animation: scroll 3s linear infinite;
             z-index: 0;
-            animation: scroll 2s linear infinite;
           }
           @keyframes scroll {
             0% { background-position-y: 0; }
-            100% { background-position-y: 100px; }
+            100% { background-position-y: 120px; }
+          }
+          .glow-border {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+          }
+          .glow-border::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(90deg, rgba(0, 13, 255, 1), #0f0, rgba(0, 13, 255, 1));
+            background-size: 800% 800%;
+            animation: glow 9s linear infinite;
+            z-index: -1;
+            filter: blur(6px);
+          }
+          @keyframes glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
           }
         `}</style>
 
         {/* Title Section */}
-        <div style={{ textAlign: "center", marginBottom: "50px", position: "relative", zIndex: 1 }}>
+        <div style={{ textAlign: "center", marginBottom: "60px", position: "relative", zIndex: 1 }}>
           <Title
             order={1}
             style={{
               color: "#0ff",
-              fontSize: "3rem",
+              fontSize: "3.5rem",
               fontWeight: "900",
-              letterSpacing: "2px",
-              textShadow: "0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff",
+              letterSpacing: "3px",
+              textShadow: "0 0 15px #0ff, 0 0 40px #0ff, 0 0 70px #0ff",
+              animation: "pulse 2.5s infinite",
             }}
           >
             Rk Swami
           </Title>
+          <style>{`
+            @keyframes pulse {
+              0% { text-shadow: 0 0 15px #0ff, 0 0 40px #0ff; }
+              50% { text-shadow: 0 0 30px #0ff, 0 0 70px #0ff; }
+              100% { text-shadow: 0 0 15px #0ff, 0 0 40px #0ff; }
+            }
+          `}</style>
           <Text
             size="lg"
             fw={500}
             style={{
               color: "#0f0",
-              marginTop: "10px",
+              marginTop: "15px",
               fontStyle: "italic",
-              fontSize: "1.2rem",
-              textShadow: "0 0 4px #0f0",
+              fontSize: "1.3rem",
+              textShadow: "0 0 6px #0f0",
             }}
           >
-           
+            
           </Text>
         </div>
 
         {/* Quotes Section */}
-        <Flex direction="column" gap="lg" align="center" style={{ width: "100%", position: "relative", zIndex: 1 }}>
+        <Flex direction="column" gap="xl" align="center" style={{ width: "100%", position: "relative", zIndex: 1 }}>
           {quotes.map((q, i) => (
             <Card
               key={i}
-              shadow="xl"
               padding="xl"
               radius="lg"
+              className="glow-border"
               style={{
-                width: "70%",
-                background: "rgba(0,0,0,0.7)",
-                border: "1px solid #0ff",
-                backdropFilter: "blur(8px)",
-                transition: "all 0.3s ease",
+                width: "75%",
+                background: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(12px)",
+                border: "1px solid rgba(0, 255, 255, 1)",
+                boxShadow: "0 0 20px rgba(0,255,255,0.4)",
+                transition: "all 0.4s ease",
                 cursor: "pointer",
-                boxShadow: "0 0 12px #0ff",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-8px) scale(1.03)";
-                e.currentTarget.style.boxShadow = "0 0 25px #0ff, 0 0 50px #0ff";
+                e.currentTarget.style.transform = "translateY(-10px) scale(1.05)";
+                e.currentTarget.style.boxShadow = "0 0 40px rgba(255, 0, 0, 1), 0 0 80px #0f0 ,#4f46e5";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow = "0 0 12px #0ff";
+                e.currentTarget.style.boxShadow = "0 0 20px rgba(255, 0, 0, 0.4)";
               }}
             >
               <Text
@@ -110,9 +139,9 @@ export default function Poirty() {
                 style={{
                   lineHeight: 1.8,
                   fontWeight: "600",
-                  color: "#0f0",
+                  // color: "#0f0",
                   textAlign: "center",
-                  fontSize: "1.2rem",
+                  fontSize: "1.25rem",
                   textShadow: "0 0 6px #0f0, 0 0 12px #0f0",
                 }}
               >

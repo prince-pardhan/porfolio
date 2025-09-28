@@ -1,9 +1,23 @@
 // ProfilePageNormal.jsx
 import React from "react";
-import { Container, Text, Image, Card, Group, Button, Stack, Title } from "@mantine/core";
+import {
+  Container,
+  Text,
+  Image,
+  Card,
+  Group,
+  Button,
+  Stack,
+  Title,
+  Divider,
+  Box,
+  Grid,
+  Badge,
+  Avatar,
+} from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { motion } from "framer-motion";
-import { IconPhoneCall, IconBrandWhatsapp } from "@tabler/icons-react";
+import { IconPhoneCall, IconBrandWhatsapp, IconMail, IconMapPin, IconStar } from "@tabler/icons-react";
 import img1 from "./images/image.png";
 import About from "./About";
 import Poirty from "./Motavison";
@@ -15,154 +29,220 @@ export default function ProfilePageNormal() {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         minHeight: "100vh",
-        fontFamily: "Inter, sans-serif",
-        color: "#222",
+        fontFamily: "'Inter', 'Segoe UI', sans-serif",
+        color: "#2d3748",
       }}
     >
       <Container
         size="lg"
         style={{
-          padding: isMobile ? "20px" : "50px",
+          padding: isMobile ? "20px" : "40px 20px",
           display: "flex",
           justifyContent: "center",
-          alignItems: "flex-start",
         }}
       >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          style={{ width: "100%", maxWidth: 960 }}
+          transition={{ duration: 0.6 }}
+          style={{ width: "100%", maxWidth: 1000 }}
         >
+          {/* Main Profile Card */}
           <Card
-            shadow="lg"
+            shadow="xl"
             radius="xl"
             padding="xl"
             style={{
-              background: "linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)",
-              border: "2px solid #e0e7ff",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
-              transition: "all 0.3s ease",
+              background: "rgba(255, 255, 255, 0.95)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              boxShadow: "0 15px 35px rgba(0, 0, 0, 0.1)",
+              overflow: "hidden",
+              position: "relative",
             }}
           >
-            <Stack spacing="lg" align="center">
-              <Image
-                src={img1}
-                alt="Profile"
-                style={{
-                  width: isMobile ? 120 : 160,
-                  height: isMobile ? 120 : 160,
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  border: "5px solid transparent",
-                  backgroundImage:
-                    "linear-gradient(white, white), linear-gradient(45deg, #06b6d4, #3b82f6, #9333ea, #f59e0b)",
-                  backgroundOrigin: "border-box",
-                  backgroundClip: "content-box, border-box",
-                  boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
-                }}
-              />
+            {/* Background Pattern */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: "120px",
+                background: "linear-gradient(90deg, #C, #7c3aed)",
+                zIndex: 0,
+              }}
+            />
+            
+            <Stack spacing="lg" align="center" style={{ position: "relative", zIndex: 1 }}>
+              {/* Profile Image with Badge */}
+              <div style={{ position: "relative" }}>
+                <Avatar
+                  src={img1}
+                  alt="Profile"
+                  size={isMobile ? 120 : 150}
+                  radius="50%"
+                  style={{
+                    border: "4px solid white",
+                    boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+                  }}
+                />
+                {/* <Badge
+                  color="blue"
+                  variant="filled"
+                  size="sm"
+                  style={{
+                    position: "absolute",
+                    bottom: 5,
+                    right: 5,
+                    borderRadius: "20px",
+                    padding: "5px 10px",
+                  }}
+                >
+                  <IconStar size={12} style={{ marginRight: 4 }} />
+                  Pro
+                </Badge> */}
+              </div>
+
+              {/* Name + Role */}
               <div style={{ textAlign: "center" }}>
                 <Title
-                  order={2}
+                  order={1}
                   style={{
                     fontWeight: 800,
-                    marginBottom: 4,
-                    background: "linear-gradient(90deg, #06b6d4, #3b82f6, #9333ea, #f59e0b)",
+                    marginBottom: 8,
+                    background: "linear-gradient(90deg, #4f46e5, #7c3aed)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
+                    fontSize: isMobile ? "1.8rem" : "2.5rem",
                   }}
                 >
                   Rk Swami
                 </Title>
-                <Text color="dimmed" size="sm">
-                   Editor •  Poster Designer •  Frontend Developer
+                <Text size="lg" color="dimmed" fw={600} mb={8}>
+                  Creative Professional
                 </Text>
+                <Group justify="center" spacing="xs">
+                  <Badge color="blue" variant="light" size="md">
+                     Video Editor
+                  </Badge>
+                  <Badge color="grape" variant="light" size="md">
+                     Poster Designer
+                  </Badge>
+                  <Badge color="orange" variant="light" size="md">
+                     Frontend Developer
+                  </Badge>
+                </Group>
               </div>
-            {/* <Group spacing="sm">
-  WhatsApp Button
-  <Button
-    radius="xl"
-    size="md"
-    leftSection={<IconBrandWhatsapp size={18} />}
-    component="a"
-    href="https://8290400325"
-    target="_blank"
-    style={{
-      background: "linear-gradient(45deg, #22c55e, #16a34a)",
-      color: "white",
-      fontWeight: 900,
-      boxShadow: "0 4px 12px rgba(34,197,94,0.4)",
-    }}
-    onMouseEnter={(e) =>
-      (e.currentTarget.style.background =
-        "linear-gradient(45deg, #16a34a, #22c55e)")
-    }
-    onMouseLeave={(e) =>
-      (e.currentTarget.style.background =
-        "linear-gradient(45deg, #22c55e, #16a34a)")
-    }
-  >
-    WhatsApp
-  </Button>
 
-  Call Button
-  <Button
-    radius="xl"
-    size="md"
-    component="a"
-    href="tel:+918290400325"
-    leftSection={<IconPhoneCall size={18} />}
-    style={{
-      background: "linear-gradient(45deg, #6366f1, #06b6d4)",
-      color: "white",
-      fontWeight: 600,
-      boxShadow: "0 4px 12px rgba(99,102,241,0.4)",
-      transition: "all 0.2s ease",
-    }}
-    onMouseEnter={(e) =>
-      (e.currentTarget.style.background =
-        "linear-gradient(45deg, #06b6d4, #6366f1)")
-    }
-    onMouseLeave={(e) =>
-      (e.currentTarget.style.background =
-        "linear-gradient(45deg, #6366f1, #06b6d4)")
-    }
-  >
-    Call
-  </Button>
-</Group> */}
+              {/* Location & Contact Info */}
+              <Group spacing="lg" mt="sm">
+                <Group spacing={5}>
+                  <IconMapPin size={16} color="#6b7280" />
+                  <Text size="sm" color="dimmed">
+                    Madhosinghana (Sirsa)
+                  </Text>
+                </Group>
+                <Group spacing={5}>
+                  <IconMail size={16} color="#6b7280" />
+                  <Text size="sm" color="dimmed">
+                    srk016361@gmil.com
+                  </Text>
+                </Group>
+              </Group>
 
+              {/* Action Buttons */}
+              <Group spacing="md" mt="sm" wrap="wrap" justify="center">
+                {/* <Button
+                  radius="xl"
+                  size="md"
+                  leftSection={<IconBrandWhatsapp size={20} />}
+                  component="a"
+                  href="https://wa.me/918290400325"
+                  target="_blank"
+                  style={{
+                    background: "linear-gradient(45deg, #22c55e, #16a34a)",
+                    color: "white",
+                    fontWeight: 700,
+                    boxShadow: "0 4px 15px rgba(34,197,94,0.4)",
+                    padding: "0 25px",
+                  }}
+                >
+                  WhatsApp
+                </Button> */}
+
+                {/* <Button
+                  radius="xl"
+                  size="md"
+                  component="a"
+                  href="tel:+918290400325"
+                  leftSection={<IconPhoneCall size={20} />}
+                  variant="outline"
+                  style={{
+                    borderColor: "#4f46e5",
+                    color: "#4f46e5",
+                    fontWeight: 600,
+                    padding: "0 25px",
+                  }}
+                >
+                  Call Now
+                </Button> */}
+                
+                {/* <Button
+                  radius="xl"
+                  size="md"
+                  variant="light"
+                  style={{
+                    background: "linear-gradient(45deg, #f59e0b, #d97706)",
+                    color: "white",
+                    fontWeight: 700,
+                    padding: "0 25px",
+                  }}
+                >
+                  Hire Me
+                </Button> */}
+              </Group>
             </Stack>
 
-            {/* About Section */}
-            <div style={{ marginTop: 30, textAlign: "center" }}>
-              <Title
-                order={3}
-                style={{
-                  background: "linear-gradient(90deg, #f59e0b, #ef4444, #ec4899)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  fontWeight: 700,
+            {/* Stats Section */}
+            {/* <Divider my="xl" /> */}
+            
+
+            {/* Quote Section */}
+            <Box ta="center" mt="xl" pt="lg" style={{ borderTop: "1px solid #e2e8f0" }}>
+              <Text
+                size="md"
+                color="dimmed"
+                fs="italic"
+                style={{ 
+                  maxWidth: 600, 
+                  margin: "0 auto",
+                  lineHeight: 1.6
                 }}
               >
-               
-              </Title>
-              <Text size="sm" mt="sm" color="dimmed" style={{ fontStyle: "italic" }}>
-                "It takes time to become successful — and time is money."
+                "It takes time to become successful — and time is money. Quality work requires dedication, creativity, and attention to detail."
               </Text>
-            </div>
+            </Box>
           </Card>
         </motion.div>
       </Container>
 
-      {/* Other Sections */}
-      <div style={{ padding: "40px 20px 80px" }}>
-        <About />
-        <Poirty />
-        <LoginPage />
+      {/* Other Sections with improved spacing */}
+      <div style={{ 
+        padding: isMobile ? "30px 15px 60px" : "50px 20px 80px",
+        background: "rgba(255, 255, 255, 0.97)"
+      }}>
+        <Container size="lg">
+          <About />
+          <Box my={50}>
+            <Poirty />
+          </Box>
+          <Box my={50}>
+            <LoginPage />
+          </Box>
+        </Container>
       </div>
     </div>
   );

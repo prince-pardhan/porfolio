@@ -1,249 +1,169 @@
-// ProfilePageNormal.jsx
+// HomePage.jsx
 import React from "react";
 import {
   Container,
   Text,
-  Image,
-  Card,
-  Group,
-  Button,
-  Stack,
   Title,
-  Divider,
+  Stack,
   Box,
-  Grid,
-  Badge,
-  Avatar,
+  Group,
 } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 import { motion } from "framer-motion";
-import { IconPhoneCall, IconBrandWhatsapp, IconMail, IconMapPin, IconStar } from "@tabler/icons-react";
-import img1 from "./images/image.png";
-import About from "./About";
-import Poirty from "./Motavison";
-import LoginPage from "./Login";
+import { useMediaQuery } from "@mantine/hooks";
+import { useNavigate } from "react-router-dom";
+import bgImage from "./images/background-ai_094202459.png";
 
-export default function ProfilePageNormal() {
-  const isMobile = useMediaQuery("(max-width: 780px)");
+export default function HomePage() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         minHeight: "100vh",
-        fontFamily: "'Inter', 'Segoe UI', sans-serif",
-        color: "#2d3748",
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "#fff",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "'Playfair Display', serif",
+        overflow: "hidden",
       }}
     >
-      <Container
-        size="lg"
-        style={{
-          padding: isMobile ? "20px" : "40px 20px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <Container size="lg" style={{ textAlign: "center", zIndex: 2 }}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ width: "100%", maxWidth: 1000 }}
+          transition={{ duration: 1.2 }}
         >
-          {/* Main Profile Card */}
-          <Card
-            shadow="xl"
-            radius="xl"
-            padding="xl"
+          {/* Hero Section */}
+          <Title
+            order={1}
             style={{
-              background: "rgba(255, 255, 255, 0.95)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
-              boxShadow: "0 15px 35px rgba(0, 0, 0, 0.1)",
-              overflow: "hidden",
-              position: "relative",
+              fontSize: isMobile ? "2.5rem" : "4.2rem",
+              fontWeight: 700,
+              letterSpacing: "1px",
+              background: "linear-gradient(90deg, #ff0000ff 20%, #ff0000ff 80%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
-            {/* Background Pattern */}
-            <div
+            Rahul-Swami
+          </Title>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
+            <Text
+              size={isMobile ? "lg" : "xl"}
+              mt="md"
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "120px",
-                background: "linear-gradient(90deg, #C, #7c3aed)",
-                zIndex: 0,
+                color: "rgba(64, 255, 0, 1)",
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 500,
+                letterSpacing: "0.5px",
               }}
-            />
-            
-            <Stack spacing="lg" align="center" style={{ position: "relative", zIndex: 1 }}>
-              {/* Profile Image with Badge */}
-              <div style={{ position: "relative" }}>
-                <Avatar
-                  src={img1}
-                  alt="Profile"
-                  size={isMobile ? 120 : 150}
-                  radius="50%"
-                  style={{
-                    border: "4px solid white",
-                    boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
-                  }}
-                />
-                {/* <Badge
-                  color="blue"
-                  variant="filled"
-                  size="sm"
-                  style={{
-                    position: "absolute",
-                    bottom: 5,
-                    right: 5,
-                    borderRadius: "20px",
-                    padding: "5px 10px",
-                  }}
-                >
-                  <IconStar size={12} style={{ marginRight: 4 }} />
-                  Pro
-                </Badge> */}
-              </div>
+            >
+               <h2>Full stak Developer</h2>
+            </Text>
+          </motion.div>
 
-              {/* Name + Role */}
-              <div style={{ textAlign: "center" }}>
-                <Title
-                  order={1}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            <Text
+              mt="md"
+              size={isMobile ? "sm" : "md"}
+              style={{
+                maxWidth: 590,
+                fontWeight:"900",
+                margin: "0 auto",
+                color: "rgba(255, 208, 0, 1)",
+                lineHeight: 1.7,
+              }}
+              >
+              "Chanakya said that the one who controls Sama, Dana, Danda, and Bhed 
+              is called a king — what we now call a hacker. And I control all three of them"
+              
+            </Text>
+          </motion.div>
+
+          
+          <Group position="center" mt="xl" spacing="md">
+            {[
+              { label: "👉About", path: "/about" },
+              // { label: "👉Skills", path: "/portfolio" },
+              // { label: "Contact", path: "/contact" },
+            ].map((btn, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.07 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div
+                  onClick={() => handleNavigation(btn.path)}
                   style={{
-                    fontWeight: 800,
-                    marginBottom: 8,
-                    background: "linear-gradient(90deg, #4f46e5, #7c3aed)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    fontSize: isMobile ? "1.8rem" : "2.5rem",
+                    padding: "12px 30px",
+                    border: "2px solid rgba(255,255,255,0.3)",
+                    borderRadius: "30px",
+                    cursor: "pointer",
+                    color: "#fff",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    backdropFilter: "blur(6px)",
+                    background: "rgba(255,255,255,0.05)",
+                    transition: "0.3s",
                   }}
-                >
-                  Rk Swami
-                </Title>
-                <Text size="lg" color="dimmed" fw={600} mb={8}>
-                  Creative Professional
-                </Text>
-                <Group justify="center" spacing="xs">
-                  <Badge color="blue" variant="light" size="md">
-                     Video Editor
-                  </Badge>
-                  <Badge color="grape" variant="light" size="md">
-                     Poster Designer
-                  </Badge>
-                  <Badge color="orange" variant="light" size="md">
-                     Frontend Developer
-                  </Badge>
-                </Group>
-              </div>
-
-              {/* Location & Contact Info */}
-              <Group spacing="lg" mt="sm">
-                <Group spacing={5}>
-                  <IconMapPin size={16} color="#6b7280" />
-                  <Text size="sm" color="dimmed">
-                    Madhosinghana (Sirsa)
-                  </Text>
-                </Group>
-                <Group spacing={5}>
-                  <IconMail size={16} color="#6b7280" />
-                  <Text size="sm" color="dimmed">
-                    srk016361@gmil.com
-                  </Text>
-                </Group>
-              </Group>
-
-              {/* Action Buttons */}
-              <Group spacing="md" mt="sm" wrap="wrap" justify="center">
-                {/* <Button
-                  radius="xl"
-                  size="md"
-                  leftSection={<IconBrandWhatsapp size={20} />}
-                  component="a"
-                  href="https://wa.me/918290400325"
-                  target="_blank"
-                  style={{
-                    background: "linear-gradient(45deg, #22c55e, #16a34a)",
-                    color: "white",
-                    fontWeight: 700,
-                    boxShadow: "0 4px 15px rgba(34,197,94,0.4)",
-                    padding: "0 25px",
+                  onMouseEnter={(e) => {
+                    e.target.style.background = "rgba(255,255,255,0.15)";
+                    e.target.style.border = "2px solid rgba(255,255,255,0.6)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = "rgba(255,255,255,0.05)";
+                    e.target.style.border = "2px solid rgba(255,255,255,0.3)";
                   }}
                 >
-                  WhatsApp
-                </Button> */}
+                  {btn.label}
+                </div>
+              </motion.div>
+            ))}
+          </Group>
 
-                {/* <Button
-                  radius="xl"
-                  size="md"
-                  component="a"
-                  href="tel:+918290400325"
-                  leftSection={<IconPhoneCall size={20} />}
-                  variant="outline"
-                  style={{
-                    borderColor: "#4f46e5",
-                    color: "#4f46e5",
-                    fontWeight: 600,
-                    padding: "0 25px",
-                  }}
-                >
-                  Call Now
-                </Button> */}
-                
-                {/* <Button
-                  radius="xl"
-                  size="md"
-                  variant="light"
-                  style={{
-                    background: "linear-gradient(45deg, #f59e0b, #d97706)",
-                    color: "white",
-                    fontWeight: 700,
-                    padding: "0 25px",
-                  }}
-                >
-                  Hire Me
-                </Button> */}
-              </Group>
-            </Stack>
-
-            {/* Stats Section */}
-            {/* <Divider my="xl" /> */}
-            
-
-            {/* Quote Section */}
-            <Box ta="center" mt="xl" pt="lg" style={{ borderTop: "1px solid #e2e8f0" }}>
+          {/* Footer / Tagline */}
+          <Box mt="xl" style={{ textAlign: "center" }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5 }}
+            >
+              
               <Text
-                size="md"
-                color="dimmed"
-                fs="italic"
-                style={{ 
-                  maxWidth: 600, 
-                  margin: "0 auto",
-                  lineHeight: 1.6
+                size="xs"
+                mt={8}
+                style={{
+                  color: "rgba(255, 0, 0, 1)",
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight:"900",
                 }}
               >
-                "It takes time to become successful — and time is money. Quality work requires dedication, creativity, and attention to detail."
+                Editing Experience in 2+ year 
               </Text>
-            </Box>
-          </Card>
+            </motion.div>
+          </Box>
         </motion.div>
       </Container>
-
-      {/* Other Sections with improved spacing */}
-      <div style={{ 
-        padding: isMobile ? "30px 15px 60px" : "50px 20px 80px",
-        background: "rgba(255, 255, 255, 0.97)"
-      }}>
-        <Container size="lg">
-          <About />
-          <Box my={50}>
-            <Poirty />
-          </Box>
-          <Box my={50}>
-            <LoginPage />
-          </Box>
-        </Container>
-      </div>
     </div>
   );
 }

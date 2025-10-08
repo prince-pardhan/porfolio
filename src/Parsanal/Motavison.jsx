@@ -8,7 +8,7 @@ export default function Poirty() {
   ];
 
   return (
-    <div id="motavison">
+   
       <Container
         fluid
         style={{
@@ -151,6 +151,6 @@ export default function Poirty() {
           ))}
         </Flex>
       </Container>
-    </div>
+    
   );
 }

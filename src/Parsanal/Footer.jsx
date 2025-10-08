@@ -26,7 +26,7 @@ export default function Footer() {
       mt="xl"
       style={{
         background:
-          "linear-gradient(135deg, #0f2027, #203a43, #2c5364)", // Dark gradient background
+          "linear-gradient(135deg, #51a2c5ff, #51a2c5ff, #51a2c5ff)", // Dark gradient background
         borderTop: "3px solid #00c3ff",
         boxShadow: "0 -4px 20px rgba(0,0,0,0.3)",
       }}
@@ -54,7 +54,7 @@ export default function Footer() {
           >
             <Title
               order={3}
-              c="white"
+              c="black"
               mb="sm"
               style={{
                 fontWeight: "800",
@@ -64,9 +64,10 @@ export default function Footer() {
             >
               Editor Skills
             </Title>
-            <Text size="sm" c="gray.3" style={{ lineHeight: 1.8 }}>
+            <Text size="sm" c="gray.9" style={{ lineHeight: 1.8, fontWeight:"900" }}>
               🎬 Video, Image, Poster Editing <br />
               💼 2+ years of editing experience <br />
+               🖥   Full stak Developer [Ks Junction] <br />
               <br />
               <strong
                 style={{
@@ -80,48 +81,7 @@ export default function Footer() {
             </Text>
           </Card>
 
-          <Card
-            radius="lg"
-            shadow="md"
-            p="lg"
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.2)",
-              backdropFilter: "blur(12px)",
-              flex: 1,
-              minWidth: 200,
-            }}
-          >
-            <Title order={5} c="white" mb="xs" fw={700}>
-              Quick Links
-            </Title>
-            <Stack spacing="xs">
-              {[
-                { label: "🏠 Home", link: "#" },
-                { label: "ℹ️ About", link: "#about" },
-                { label: "✨ Motivation", link: "#motavison" },
-              ].map((item, idx) => (
-                <Anchor
-                  key={idx}
-                  href={item.link}
-                  size="sm"
-                  c="gray.2"
-                  style={{
-                    fontWeight: 600,
-                    transition: "0.3s",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#00c3ff")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#ccc")
-                  }
-                >
-                  {item.label}
-                </Anchor>
-              ))}
-            </Stack>
-          </Card>
+      
 
           <Card
             radius="lg"

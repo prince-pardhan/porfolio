@@ -17,6 +17,7 @@ import {
   IconBrandInstagram,
   IconPhoneCall,
   IconMail,
+  IconHome,
 } from "@tabler/icons-react";
 
 export default function Footer() {
@@ -64,10 +65,10 @@ export default function Footer() {
             >
               Editor Skills
             </Title>
-            <Text size="sm" c="gray.9" style={{ lineHeight: 1.8, fontWeight:"900" }}>
+            <Text size="sm" c="gray.9" style={{ lineHeight: 1.8, fontWeight: "900" }}>
               🎬 Video, Image, Poster Editing <br />
               💼 2+ years of editing experience <br />
-               🖥   Full stak Developer [Ks Junction] <br />
+              🖥   Full stak Developer [Ks Junction] <br />
               <br />
               <strong
                 style={{
@@ -81,7 +82,11 @@ export default function Footer() {
             </Text>
           </Card>
 
-      
+                
+          <Flex>
+          
+
+          </Flex>
 
           <Card
             radius="lg"

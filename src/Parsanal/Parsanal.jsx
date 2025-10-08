@@ -21,6 +21,10 @@ export default function HomePage() {
     navigate(path);
   };
 
+  // Replace with your own phone number
+  const phoneNumber = "+918290400325"; 
+  const whatsappNumber = "+918290400325"; 
+
   return (
     <div
       style={{
@@ -72,7 +76,7 @@ export default function HomePage() {
                 letterSpacing: "0.5px",
               }}
             >
-               <h2>Full stak Developer</h2>
+              <h2>Full Stack Developer</h2>
             </Text>
           </motion.div>
 
@@ -86,24 +90,22 @@ export default function HomePage() {
               size={isMobile ? "sm" : "md"}
               style={{
                 maxWidth: 590,
-                fontWeight:"900",
+                fontWeight: "900",
                 margin: "0 auto",
                 color: "rgba(255, 208, 0, 1)",
                 lineHeight: 1.7,
               }}
-              >
+            >
               "Chanakya said that the one who controls Sama, Dana, Danda, and Bhed 
               is called a king — what we now call a hacker. And I control all three of them"
-              
             </Text>
           </motion.div>
 
-          
+          {/* Navigation Buttons */}
           <Group position="center" mt="xl" spacing="md">
             {[
               { label: "👉About", path: "/about" },
-              // { label: "👉Skills", path: "/portfolio" },
-              // { label: "Contact", path: "/contact" },
+              { label: "👉Skills", path: "/portfolio" },
             ].map((btn, i) => (
               <motion.div
                 key={i}
@@ -141,6 +143,81 @@ export default function HomePage() {
             ))}
           </Group>
 
+          {/* Call & WhatsApp Buttons */}
+          <Group position="center" mt="md" spacing="md">
+            {/* Call Button */}
+            <motion.div
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a
+                href={`tel:${phoneNumber}`}
+                style={{
+                  padding: "12px 30px",
+                  border: "2px solid rgba(31, 32, 31, 1)",
+                  borderRadius: "30px",
+                  cursor: "pointer",
+                  color: "#ffffffff",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  backdropFilter: "blur(6px)",
+                  background: "rgba(0,255,0,0.05)",
+                  textDecoration: "none",
+                  transition: "0.3s",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "rgba(0, 0, 0, 0.15)";
+                  e.target.style.border = "2px solid rgba(0, 0, 0, 0.9)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "rgba(0, 0, 0, 0.05)";
+                  e.target.style.border = "2px solid rgba(0, 0, 0, 0.5)";
+                }}
+              >
+                📞 Call Me
+              </a>
+            </motion.div>
+
+            {/* WhatsApp Button */}
+            <motion.div
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: "12px 30px",
+                  border: "2px solid rgba(0, 0, 0, 1)",
+                  borderRadius: "30px",
+                  cursor: "pointer",
+                  color: "#ffffffff",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                  backdropFilter: "blur(6px)",
+                  background: "rgba(0,255,0,0.05)",
+                  textDecoration: "none",
+                  transition: "0.3s",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "rgba(0, 0, 0, 0.15)";
+                  e.target.style.border = "2px solid rgba(0, 0, 0, 0.9)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "rgba(0, 0, 0, 0.05)";
+                  e.target.style.border = "2px solid rgba(0, 0, 0, 0.5)";
+                }}
+              >
+                💬 WhatsApp
+              </a>
+            </motion.div>
+          </Group>
+
           {/* Footer / Tagline */}
           <Box mt="xl" style={{ textAlign: "center" }}>
             <motion.div
@@ -149,17 +226,6 @@ export default function HomePage() {
               transition={{ delay: 1.5 }}
             >
               
-              <Text
-                size="xs"
-                mt={8}
-                style={{
-                  color: "rgba(255, 0, 0, 1)",
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight:"900",
-                }}
-              >
-                Editing Experience in 2+ year 
-              </Text>
             </motion.div>
           </Box>
         </motion.div>

@@ -59,7 +59,7 @@ export default function About() {
 
       <Container size="lg" py="xl" style={{ zIndex: 2, position: "relative" }}>
         <Stack spacing="xl" align="center">
-          {/* Header */}
+         
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,6 @@ export default function About() {
               </Text>
             </Card>
 
-            {/* Second Card with gap */}
             <Card 
               radius="lg"
               style={{
@@ -168,7 +167,7 @@ export default function About() {
                 backdropFilter: "blur(15px)",
                 maxWidth: 900,
                 textAlign: "center",
-                marginTop: "20px", // <-- gap added here
+                marginTop: "50px", 
               }}
             >
               <Text style={{color:"white", fontWeight:"900"}}>

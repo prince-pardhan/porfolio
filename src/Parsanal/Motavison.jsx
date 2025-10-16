@@ -3,15 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Title, Card } from "@mantine/core";
 import { motion } from "framer-motion";
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  CartesianGrid,
-} from "recharts";
-import {
   IconBrandHtml5,
   IconBrandCss3,
   IconBrandJavascript,
@@ -57,128 +48,145 @@ export default function SkillsSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // Fake dynamic trading data (each skill represented as time-series)
-  const chartData = skills.map((skill) => ({
-    name: skill.name,
-    value: skill.percent + Math.random() * 5 - 2, // small variation for trading look
-  }));
-
   return (
     <div
       style={{
+        position: "relative",
         width: "100%",
         maxWidth: 1200,
         margin: "0 auto",
         padding: "80px 20px",
         textAlign: "center",
-        backgroundColor: "black",
-        borderTop: "2px solid rgba(255,255,255,0.05)",
-        borderBottom: "2px solid rgba(255,255,255,0.05)",
+        overflow: "hidden",
       }}
     >
-      {/* Typing Animated Title */}
-      <Title
-        order={2}
+      {/* Animated Hacking Background */}
+      <canvas
+        id="matrixCanvas"
         style={{
-          background: "linear-gradient(45deg, #6aff00, #6aff00)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          marginBottom: 50,
-          fontSize: "2.5rem",
-          fontWeight: 800,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+          backgroundColor: "black",
         }}
-      >
-        {displayText}
-      </Title>
+      ></canvas>
 
-      {/* CSS */}
-      <style>{`
-        .chart-card {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 20px;
-          padding: 20px;
-          margin-bottom: 40px;
-          transition: all 0.3s ease;
-          backdrop-filter: blur(8px);
-        }
+      {/* JS Animation for Hacking Lines */}
+      <MatrixBackground />
 
-        .chart-card:hover {
-          transform: translateY(-6px) scale(1.02);
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(255, 255, 255, 0.3);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+      {/* Content Above Background */}
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <Title
+          order={2}
+          style={{
+            background: "linear-gradient(45deg, #6aff00, #6aff00)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            marginBottom: 50,
+            fontSize: "2.5rem",
+            fontWeight: 800,
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+          }}
+        >
+          {displayText}
+        </Title>
 
-        .skill-name {
-          color: white;
-          font-weight: 800;
-          font-size: 1.1rem;
-          margin-top: 12px;
-        }
-      `}</style>
+        <style>{`
+          .chart-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+          }
+          .chart-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+          }
+          .skill-name {
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-top: 12px;
+          }
+        `}</style>
 
-      {/* Trading-Style Graph */}
-      <Card className="chart-card">
-        <ResponsiveContainer width="100%" height={350}>
-          <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-            <XAxis dataKey="name" tick={{ fill: "white", fontSize: 12 }} />
-            <YAxis domain={[80, 100]} tick={{ fill: "white", fontSize: 12 }} />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "rgba(0,0,0,0.7)",
-                borderRadius: "10px",
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "white",
-              }}
-            />
-            <Line
-              type="monotone"
-              dataKey="value"
-              stroke="#00ff99"
-              strokeWidth={3}
-              dot={{ fill: "#6aff00", strokeWidth: 2 }}
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </Card>
-
-      {/* Individual Skill Cards */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "25px",
-        }}
-      >
-        {skills.map((skill, idx) => (
-          <motion.div
-            key={idx}
-            className="chart-card"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            viewport={{ once: true }}
-          >
-            <div style={{ color: skill.color, fontSize: "28px" }}>{skill.icon}</div>
-            <div className="skill-name">{skill.name}</div>
-            <div
-              style={{
-                color: skill.color,
-                fontWeight: 900,
-                fontSize: "1.2rem",
-                marginTop: 4,
-              }}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "25px",
+          }}
+        >
+          {skills.map((skill, idx) => (
+            <motion.div
+              key={idx}
+              className="chart-card"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              viewport={{ once: true }}
             >
-              {skill.percent}%
-            </div>
-          </motion.div>
-        ))}
+              <div style={{ color: skill.color, fontSize: "28px" }}>{skill.icon}</div>
+              <div className="skill-name">{skill.name}</div>
+              <div
+                style={{
+                  color: skill.color,
+                  fontWeight: 900,
+                  fontSize: "1.2rem",
+                  marginTop: 4,
+                }}
+              >
+                {skill.percent}%
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
+}
+
+// Matrix-style animated background component
+function MatrixBackground() {
+  useEffect(() => {
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    const draw = () => {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#0F0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    };
+
+    const interval = setInterval(draw, 35);
+    return () => clearInterval(interval);
+  }, []);
+
+  return null;
 }

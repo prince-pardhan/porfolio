@@ -76,6 +76,7 @@ export default function HomePage() {
                 letterSpacing: "0.5px",
               }}
             >
+              <h2 style={{color:"gray"}}>Editor</h2>
               <h2>Full Stack Developer</h2>
             </Text>
           </motion.div>

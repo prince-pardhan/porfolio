@@ -1,3 +1,5 @@
+// src/Footer.jsx
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Container,
@@ -6,7 +8,6 @@ import {
   Stack,
   Text,
   Title,
-  Anchor,
   Divider,
   ActionIcon,
   Card,
@@ -17,17 +18,57 @@ import {
   IconBrandInstagram,
   IconPhoneCall,
   IconMail,
-  IconHome,
+  IconStar,
+  IconStarFilled,
 } from "@tabler/icons-react";
 
+const LOCALSTORAGE_KEY = "rahul_footer_star_count_v1";
+const LOCALSTORAGE_CLICKED = "rahul_footer_star_clicked_v1";
+
 export default function Footer() {
+  const [starCount, setStarCount] = useState(0);
+  const [starClicked, setStarClicked] = useState(false);
+  const [anim, setAnim] = useState(false);
+
+  // Load from localStorage
+  useEffect(() => {
+    try {
+      const saved = parseInt(localStorage.getItem(LOCALSTORAGE_KEY), 10);
+      const clicked = localStorage.getItem(LOCALSTORAGE_CLICKED) === "true";
+      if (!Number.isNaN(saved)) setStarCount(saved);
+      setStarClicked(Boolean(clicked));
+    } catch (err) {
+      console.warn("localStorage read error", err);
+    }
+  }, []);
+
+  // Handle click only once per device
+  const handleStarClick = () => {
+    if (starClicked) return; // ❌ Stop if already clicked once
+
+    const newCount = (starCount || 0) + 1;
+    setStarCount(newCount);
+    setStarClicked(true);
+
+    try {
+      localStorage.setItem(LOCALSTORAGE_KEY, String(newCount));
+      localStorage.setItem(LOCALSTORAGE_CLICKED, "true");
+    } catch (err) {
+      console.warn("localStorage write error", err);
+    }
+
+    // Small animation
+    setAnim(true);
+    setTimeout(() => setAnim(false), 300);
+  };
+
   return (
     <Box
       py="xl"
       mt="xl"
       style={{
         background:
-          "linear-gradient(135deg, #51a2c5ff, #51a2c5ff, #51a2c5ff)", // Dark gradient background
+          "linear-gradient(135deg, #51a2c5ff, #51a2c5ff, #51a2c5ff)",
         borderTop: "3px solid #00c3ff",
         boxShadow: "0 -4px 20px rgba(0,0,0,0.3)",
       }}
@@ -40,7 +81,7 @@ export default function Footer() {
           gap="xl"
           wrap="wrap"
         >
-          {/* Card Style Wrapper for all 3 sections */}
+          {/* Left Card */}
           <Card
             radius="lg"
             shadow="md"
@@ -68,7 +109,7 @@ export default function Footer() {
             <Text size="sm" c="gray.9" style={{ lineHeight: 1.8, fontWeight: "900" }}>
               🎬 Video, Image, Poster Editing <br />
               💼 2+ years of editing experience <br />
-              🖥   Full stak Developer [Ks Junction] <br />
+              🖥 Full Stack Developer [Ks Junction] <br />
               <br />
               <strong
                 style={{
@@ -82,12 +123,9 @@ export default function Footer() {
             </Text>
           </Card>
 
-                
-          <Flex>
-          
+          <Flex style={{ flex: 0.2, minWidth: 40 }} />
 
-          </Flex>
-
+          {/* Contact + Star */}
           <Card
             radius="lg"
             shadow="md"
@@ -116,6 +154,7 @@ export default function Footer() {
                   srk016361@.com
                 </Text>
               </Group>
+
               {/* Social Icons */}
               <Group spacing="md" mt="sm">
                 <ActionIcon
@@ -126,10 +165,6 @@ export default function Footer() {
                   component="a"
                   href="https://www.facebook.com/share/p/19WEkPssmd/"
                   target="_blank"
-                  style={{
-                    transition: "0.3s",
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-                  }}
                 >
                   <IconBrandFacebook size={22} />
                 </ActionIcon>
@@ -141,10 +176,6 @@ export default function Footer() {
                   component="a"
                   href="https://youtube.com/@princpardhan7782?si=h71r0D50nU4aPtFd"
                   target="_blank"
-                  style={{
-                    transition: "0.3s",
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-                  }}
                 >
                   <IconBrandYoutube size={22} />
                 </ActionIcon>
@@ -156,29 +187,52 @@ export default function Footer() {
                   component="a"
                   href="https://www.instagram.com/princ_pardhan_325?igsh=MXFxaTBjMHdpZW5ueg=="
                   target="_blank"
-                  style={{
-                    transition: "0.3s",
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-                  }}
                 >
                   <IconBrandInstagram size={22} />
                 </ActionIcon>
+              </Group>
+
+              {/* ⭐ Star Counter */}
+              <Divider my="sm" color="rgba(255,255,255,0.06)" />
+              <Group position="apart" align="center">
+                <Group spacing="xs">
+                  <ActionIcon
+                    size="xl"
+                    radius="xl"
+                    variant={starClicked ? "filled" : "light"}
+                    color={starClicked ? "yellow" : "gray"}
+                    onClick={handleStarClick}
+                    disabled={starClicked} // ❌ disables after one click
+                    style={{
+                      transform: anim ? "scale(1.15)" : "scale(1)",
+                      transition: "transform 120ms ease",
+                      cursor: starClicked ? "not-allowed" : "pointer",
+                    }}
+                    aria-label="Give a star"
+                  >
+                    {starClicked ? <IconStarFilled size={20} /> : <IconStar size={20} />}
+                  </ActionIcon>
+
+                  <div>
+                    <Text size="sm" c="white" fw={700}>
+                      {starCount || 0}
+                    </Text>
+                    <Text size="xs" c="gray.5">
+                      lifetime stars
+                    </Text>
+                  </div>
+                </Group>
+
+                <Text size="xs" c="gray.5" ta="right">
+                  Click once to support ✨
+                </Text>
               </Group>
             </Stack>
           </Card>
         </Flex>
 
-        {/* Divider */}
         <Divider my="lg" color="gray.7" />
-
-        {/* Bottom Copyright */}
-        <Text
-          size="sm"
-          ta="center"
-          c="white"
-          fw={600}
-          style={{ letterSpacing: "0.5px" }}
-        >
+        <Text size="sm" ta="center" c="white" fw={600} style={{ letterSpacing: "0.5px" }}>
           © {new Date().getFullYear()}{" "}
           <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong>
         </Text>

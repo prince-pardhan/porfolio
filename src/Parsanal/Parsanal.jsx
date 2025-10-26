@@ -1,4 +1,3 @@
-// HomePage.jsx
 import React from "react";
 import {
   Container,
@@ -12,19 +11,14 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "@mantine/hooks";
 import { useNavigate } from "react-router-dom";
 import bgImage from "./images/background-ai_094202459.png";
-
 export default function HomePage() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const navigate = useNavigate();
-
   const handleNavigation = (path) => {
     navigate(path);
   };
-
-  // Replace with your own phone number
   const phoneNumber = "+918290400325"; 
   const whatsappNumber = "+918290400325"; 
-
   return (
     <div
       style={{
@@ -46,7 +40,6 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          {/* Hero Section */}
           <Title
             order={1}
             style={{
@@ -60,7 +53,6 @@ export default function HomePage() {
           >
             Rahul-Swami
           </Title>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -80,7 +72,6 @@ export default function HomePage() {
               <h2>Full Stack Developer</h2>
             </Text>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -101,8 +92,6 @@ export default function HomePage() {
               is called a king — what we now call a hacker. And I control all three of them"
             </Text>
           </motion.div>
-
-          {/* Navigation Buttons */}
           <Group position="center" mt="xl" spacing="md">
             {[
               { label: "👉About", path: "/about" },
@@ -143,10 +132,7 @@ export default function HomePage() {
               </motion.div>
             ))}
           </Group>
-
-          {/* Call & WhatsApp Buttons */}
           <Group position="center" mt="md" spacing="md">
-            {/* Call Button */}
             <motion.div
               whileHover={{ scale: 1.07 }}
               whileTap={{ scale: 0.95 }}
@@ -180,8 +166,6 @@ export default function HomePage() {
                 📞 Call Me
               </a>
             </motion.div>
-
-            {/* WhatsApp Button */}
             <motion.div
               whileHover={{ scale: 1.07 }}
               whileTap={{ scale: 0.95 }}
@@ -218,15 +202,12 @@ export default function HomePage() {
               </a>
             </motion.div>
           </Group>
-
-          {/* Footer / Tagline */}
           <Box mt="xl" style={{ textAlign: "center" }}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
             >
-              
             </motion.div>
           </Box>
         </motion.div>

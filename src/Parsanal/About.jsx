@@ -1,4 +1,3 @@
-// About.jsx
 import React from "react";
 import {
   Container,
@@ -8,7 +7,6 @@ import {
   Card,
 } from "@mantine/core";
 import { motion } from "framer-motion";
-
 export default function About() {
   return (
     <div
@@ -22,7 +20,6 @@ export default function About() {
         fontFamily: "'Inter', sans-serif",
       }}
     >
-      {/* Floating glow effects */}
       <div
         style={{
           position: "absolute",
@@ -49,17 +46,14 @@ export default function About() {
           animation: "float 7s ease-in-out infinite alternate",
         }}
       />
-
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
         }
       `}</style>
-
       <Container size="lg" py="xl" style={{ zIndex: 2, position: "relative" }}>
         <Stack spacing="xl" align="center">
-         
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,14 +100,13 @@ export default function About() {
               extraordinary digital experiences.
             </Text>
           </motion.div>
-
-          {/* Info Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             style={{ marginTop: "40px" }}
           >
+                <h1 style={{ display:"flex", justifyContent:"center", color:"yellow"}}>Editor  <span style={{color:"white"}}> Detall</span>  </h1>
             <Card
               padding="xl"
               radius="lg"
@@ -158,7 +151,6 @@ export default function About() {
                 project I take on. <br />
               </Text>
             </Card>
-
             <Card 
               radius="lg"
               style={{
@@ -186,6 +178,18 @@ export default function About() {
                 </span>
               </Text>
             </Card>
+            <Card 
+                 radius="lg"
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.05)",
+                backdropFilter: "blur(15px)",
+                maxWidth: 900,
+                textAlign: "center",
+                marginTop: "50px", 
+              }}
+              >
+              </Card>
           </motion.div>
         </Stack>
       </Container>

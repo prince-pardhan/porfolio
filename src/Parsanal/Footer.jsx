@@ -1,4 +1,3 @@
-// src/Footer.jsx
 import React, { useEffect, useState } from "react";
 import {
   Box,
@@ -21,16 +20,12 @@ import {
   IconStar,
   IconStarFilled,
 } from "@tabler/icons-react";
-
 const LOCALSTORAGE_KEY = "rahul_footer_star_count_v1";
 const LOCALSTORAGE_CLICKED = "rahul_footer_star_clicked_v1";
-
 export default function Footer() {
   const [starCount, setStarCount] = useState(0);
   const [starClicked, setStarClicked] = useState(false);
   const [anim, setAnim] = useState(false);
-
-  // Load from localStorage
   useEffect(() => {
     try {
       const saved = parseInt(localStorage.getItem(LOCALSTORAGE_KEY), 10);
@@ -41,27 +36,20 @@ export default function Footer() {
       console.warn("localStorage read error", err);
     }
   }, []);
-
-  // Handle click only once per device
   const handleStarClick = () => {
-    if (starClicked) return; // ❌ Stop if already clicked once
-
+    if (starClicked) return; 
     const newCount = (starCount || 0) + 1;
     setStarCount(newCount);
     setStarClicked(true);
-
-    try {
+try {
       localStorage.setItem(LOCALSTORAGE_KEY, String(newCount));
       localStorage.setItem(LOCALSTORAGE_CLICKED, "true");
     } catch (err) {
       console.warn("localStorage write error", err);
-    }
-
-    // Small animation
+    }  
     setAnim(true);
     setTimeout(() => setAnim(false), 300);
   };
-
   return (
     <Box
       py="xl"
@@ -74,14 +62,12 @@ export default function Footer() {
       }}
     >
       <Container size="lg">
-        {/* Main Layout */}
         <Flex
           direction={{ base: "column", sm: "row" }}
           justify="space-between"
           gap="xl"
           wrap="wrap"
-        >
-          {/* Left Card */}
+        >    
           <Card
             radius="lg"
             shadow="md"
@@ -122,10 +108,7 @@ export default function Footer() {
               </strong>
             </Text>
           </Card>
-
           <Flex style={{ flex: 0.2, minWidth: 40 }} />
-
-          {/* Contact + Star */}
           <Card
             radius="lg"
             shadow="md"
@@ -154,8 +137,6 @@ export default function Footer() {
                   srk016361@.com
                 </Text>
               </Group>
-
-              {/* Social Icons */}
               <Group spacing="md" mt="sm">
                 <ActionIcon
                   size="lg"
@@ -191,9 +172,7 @@ export default function Footer() {
                   <IconBrandInstagram size={22} />
                 </ActionIcon>
               </Group>
-
-              {/* ⭐ Star Counter */}
-              <Divider my="sm" color="rgba(255,255,255,0.06)" />
+                       <Divider my="sm" color="rgba(255,255,255,0.06)" />
               <Group position="apart" align="center">
                 <Group spacing="xs">
                   <ActionIcon
@@ -202,7 +181,7 @@ export default function Footer() {
                     variant={starClicked ? "filled" : "light"}
                     color={starClicked ? "yellow" : "gray"}
                     onClick={handleStarClick}
-                    disabled={starClicked} // ❌ disables after one click
+                    disabled={starClicked} 
                     style={{
                       transform: anim ? "scale(1.15)" : "scale(1)",
                       transition: "transform 120ms ease",
@@ -212,7 +191,6 @@ export default function Footer() {
                   >
                     {starClicked ? <IconStarFilled size={20} /> : <IconStar size={20} />}
                   </ActionIcon>
-
                   <div>
                     <Text size="sm" c="white" fw={700}>
                       {starCount || 0}
@@ -222,7 +200,6 @@ export default function Footer() {
                     </Text>
                   </div>
                 </Group>
-
                 <Text size="xs" c="gray.5" ta="right">
                   Click once to support ✨
                 </Text>
@@ -230,7 +207,6 @@ export default function Footer() {
             </Stack>
           </Card>
         </Flex>
-
         <Divider my="lg" color="gray.7" />
         <Text size="sm" ta="center" c="white" fw={600} style={{ letterSpacing: "0.5px" }}>
           © {new Date().getFullYear()}{" "}

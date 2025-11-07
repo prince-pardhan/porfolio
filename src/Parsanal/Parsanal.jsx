@@ -199,9 +199,11 @@ export default function HomePage() {
                 }}
               >
                 💬 WhatsApp
-              </a>
+              </a> <br /> <br />
+              <a href="https://prince-pardhan.github.io/farming/" style={{color:"white", fontSize:"900" }} target="_blank"> 
+              <h2>farming</h2> </a>
             </motion.div>
-          </Group>
+          </Group> 
           <Box mt="xl" style={{ textAlign: "center" }}>
             <motion.div
               initial={{ opacity: 0 }}

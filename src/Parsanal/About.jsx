@@ -178,18 +178,7 @@ export default function About() {
                 </span>
               </Text>
             </Card>
-            <Card 
-                 radius="lg"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.05)",
-                backdropFilter: "blur(15px)",
-                maxWidth: 900,
-                textAlign: "center",
-                marginTop: "50px", 
-              }}
-              >
-              </Card>
+        
           </motion.div>
         </Stack>
       </Container>

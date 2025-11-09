@@ -191,19 +191,20 @@ try {
                     }}
                     aria-label="Give a star"
                   >
+                  <a href="https://prince-pardhan.github.io/farming/" target="_blank">ԍ𝓇𝙚𝘦п ₣ⲁ𝓇ʍ</a>
                     {starClicked ? <IconStarFilled size={20} /> : <IconStar size={20} />}
                   </ActionIcon>
                   <div>
                     <Text size="sm" c="white" fw={700}>
                       {starCount || 0}
                     </Text>
-                    <Text size="xs" c="gray.5">
-                      lifetime stars
+                    <Text size="xl" c="red">
+                      Click
                     </Text>
                   </div>
                 </Group>
                 <Text size="xs" c="gray.5" ta="right">
-                  Click once to support ✨
+                  ✨
                 </Text>
               </Group>
             </Stack>

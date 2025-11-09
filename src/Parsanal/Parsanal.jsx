@@ -51,7 +51,7 @@ export default function HomePage() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Rahul-Swami
+          ℛ𝓪𝓱𝓾𝓵-𝓼𝔀𝓪𝓶𝓲
           </Title>
           <motion.div
             initial={{ opacity: 0 }}
@@ -68,8 +68,8 @@ export default function HomePage() {
                 letterSpacing: "0.5px",
               }}
             >
-              <h2 style={{color:"gray"}}>Editor</h2>
-              <h2>Full Stack Developer</h2>
+              <h2 style={{color:"gray"}}> ᗴ∂𝘪Ե𝗼𝚛 </h2>
+              <h2>Ƒ𝓊ใใ 𝑆Եสc𝘬 Ɖ𝓮ν𝓮ใₒ𝓹𝓮𝓻</h2>
             </Text>
           </motion.div>
           <motion.div
@@ -199,9 +199,9 @@ export default function HomePage() {
                 }}
               >
                 💬 WhatsApp
-              </a> <br /> <br />
-              <a href="https://prince-pardhan.github.io/farming/" style={{color:"white", fontSize:"900" }} target="_blank"> 
-              <h2>farming</h2> </a>
+              </a> 
+              {/* <a href="https://prince-pardhan.github.io/farming/" style={{color:"white", fontSize:"900" }} target="_blank">  */}
+              {/* <h2>farming</h2> </a> */}
             </motion.div>
           </Group> 
           <Box mt="xl" style={{ textAlign: "center" }}>

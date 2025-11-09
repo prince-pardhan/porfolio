@@ -82,7 +82,7 @@ export default function About() {
                 marginTop: "8px",
               }}
             >
-              Rk Swami
+              ℛ𝓴. 𝓼𝔀𝓪𝓶𝓲
             </Title>
             <Text
               style={{
@@ -106,7 +106,7 @@ export default function About() {
             transition={{ duration: 1 }}
             style={{ marginTop: "40px" }}
           >
-                <h1 style={{ display:"flex", justifyContent:"center", color:"yellow"}}>Editor  <span style={{color:"white"}}> Detall</span>  </h1>
+                <h1 style={{ display:"flex", justifyContent:"center", color:"yellow"}}>ᗴ∂𝘪Ե𝗼𝚛  <span style={{color:"white"}}> Detall</span>  </h1>
             <Card
               padding="xl"
               radius="lg"
@@ -128,7 +128,7 @@ export default function About() {
                   marginBottom: "6px",
                 }}
               >
-                Hii, I am Editing (and) Full Stack Developer
+                𝓱𝓲𝓲, 𝓲 𝓪𝓶 ᗴ∂𝘪Ե𝗼𝚛  (and) ᖴùˡˡ ک𝓉ꪋc𝚔 𝘿𝕖𝓋ꪋ
               </Text>
               <Text
                 size="md"
@@ -141,11 +141,11 @@ export default function About() {
               >
                 With 8 month of experience Editing, working with{" "}
                 <span style={{ color: "#38fc02ff" }}>
-                  (Cult Music Production)
+                  (ᑕᶸ𝕝𐍄 𝘔บѕɨc ℙ®𝑜₫บcʈǐ𝑜𝙣)
                 </span>{" "}
                 and{" "}
                 <span style={{ color: "#01b3ffff" }}>
-                  (Ks Junction Sirsa)
+                  (ҝ𝕤 𝘑ʊ𝐧c♰їŏ𝐧 𝑆ї𝕣𝙨𝑎)
                 </span>
                 , I bring together creativity, structure, and precision to every
                 project I take on. <br />
@@ -164,10 +164,10 @@ export default function About() {
             >
               <Text style={{color:"white", fontWeight:"900"}}>
                 <h1>
-                  <span style={{color:"red", fontWeight:"900"}}>200+</span> Long video
-                  <span style={{color:"green"}}> 300+</span> Short Video <br /> 
+                  <span style={{color:"red", fontWeight:"900"}}>200+</span> ட𝑜𝖓ℊ 𝕧ῖ𝚍ə𝑜
+                  <span style={{color:"green"}}> 300+</span> ꇙԩо®𝑡 𝙑𝔦๔ео <br /> 
                 </h1>
-                Editing ki h (And) <span style={{color:"yellow"}}>2 years</span> complite in Editing 
+                Editing ki h (And) <span style={{color:"yellow"}}>2 𝒀𝖾á𝚛</span> complite in Editing 
                 Cours <br />
                 <span style={{fontWeight:"200", color:"#00ffd9ff"}}>
                   Every project is a new experience for me, where I use my

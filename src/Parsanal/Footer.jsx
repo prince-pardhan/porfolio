@@ -85,13 +85,14 @@ try {
               c="black"
               mb="sm"
               style={{
-                fontWeight: "800",
+                fontWeight: "900",
                 fontSize: "1.6rem",
                 letterSpacing: "1px",
+                color:"yellow"
               }}
-            >
-              Editor Skills
-            </Title>
+              >
+              ꭼ𝗱Ꭵ𝓽⊙ℝ 𝑺Ҝ𝓲𝓁𝓁𝘴          
+ </Title>
             <Text size="sm" c="gray.9" style={{ lineHeight: 1.8, fontWeight: "900" }}>
               🎬 Video, Image, Poster Editing <br />
               💼 2+ years of editing experience <br />
@@ -104,11 +105,12 @@ try {
                   fontSize: "1.1rem",
                 }}
               >
-                Rahul Swami
+                         ℛ𝓪𝓱𝓾𝓵-𝓼𝔀𝓪𝓶𝓲
+
               </strong>
             </Text>
           </Card>
-          <Flex style={{ flex: 0.2, minWidth: 40 }} />
+          <Flex style={{ flex: 0.9, minWidth: 40 }} />
           <Card
             radius="lg"
             shadow="md"
@@ -210,7 +212,7 @@ try {
         <Divider my="lg" color="gray.7" />
         <Text size="sm" ta="center" c="white" fw={600} style={{ letterSpacing: "0.5px" }}>
           © {new Date().getFullYear()}{" "}
-          <strong style={{ color: "#00c3ff" }}>Rahulswami.online</strong>
+          <strong style={{ color: "#00c3ff" }}>ℛ𝓪𝓱𝓾𝓵 𝓼𝔀𝓪𝓶𝓲.𝖔𝑛ɭí𝑛𝙚</strong>
         </Text>
       </Container>
     </Box>

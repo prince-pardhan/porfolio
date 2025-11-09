@@ -18,7 +18,7 @@ import {
 export default function SkillsSection() {
   const skills = [
     {
-      name: "Editor",
+      name: "ᗴ∂𝘪Ե𝗼𝚛",
       percent: 90,
       color: "#ff0080",
       icon: <IconPencil size={24} />,

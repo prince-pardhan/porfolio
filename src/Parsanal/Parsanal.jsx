@@ -94,8 +94,8 @@ export default function HomePage() {
           </motion.div>
           <Group position="center" mt="xl" spacing="md">
             {[
-              { label: "👉About", path: "/about" },
-              { label: "👉Skills", path: "/portfolio" },
+              { label: "_Ą𝑏ʘ𝐮т_", path: "/about" },
+              { label: "_Ꮪ𝓀𝗶𝕝𝕝𝕤_", path: "/portfolio" },
             ].map((btn, i) => (
               <motion.div
                 key={i}
@@ -147,8 +147,8 @@ export default function HomePage() {
                   cursor: "pointer",
                   color: "#ffffffff",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "15px",
-                  fontWeight: 500,
+                  fontSize: "25px",
+                  fontWeight: 900,
                   backdropFilter: "blur(6px)",
                   background: "rgba(0,255,0,0.05)",
                   textDecoration: "none",
@@ -163,8 +163,7 @@ export default function HomePage() {
                   e.target.style.border = "2px solid rgba(0, 0, 0, 0.5)";
                 }}
               >
-                📞 Call Me
-              </a>
+              𝗰𝑎ʆ𝓵 𝙈ě             </a>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.07 }}
@@ -182,8 +181,8 @@ export default function HomePage() {
                   cursor: "pointer",
                   color: "#ffffffff",
                   fontFamily: "Inter, sans-serif",
-                  fontSize: "15px",
-                  fontWeight: 500,
+                  fontSize: "25px",
+                  fontWeight: 900,
                   backdropFilter: "blur(6px)",
                   background: "rgba(0,255,0,0.05)",
                   textDecoration: "none",
@@ -198,7 +197,7 @@ export default function HomePage() {
                   e.target.style.border = "2px solid rgba(0, 0, 0, 0.5)";
                 }}
               >
-                💬 WhatsApp
+                •𝓦𝘩ⱥţ𝒔Å𝖕𝖕•
               </a> 
               {/* <a href="https://prince-pardhan.github.io/farming/" style={{color:"white", fontSize:"900" }} target="_blank">  */}
               {/* <h2>farming</h2> </a> */}

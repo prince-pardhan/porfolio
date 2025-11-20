@@ -59,6 +59,7 @@ try {
           "linear-gradient(135deg, #51a2c5ff, #51a2c5ff, #51a2c5ff)",
         borderTop: "3px solid #00c3ff",
         boxShadow: "0 -4px 20px rgba(0,0,0,0.3)",
+        
       }}
     >
       <Container size="lg">

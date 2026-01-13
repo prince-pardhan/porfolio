@@ -3,7 +3,6 @@ import {
   Container,
   Text,
   Title,
-  Stack,
   Box,
   Group,
 } from "@mantine/core";
@@ -17,8 +16,8 @@ export default function HomePage() {
   const handleNavigation = (path) => {
     navigate(path);
   };
-  const phoneNumber = "+918290400325"; 
-  const whatsappNumber = "+918290400325"; 
+  const phoneNumber = "+917450800010"; 
+  const whatsappNumber = "+917450800010"; 
   return (
     <div
       style={{

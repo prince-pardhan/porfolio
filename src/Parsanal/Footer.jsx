@@ -98,6 +98,7 @@ try {
               💼 2+ years of editing experience <br />
               🖥 Full Stack Developer [Ks Junction] <br />
               <a href="https://prince-pardhan.github.io/farming/" target="_blank" style={{color:"green", fontWeight:"900", fontSize:"200%"}}>Green Farma</a>
+              <a href="https://news-ten-beige.vercel.app/" target="_blank" style={{color:"green", fontWeight:"900", fontSize:"200%"}}>News</a>
               <br />
               <strong
                 style={{
